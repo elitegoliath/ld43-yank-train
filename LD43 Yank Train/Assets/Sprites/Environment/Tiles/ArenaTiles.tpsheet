@@ -4,26 +4,31 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # http://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:617cf2ac9bdbd97181b368c6dbf14dc8:b3a175d50f49f5322bfc13d03774b9e0:79632b523ec0ca58898888bddcf5f498$
+# $TexturePacker:SmartUpdate:7ffd67488669db26115bc939b58af011:5c105d49005ed0f176fcbed4d80e0ecf:79632b523ec0ca58898888bddcf5f498$
 #
 :format=40300
 :texture=ArenaTiles.png
-:size=512x512
+:size=512x1024
 :pivotpoints=enabled
 :borders=disabled
 
-CliffBase;0;384;128;128; 0.5;0.5; 0;0;0;0
-GroundConcrete;0;256;128;128; 0.5;0.5; 0;0;0;0
-GroundCracks;0;128;128;128; 0.5;0.5; 0;0;0;0
-GroundDirt;0;0;128;128; 0.5;0.5; 0;0;0;0
-GroundGrass;128;384;128;128; 0.5;0.5; 0;0;0;0
-GroundGrassDirtB;256;384;128;128; 0.5;0.5; 0;0;0;0
-GroundGrassDirtBL;384;384;128;128; 0.5;0.5; 0;0;0;0
-GroundGrassDirtBR;128;256;128;128; 0.5;0.5; 0;0;0;0
-GroundGrassDirtL;128;128;128;128; 0.5;0.5; 0;0;0;0
-GroundGrassDirtR;128;0;128;128; 0.5;0.5; 0;0;0;0
-GroundGrassDirtT;256;256;128;128; 0.5;0.5; 0;0;0;0
-GroundGrassDirtTL;384;256;128;128; 0.5;0.5; 0;0;0;0
-GroundGrassDirtTR;256;128;128;128; 0.5;0.5; 0;0;0;0
-GroundLightGrass;256;0;128;128; 0.5;0.5; 0;0;0;0
-GroundRocks;384;128;128;128; 0.5;0.5; 0;0;0;0
+CliffBase;0;896;128;128; 0.5;0.5; 0;0;0;0
+GroundConcrete;128;896;128;128; 0.5;0.5; 0;0;0;0
+GroundCracks;256;896;128;128; 0.5;0.5; 0;0;0;0
+GroundDirt;384;896;128;128; 0.5;0.5; 0;0;0;0
+GroundGrass;0;768;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassDirtB;128;768;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassDirtBL;256;768;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassDirtBR;384;768;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassDirtL;0;640;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassDirtR;128;640;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassDirtT;256;640;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassDirtTL;384;640;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassDirtTR;0;512;128;128; 0.5;0.5; 0;0;0;0
+GroundLightGrass;128;512;128;128; 0.5;0.5; 0;0;0;0
+GroundRocks;256;512;128;128; 0.5;0.5; 0;0;0;0
+WaterBase;384;512;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtBR;0;384;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtTL;0;256;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassBR;0;128;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassTL;0;0;128;128; 0.5;0.5; 0;0;0;0
