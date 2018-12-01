@@ -113,6 +113,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &154481954
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4601299349600132, guid: e18ab76959598434e946f0793424d127, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.9133903
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601299349600132, guid: e18ab76959598434e946f0793424d127, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.26947546
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601299349600132, guid: e18ab76959598434e946f0793424d127, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -10.027344
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601299349600132, guid: e18ab76959598434e946f0793424d127, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601299349600132, guid: e18ab76959598434e946f0793424d127, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601299349600132, guid: e18ab76959598434e946f0793424d127, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601299349600132, guid: e18ab76959598434e946f0793424d127, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601299349600132, guid: e18ab76959598434e946f0793424d127, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722753128056126, guid: e18ab76959598434e946f0793424d127, type: 2}
+      propertyPath: m_Name
+      value: Obj_APC
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e18ab76959598434e946f0793424d127, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &284842139
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,6 +299,48 @@ MonoBehaviour:
     height: 1000
   m_DrawDebug: 0
   m_AutoAddFocus: 0
+--- !u!1 &674889003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 674889004}
+  - component: {fileID: 674889005}
+  m_Layer: 0
+  m_Name: Obj_ArenaController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &674889004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 674889003}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.4469469, y: 1.6624938, z: -10.035542}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &674889005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 674889003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6680d6b222b45a4baff33f507cbe331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tranportPrefabList:
+  - {fileID: 0}
 --- !u!1 &1225718415
 GameObject:
   m_ObjectHideFlags: 0
@@ -3193,7 +3281,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -476002989
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6abb2abd3c8401c46a3b7d3011bec239, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

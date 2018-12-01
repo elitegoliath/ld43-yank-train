@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - APC
   layers:
   - Default
   - TransparentFX
@@ -44,12 +45,21 @@ TagManager:
   - name: Ground
     uniqueID: 2578573443
     locked: 0
-  - name: Enemy
+  - name: Ground Enemy
     uniqueID: 1685585229
+    locked: 0
+  - name: Ground Transport
+    uniqueID: 1834852901
     locked: 0
   - name: Companion
     uniqueID: 1018322019
     locked: 0
   - name: Player
     uniqueID: 3818964307
+    locked: 0
+  - name: Flyer Enemy
+    uniqueID: 487061805
+    locked: 0
+  - name: Flyer Transport
+    uniqueID: 787840707
     locked: 0
