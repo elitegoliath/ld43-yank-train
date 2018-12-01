@@ -4,26 +4,55 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # http://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:617cf2ac9bdbd97181b368c6dbf14dc8:b3a175d50f49f5322bfc13d03774b9e0:79632b523ec0ca58898888bddcf5f498$
+# $TexturePacker:SmartUpdate:f3183289cb20e1711ad4e40ec6d17b4f:3c9780db433f8b3df55f6794ecf64ccf:79632b523ec0ca58898888bddcf5f498$
 #
 :format=40300
 :texture=ArenaTiles.png
-:size=512x512
+:size=1024x1024
 :pivotpoints=enabled
 :borders=disabled
 
-CliffBase;0;384;128;128; 0.5;0.5; 0;0;0;0
-GroundConcrete;0;256;128;128; 0.5;0.5; 0;0;0;0
-GroundCracks;0;128;128;128; 0.5;0.5; 0;0;0;0
-GroundDirt;0;0;128;128; 0.5;0.5; 0;0;0;0
-GroundGrass;128;384;128;128; 0.5;0.5; 0;0;0;0
-GroundGrassDirtB;256;384;128;128; 0.5;0.5; 0;0;0;0
-GroundGrassDirtBL;384;384;128;128; 0.5;0.5; 0;0;0;0
+CliffBase;0;896;128;128; 0.5;0.5; 0;0;0;0
+GroundConcrete;0;768;128;128; 0.5;0.5; 0;0;0;0
+GroundCracks;0;640;128;128; 0.5;0.5; 0;0;0;0
+GroundDirt;0;512;128;128; 0.5;0.5; 0;0;0;0
+GroundDirtWaterB;0;384;128;128; 0.5;0.5; 0;0;0;0
+GroundDirtWaterBL;0;256;128;128; 0.5;0.5; 0;0;0;0
+GroundDirtWaterBR;0;128;128;128; 0.5;0.5; 0;0;0;0
+GroundDirtWaterCornerBL;0;0;128;128; 0.5;0.5; 0;0;0;0
+GroundDirtWaterCornerBR;128;896;128;128; 0.5;0.5; 0;0;0;0
+GroundDirtWaterCornerTL;256;896;128;128; 0.5;0.5; 0;0;0;0
+GroundDirtWaterCornerTR;384;896;128;128; 0.5;0.5; 0;0;0;0
+GroundDirtWaterL;512;896;128;128; 0.5;0.5; 0;0;0;0
+GroundDirtWaterR;640;896;128;128; 0.5;0.5; 0;0;0;0
+GroundDirtWaterT;768;896;128;128; 0.5;0.5; 0;0;0;0
+GroundDirtWaterTL;896;896;128;128; 0.5;0.5; 0;0;0;0
+GroundDirtWaterTR;128;768;128;128; 0.5;0.5; 0;0;0;0
+GroundGrass;128;640;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassDirtB;128;512;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassDirtBL;128;384;128;128; 0.5;0.5; 0;0;0;0
 GroundGrassDirtBR;128;256;128;128; 0.5;0.5; 0;0;0;0
 GroundGrassDirtL;128;128;128;128; 0.5;0.5; 0;0;0;0
 GroundGrassDirtR;128;0;128;128; 0.5;0.5; 0;0;0;0
-GroundGrassDirtT;256;256;128;128; 0.5;0.5; 0;0;0;0
-GroundGrassDirtTL;384;256;128;128; 0.5;0.5; 0;0;0;0
-GroundGrassDirtTR;256;128;128;128; 0.5;0.5; 0;0;0;0
-GroundLightGrass;256;0;128;128; 0.5;0.5; 0;0;0;0
-GroundRocks;384;128;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassDirtT;256;768;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassDirtTL;384;768;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassDirtTR;512;768;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassWaterB;640;768;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassWaterBL;768;768;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassWaterBR;896;768;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassWaterCornerBL;256;640;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassWaterCornerBR;256;512;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassWaterCornerTL;256;384;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassWaterCornerTR;256;256;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassWaterL;256;128;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassWaterR;256;0;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassWaterT;384;640;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassWaterTL;512;640;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassWaterTR;640;640;128;128; 0.5;0.5; 0;0;0;0
+GroundLightGrass;768;640;128;128; 0.5;0.5; 0;0;0;0
+GroundRocks;896;640;128;128; 0.5;0.5; 0;0;0;0
+WaterBase;384;512;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtBR;384;384;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtTL;384;256;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassBR;384;128;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassTL;384;0;128;128; 0.5;0.5; 0;0;0;0
