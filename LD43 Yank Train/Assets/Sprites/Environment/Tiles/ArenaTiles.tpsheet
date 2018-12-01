@@ -1,0 +1,17 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:ccadff6908f5839da40e9b81a8fa7e47:a6c9a39e570d4d88adcc88cad2400aa2:79632b523ec0ca58898888bddcf5f498$
+#
+:format=40300
+:texture=ArenaTiles.png
+:size=256x256
+:pivotpoints=enabled
+:borders=disabled
+
+GroundBase;0;128;128;128; 0.5;0.5; 0;0;0;0
+GroundCliff-2;0;0;128;128; 0.5;0.5; 0;0;0;0
+GroundCliff;128;128;128;128; 0.5;0.5; 0;0;0;0
