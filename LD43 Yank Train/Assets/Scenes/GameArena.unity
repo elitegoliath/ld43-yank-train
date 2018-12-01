@@ -448,7 +448,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6680d6b222b45a4baff33f507cbe331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tranportPrefabList: []
+  enemyWaveMultiplier: 1.2
+  waveDelay: 100
+  startingWave: 1
+  numberOfWaves: 10
+  baseTransportCount: 2
+  baseEnemyCountPerTransport: 5
+  enemyEndWaveThreshold: 10
+  minEnemyPerTransport: 3
+  maxEnemyPerTransport: 8
+  transportPrefabList: []
 --- !u!1 &739327204
 GameObject:
   m_ObjectHideFlags: 0
@@ -21565,8 +21574,8 @@ Tilemap:
     m_Data: {fileID: 21300052, guid: 0d1fd7b5518c8b84e9ca41b21fd4ba5c, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300096, guid: 0d1fd7b5518c8b84e9ca41b21fd4ba5c, type: 3}
-    m_Data: {fileID: 21300100, guid: 0d1fd7b5518c8b84e9ca41b21fd4ba5c, type: 3}
   - m_RefCount: 1
+    m_Data: {fileID: 21300100, guid: 0d1fd7b5518c8b84e9ca41b21fd4ba5c, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 21300154, guid: 0d1fd7b5518c8b84e9ca41b21fd4ba5c, type: 3}
   m_TileMatrixArray:
