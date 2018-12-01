@@ -1,9 +1,6 @@
 version: 2
 importPivots: 1
 tpsheetFileNames:
-- Assets/Sprites/Environment/Tiles/ArenaTiles.tpsheet
 textureFileNames:
-- Assets/Sprites/Environment/Tiles/ArenaTiles.png
 normalmapFileNames:
-- 
 enableDebugOutput: 0
