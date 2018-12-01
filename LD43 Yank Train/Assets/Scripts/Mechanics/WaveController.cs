@@ -3,16 +3,77 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WaveController : MonoBehaviour {
+    public float enemyWaveMultiplier = 1.2f;
+    public float waveDelay = 100f;
+    public int startingWave = 1;
+    public int numberOfWaves = 10;
+    public int baseTransportCount = 2;
+    public int baseEnemyCountPerTransport = 5;
+    public int enemyEndWaveThreshold = 10;
+    public int minEnemyPerTransport = 3;
+    public int maxEnemyPerTransport = 8;
+    public GameObject[] transportPrefabList;
 
-    public GameObject[] tranportPrefabList;
+    private float _waveStartTimer;
+    private int _currentWave;
+    private bool _isWaveActive;
 
-	// Use this for initialization
-	void Start () {
-		
+    /// <summary>
+    /// Initialize
+    /// </summary>
+    void Start () {
+        _waveStartTimer = waveDelay;
+        _isWaveActive = false;
+        _currentWave = startingWave - 1;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+    /// <summary>
+    /// Per-frame logic.
+    /// </summary>
+    void Update() {
+        if (_isWaveActive == false) {
+            _waveStartTimer -= Time.deltaTime;
+
+            if (_waveStartTimer <= 0f) {
+                StartWave();
+            }
+        } else {
+            MonitorWave();
+        }
 	}
+
+    /// <summary>
+    /// Begin a new wave.
+    /// </summary>
+    private void StartWave()
+    {
+        Debug.Log("Wave Started");
+        _currentWave++;
+        _waveStartTimer = waveDelay;
+        _isWaveActive = true;
+
+        // TODO: Spawn Bitches.
+        // Determine wave size.
+        // TODO: Currently linear, want to make more of a ramp.
+        int transportCount = baseTransportCount * _currentWave;
+        List<GameObject> transports = new List<GameObject>();
+
+        for (int i = 0; i < transportCount; i++) {
+            transports.Add(Instantiate(transportPrefabList[Random.Range(0, transportPrefabList.Length)]));
+        }
+    }
+
+    /// <summary>
+    /// Track wave progress and trigger events when appropriate.
+    /// </summary>
+    private void MonitorWave()
+    {
+        // TODO: Watch for death toll to reach threshold. Once reached...
+
+        // TODO: Offer up perks
+
+        // TODO: Reset wave timer
+
+        // TODO: Reset active wave flag
+    }
 }
