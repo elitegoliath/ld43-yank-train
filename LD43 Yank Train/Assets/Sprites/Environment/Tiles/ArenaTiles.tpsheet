@@ -4,18 +4,23 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # http://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:5219cedb0304f0151b1abd8f5a713aed:6eba12ae11c83172b5b410f74be9890e:79632b523ec0ca58898888bddcf5f498$
+# $TexturePacker:SmartUpdate:5cc61fbd509f935e2b6c0e2d5f6e1175:c917e0db6ee7729b8287057b16b1a44d:79632b523ec0ca58898888bddcf5f498$
 #
 :format=40300
 :texture=ArenaTiles.png
-:size=256x512
+:size=512x512
 :pivotpoints=enabled
 :borders=disabled
 
 CliffBase;0;384;128;128; 0.5;0.5; 0;0;0;0
-GroundConcrete;128;384;128;128; 0.5;0.5; 0;0;0;0
-GroundCracks;0;256;128;128; 0.5;0.5; 0;0;0;0
-GroundDirt;128;256;128;128; 0.5;0.5; 0;0;0;0
-GroundGrass;0;128;128;128; 0.5;0.5; 0;0;0;0
-GroundLightGrass;0;0;128;128; 0.5;0.5; 0;0;0;0
-GroundRocks;128;128;128;128; 0.5;0.5; 0;0;0;0
+GroundConcrete;0;256;128;128; 0.5;0.5; 0;0;0;0
+GroundCracks;0;128;128;128; 0.5;0.5; 0;0;0;0
+GroundDirt;0;0;128;128; 0.5;0.5; 0;0;0;0
+GroundGrass;128;384;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassDirtB;256;384;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassDirtL;384;384;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassDirtR;128;256;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassDirtT;128;128;128;128; 0.5;0.5; 0;0;0;0
+GroundGrassTR;128;0;128;128; 0.5;0.5; 0;0;0;0
+GroundLightGrass;256;256;128;128; 0.5;0.5; 0;0;0;0
+GroundRocks;384;256;128;128; 0.5;0.5; 0;0;0;0
