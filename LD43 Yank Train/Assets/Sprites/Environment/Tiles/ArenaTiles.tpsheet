@@ -4,7 +4,7 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # http://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:0964b501eb8ccbd1191e5b798fc34db4:a3d03f633992ddcb5f439cfb738cddcb:79632b523ec0ca58898888bddcf5f498$
+# $TexturePacker:SmartUpdate:f4fe9f1aa62f03897e64a3c5ede11049:9d9981d75c8b86244b0f95b8ffb5ec46:79632b523ec0ca58898888bddcf5f498$
 #
 :format=40300
 :texture=ArenaTiles.png
@@ -13,7 +13,9 @@
 :borders=disabled
 
 CliffBase;0;384;128;128; 0.5;0.5; 0;0;0;0
-GroundCliff-2;128;384;128;128; 0.5;0.5; 0;0;0;0
-GroundDirt;0;256;128;128; 0.5;0.5; 0;0;0;0
-GroundGrass;128;256;128;128; 0.5;0.5; 0;0;0;0
-GroundLightGrass;0;128;128;128; 0.5;0.5; 0;0;0;0
+GroundConcrete;128;384;128;128; 0.5;0.5; 0;0;0;0
+GroundCracks;0;256;128;128; 0.5;0.5; 0;0;0;0
+GroundDirt;128;256;128;128; 0.5;0.5; 0;0;0;0
+GroundGrass;0;128;128;128; 0.5;0.5; 0;0;0;0
+GroundLightGrass;0;0;128;128; 0.5;0.5; 0;0;0;0
+GroundRocks;128;128;128;128; 0.5;0.5; 0;0;0;0
