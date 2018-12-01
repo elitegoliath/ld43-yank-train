@@ -3,15 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TransportSpawnController : MonoBehaviour {
-    private List<BoxCollider2D> _spawnSectors = new List<BoxCollider2D>();
+    public GameObject spawnCollider;
 
-	// Use this for initialization
-	void Start () {
+    private List<BoxCollider2D> _spawnSectors = new List<BoxCollider2D>();
+    private GameObject _spawnColliderClone;
+    private SpawnColliderController _spawnColliderController;
+
+    // Use this for initialization
+    void Start () {
+        // Compile list of spawn sector colliders.
         GameObject[] spawnSectorObjects = GameObject.FindGameObjectsWithTag("SpawnSector");
         for (int i = 0; i < spawnSectorObjects.Length; i++) {
             _spawnSectors.Add(spawnSectorObjects[i].GetComponent<BoxCollider2D>());
         }
-	}
+
+        // Instantiate the collider that will be used to check for free space.
+        _spawnColliderClone = Instantiate(spawnCollider);
+        _spawnColliderController = _spawnColliderClone.GetComponent<SpawnColliderController>();
+    }
 
     /// <summary>
     /// Returns a Vector2 of a free location for the transport to spawn.
@@ -24,6 +33,8 @@ public class TransportSpawnController : MonoBehaviour {
 
         // Check to see if it's free.
         bool canSpawnHere = CheckForCollision(foundSpawnPoint);
+
+        Debug.Log(canSpawnHere);
 
         // If not, invoke recursion until one is found.
         if(canSpawnHere == false) {
@@ -55,12 +66,16 @@ public class TransportSpawnController : MonoBehaviour {
         return new Vector2(x, y);
     }
 
+    /// <summary>
+    /// Checks for collisions with other Transports and returns whether the space is free of them.
+    /// </summary>
+    /// <param name="spawnPoint"></param>
+    /// <returns></returns>
     private bool CheckForCollision(Vector2 spawnPoint)
     {
+        _spawnColliderClone.transform.position = spawnPoint;
+        bool isFree = _spawnColliderController.CheckIfFree();
 
-        // TODO: Check if space is occupied by another transport.
-
-        // TODO: Return bool based on whether the space is occupied.
-        return false;
+        return isFree;
     }
 }

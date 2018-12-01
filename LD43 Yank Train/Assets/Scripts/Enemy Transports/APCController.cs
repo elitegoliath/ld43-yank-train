@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class APCController : MonoBehaviour {
     private TransportSpawnController _spawnController;
-    private Transform _spawnPoint;
-    private Transform _destination;
+    private Vector2 _spawnPoint;
+    private Vector2 _destination;
 
     // Use this for initialization
     void Start () {
+        // Grab the spawn point for this unit.
         _spawnController = gameObject.GetComponent<TransportSpawnController>();
-        _spawnController.EngageSpawnPoint();
+        _spawnPoint = _spawnController.GetSpawnPoint();
+
+        // Move to spawn location.
+        gameObject.transform.position = _spawnPoint;
+
+        // TODO: Get destination point.
 	}
 	
 	// Update is called once per frame

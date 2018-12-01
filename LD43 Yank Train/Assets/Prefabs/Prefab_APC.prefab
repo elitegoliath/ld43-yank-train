@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 50390190414971526}
   - component: {fileID: 114596345152827126}
   - component: {fileID: 114737397733441734}
+  - component: {fileID: 61289925178393584}
   m_Layer: 0
   m_Name: Prefab_APC
-  m_TagString: APC
+  m_TagString: Transport
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1775810669488168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.52, y: 1.54, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4601299349600132}
@@ -65,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1722753128056126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50.4, y: 2, z: 0}
+  m_LocalPosition: {x: -44.61, y: 1.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4329904309481736}
@@ -92,6 +93,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!61 &61289925178393584
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1722753128056126}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.39, y: 3.37}
+  m_EdgeRadius: 0
 --- !u!114 &114596345152827126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,6 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dae5e47bf8bca349a969dc11f60f21e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnCollider: {fileID: 1604712162758264, guid: 5d0c53c862b535c47833a1ad9b5eda10,
+    type: 2}
 --- !u!212 &212504374588217876
 SpriteRenderer:
   m_ObjectHideFlags: 1

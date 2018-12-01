@@ -6,6 +6,7 @@ TagManager:
   tags:
   - APC
   - SpawnSector
+  - Transport
   layers:
   - Default
   - TransparentFX
