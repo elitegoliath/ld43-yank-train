@@ -16,6 +16,10 @@ TextureImporter:
     21300022: GroundGrassDirtR
     21300024: GroundGrassDirtT
     21300026: GroundGrassTR
+    21300028: GroundGrassDirtBL
+    21300030: GroundGrassDirtBR
+    21300032: GroundGrassDirtTL
+    21300034: GroundGrassDirtTR
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -112,7 +116,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8a7c21cc64c5d7146b229cf98c5dcf98
+      spriteID: 5920a894daa0cda49b570bdd2a1048cf
       vertices: []
       indices: 
       edges: []
@@ -132,7 +136,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c54fd4bd0c7aea84dba76416e2c714b1
+      spriteID: ff980d07a33720644a4ffafab3684bed
       vertices: []
       indices: 
       edges: []
@@ -152,7 +156,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7fed822ce1146fa4b91a5b592bc5ca6f
+      spriteID: 5895fc8c6dfb0e649bc3636e9b1e5f0c
       vertices: []
       indices: 
       edges: []
@@ -172,7 +176,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c32eea6abbfa4414ea9dd5c61a573dba
+      spriteID: f21068c6dcdf10a49bfb8ba8f5c54137
       vertices: []
       indices: 
       edges: []
@@ -192,7 +196,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 59180eeed60849f41a1b8590c2942891
+      spriteID: 158638ae0bf5b5d4a965633ec3001219
       vertices: []
       indices: 
       edges: []
@@ -212,13 +216,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bca4f93d7624a8747a34c8d262ee1ea5
+      spriteID: c15b92b3e430997438daafce64cf0ebf
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GroundGrassDirtL
+      name: GroundGrassDirtBL
       rect:
         serializedVersion: 2
         x: 384
@@ -232,13 +236,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 96ad1fd7a9698774b8b386abe3b71cc2
+      spriteID: fce713384bbdae549bcba8c58e5b767e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GroundGrassDirtR
+      name: GroundGrassDirtBR
       rect:
         serializedVersion: 2
         x: 128
@@ -252,13 +256,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0130b996961578b4998e57e6074d1ede
+      spriteID: aa66d7bd630425d419f28661e4d8fef7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GroundGrassDirtT
+      name: GroundGrassDirtL
       rect:
         serializedVersion: 2
         x: 128
@@ -272,13 +276,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 68fca1b23d57f40439cad2b0f1229390
+      spriteID: 4f501703d69380c41bf82998511af8c4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GroundGrassTR
+      name: GroundGrassDirtR
       rect:
         serializedVersion: 2
         x: 128
@@ -292,13 +296,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 58e0d730e300884438e4cc8e0738a893
+      spriteID: f646df57030cb1b40a589b135ffd3d6c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GroundLightGrass
+      name: GroundGrassDirtT
       rect:
         serializedVersion: 2
         x: 256
@@ -312,13 +316,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: df54328e45a61104eafaab044180f3de
+      spriteID: db024e41add5db441b418734eb290ce3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GroundRocks
+      name: GroundGrassDirtTL
       rect:
         serializedVersion: 2
         x: 384
@@ -332,7 +336,67 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4f754601ad9f656438f325cd5afeb799
+      spriteID: 95ab4d4f33a9882459b10b3df3edec99
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundGrassDirtTR
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c37b7b249993e254280a8eedf86ac8b2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundLightGrass
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d4eca5f5a8d4de45b1342186995790e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundRocks
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e015e85e572cba4aa358d9541d7fc64
       vertices: []
       indices: 
       edges: []
