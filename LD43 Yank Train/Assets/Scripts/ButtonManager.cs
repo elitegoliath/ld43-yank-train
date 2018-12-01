@@ -7,17 +7,17 @@ public class ButtonManager : MonoBehaviour {
     private const string arenaSceneName = "GameArena";
     private const string mainMenuSceneName = "GameArena";
 
-    public void loadArenaScene()
+    public void LoadArenaScene()
     {
         SceneManager.LoadScene(arenaSceneName);
     }
 
-    public void loadMainMenuScene()
+    public void LoadMainMenuScene()
     {
         SceneManager.LoadScene(mainMenuSceneName);
     }
 
-    public void quitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }
