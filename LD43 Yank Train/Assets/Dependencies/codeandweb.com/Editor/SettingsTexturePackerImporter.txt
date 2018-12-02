@@ -1,9 +1,15 @@
 version: 2
 importPivots: 1
 tpsheetFileNames:
+- Assets/Sprites/Characters/Avatar/AvatarSheet.tpsheet
+- Assets/Sprites/Characters/Bots/EnemyBot.tpsheet
 - Assets/Sprites/Environment/Tiles/ArenaTiles.tpsheet
 textureFileNames:
+- Assets/Sprites/Characters/Avatar/AvatarSheet.png
+- Assets/Sprites/Characters/Bots/EnemyBot.png
 - Assets/Sprites/Environment/Tiles/ArenaTiles.png
 normalmapFileNames:
+- 
+- 
 - 
 enableDebugOutput: 0
