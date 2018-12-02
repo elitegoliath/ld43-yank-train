@@ -1,0 +1,299 @@
+fileFormatVersion: 2
+guid: ab5fcbc6ce34bfd42be5520070aaa243
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: EnemyBot
+    21300002: EnemyBotAmature
+    21300004: EnemyBotForearmL
+    21300006: EnemyBotForearmR
+    21300008: EnemyBotHandL
+    21300010: EnemyBotHandR
+    21300012: EnemyBotOptics
+    21300014: EnemyBotReactorHeart
+    21300016: EnemyBotTorso
+    21300018: EnemyBotUpperArmL
+    21300020: EnemyBotUpperArmR
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EnemyBotAmature
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 228
+        width: 107
+        height: 56
+      alignment: 9
+      pivot: {x: 0.48598132, y: 0.5089286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eac220ec2fbd0247a821daeb0ce3f62
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBotForearmL
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 114
+        width: 55
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5090909, y: 0.49107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e8436749c5f83a49b50938a9568faa7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBotForearmR
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 117
+        width: 55
+        height: 109
+      alignment: 9
+      pivot: {x: 0.5090909, y: 0.48623854}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a151928883bff047a3f6806d68ae490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBotHandL
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 291
+        width: 83
+        height: 86
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49418604}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3bccaf19c2d1874a9790b4d3ed199d4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBotHandR
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 286
+        width: 85
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c306251c26a1334caade4e09bcc52a2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBotOptics
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 49
+        width: 66
+        height: 63
+      alignment: 9
+      pivot: {x: 0.5151515, y: 0.50793654}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deae76de4c23f514fb258387e40e2761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBotReactorHeart
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 66
+        width: 108
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49519232}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87b60d124ec113e45a6c8131ef00f1d7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBotTorso
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 379
+        width: 152
+        height: 132
+      alignment: 9
+      pivot: {x: 0.50328946, y: 0.5037879}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 344688d20cfb0e14791b03f88740439c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBotUpperArmL
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 342
+        width: 72
+        height: 169
+      alignment: 9
+      pivot: {x: 0.5138889, y: 0.50591713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6e3c58d052ba8c4d96fd77609b61d65
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBotUpperArmR
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 172
+        width: 74
+        height: 168
+      alignment: 9
+      pivot: {x: 0.4864865, y: 0.49702382}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fd917315108b03468d52ac175dfc371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 458717d6bf469384eae56d86d0b44c40
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
