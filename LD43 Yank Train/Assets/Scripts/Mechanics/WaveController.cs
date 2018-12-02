@@ -8,10 +8,7 @@ public class WaveController : MonoBehaviour {
     public int startingWave = 1;
     public int numberOfWaves = 10;
     public int baseTransportCount = 2;
-    public int baseEnemyCountPerTransport = 5;
     public int enemyEndWaveThreshold = 10;
-    public int minEnemyPerTransport = 3;
-    public int maxEnemyPerTransport = 8;
     public GameObject[] transportPrefabList;
 
     private float _waveStartTimer;
@@ -21,10 +18,7 @@ public class WaveController : MonoBehaviour {
     private GameObject _destinationCollider;
     private DestinationColliderController _destinationColliderController;
 
-    /// <summary>
-    /// Initialize
-    /// </summary>
-    void Start () {
+    private void Start () {
         _waveStartTimer = waveDelay;
         _isWaveActive = false;
         _currentWave = startingWave - 1;
@@ -33,10 +27,7 @@ public class WaveController : MonoBehaviour {
         _destinationColliderController = _destinationCollider.GetComponent<DestinationColliderController>();
     }
 
-    /// <summary>
-    /// Per-frame logic.
-    /// </summary>
-    void Update() {
+    private void Update() {
         if (_isWaveActive == false) {
             _waveStartTimer -= Time.deltaTime;
 
@@ -53,7 +44,6 @@ public class WaveController : MonoBehaviour {
     /// </summary>
     private void StartWave()
     {
-        Debug.Log("Wave Started");
         _currentWave++;
         _waveStartTimer = waveDelay;
         _isWaveActive = true;

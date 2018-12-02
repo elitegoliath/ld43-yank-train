@@ -5,6 +5,9 @@ using UnityEngine;
 public class TransportSpawnController : MonoBehaviour {
     public GameObject spawnCollider;
 
+    public int minEnemyPayload = 3;
+    public int maxEnemyPayload = 8;
+
     private List<BoxCollider2D> _spawnSectors = new List<BoxCollider2D>();
     private GameObject _spawnColliderClone;
     private GameObject _destinationCollider;
@@ -12,8 +15,7 @@ public class TransportSpawnController : MonoBehaviour {
     private SpawnColliderController _spawnColliderController;
     private DestinationColliderController _destinationColliderController;
 
-    // Use this for initialization
-    void Start () {
+    private void Start () {
         // Compile list of spawn sector colliders.
         GameObject[] spawnSectorObjects = GameObject.FindGameObjectsWithTag("SpawnSector");
         for (int i = 0; i < spawnSectorObjects.Length; i++) {

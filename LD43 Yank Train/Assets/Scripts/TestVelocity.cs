@@ -13,8 +13,6 @@ public class TestVelocity : MonoBehaviour {
         Vector2 direction = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
         transform.up = direction;
 
-        //_myRigidBody.velocity = Vector3.zero;
-
         _myRigidBody.AddForce(transform.up * velocity);
     }
 	

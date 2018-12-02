@@ -31,6 +31,12 @@ public class DestinationColliderController : MonoBehaviour {
         _myCollider.enabled = false;
     }
 
+    /// <summary>
+    /// Generates a random point within the bounds of the collider.
+    /// If the point is within the polygonal collider itself, return the coordinate.
+    /// Otherwise, recurse.
+    /// </summary>
+    /// <returns></returns>
     public Vector2 GetRandomPoint()
     {
         Vector2 retVal = new Vector2();
@@ -47,13 +53,11 @@ public class DestinationColliderController : MonoBehaviour {
         foreach (RaycastHit2D hit in foundHits) {
             if (hit.collider.tag == "DestinationArea") {
                 isHitWithinBounds = true;
-                Debug.Log("Within Bounds");
                 retVal = foundCoordinate;
             }
         }
 
         if (isHitWithinBounds == false) {
-            Debug.Log("Not Within Bounds");
             retVal = GetRandomPoint();
         }
 

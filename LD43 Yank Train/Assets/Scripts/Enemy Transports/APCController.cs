@@ -9,9 +9,9 @@ public class APCController : MonoBehaviour {
     private Rigidbody2D _myRigidBody;
     private Vector2 _spawnPoint;
     private Vector2 _destination;
-
-    // Use this for initialization
-    void Start () {
+    private bool _isMoving = false;
+    
+    private void Start () {
         _myRigidBody = gameObject.GetComponent<Rigidbody2D>();
 
         // Grab the spawn point for this unit.
@@ -27,9 +27,8 @@ public class APCController : MonoBehaviour {
         MoveToDestination();
     }
 	
-	// Update is called once per frame
-	void Update () {
-        // TODO: Check distance from destination. If close, execute Stop Order.
+	private void Update () {
+        CheckDestinationReached();
     }
 
     /// <summary>
@@ -45,10 +44,32 @@ public class APCController : MonoBehaviour {
         transform.up = direction;
 
         _myRigidBody.AddForce(transform.up * speed);
+
+        _isMoving = true;
     }
 
     private void StopOrder()
     {
         // TODO: Apply rotation and no longer apply force.
+        //_myRigidBody
+
+        // TODO: Once stopped, execute Deploy Order.
+
+        // TODO: Construct navigation components to make this an obstacle.
+    }
+
+    private void DeployOrder()
+    {
+        // TODO: Spawn Troops.
+    }
+
+    /// <summary>
+    /// Checks if within a specific range of the destination. If close, initiated stop order.
+    /// </summary>
+    private void CheckDestinationReached()
+    {
+        if (_isMoving == true) {
+
+        }
     }
 }
