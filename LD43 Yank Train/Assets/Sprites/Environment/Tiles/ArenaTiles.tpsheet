@@ -4,7 +4,7 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # http://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:4942a6b9753c6da6c6f5514a10f1b069:7923e201d207d4b377a7b08880c5c58c:79632b523ec0ca58898888bddcf5f498$
+# $TexturePacker:SmartUpdate:71ddc1d6eb5a90674dc04e088e4ab7d2:cdcb6612a0c7e323e7c057272552caf7:79632b523ec0ca58898888bddcf5f498$
 #
 :format=40300
 :texture=ArenaTiles.png
@@ -78,49 +78,49 @@ GroundGrassWaterTR;768;1024;128;128; 0.5;0.5; 0;0;0;0
 GroundGrassWaterTRDiagB;896;1024;128;128; 0.5;0.5; 0;0;0;0
 GroundGrassWaterTRDiagR;0;896;128;128; 0.5;0.5; 0;0;0;0
 GroundLightGrass;0;768;128;128; 0.5;0.5; 0;0;0;0
-GroundRocks;0;640;128;128; 0.5;0.5; 0;0;0;0
-WaterBase;0;512;128;128; 0.5;0.5; 0;0;0;0
-WaterDiagDirtBL;0;384;128;128; 0.5;0.5; 0;0;0;0
-WaterDiagDirtBR;0;256;128;128; 0.5;0.5; 0;0;0;0
-WaterDiagDirtTL;0;128;128;128; 0.5;0.5; 0;0;0;0
-WaterDiagDirtTR;0;0;128;128; 0.5;0.5; 0;0;0;0
-WaterDiagGrassBL;128;896;128;128; 0.5;0.5; 0;0;0;0
-WaterDiagGrassBR;256;896;128;128; 0.5;0.5; 0;0;0;0
-WaterDiagGrassTL;384;896;128;128; 0.5;0.5; 0;0;0;0
-WaterDiagGrassTR;512;896;128;128; 0.5;0.5; 0;0;0;0
-WaterDirtB;640;896;128;128; 0.5;0.5; 0;0;0;0
-WaterDirtBDiagTL;768;896;128;128; 0.5;0.5; 0;0;0;0
-WaterDirtBDiagTR;896;896;128;128; 0.5;0.5; 0;0;0;0
-WaterDirtBL;128;768;128;128; 0.5;0.5; 0;0;0;0
-WaterDirtBR;128;640;128;128; 0.5;0.5; 0;0;0;0
-WaterDirtL;128;512;128;128; 0.5;0.5; 0;0;0;0
-WaterDirtLDiagTL;128;384;128;128; 0.5;0.5; 0;0;0;0
-WaterDirtR;128;256;128;128; 0.5;0.5; 0;0;0;0
-WaterDirtRDiagTr;128;128;128;128; 0.5;0.5; 0;0;0;0
-WaterDirtT;128;0;128;128; 0.5;0.5; 0;0;0;0
-WaterDirtTCurveTL;256;768;128;128; 0.5;0.5; 0;0;0;0
-WaterDirtTCurveTR;384;768;128;128; 0.5;0.5; 0;0;0;0
-WaterDirtTL;512;768;128;128; 0.5;0.5; 0;0;0;0
-WaterDirtTLDiagB;640;768;128;128; 0.5;0.5; 0;0;0;0
-WaterDirtTLDiagL;768;768;128;128; 0.5;0.5; 0;0;0;0
-WaterDirtTR;896;768;128;128; 0.5;0.5; 0;0;0;0
-WaterDirtTRDiagB;256;640;128;128; 0.5;0.5; 0;0;0;0
-WaterDirtTRDiagR;256;512;128;128; 0.5;0.5; 0;0;0;0
-WaterGrassB;256;384;128;128; 0.5;0.5; 0;0;0;0
-WaterGrassBDiagTL;256;256;128;128; 0.5;0.5; 0;0;0;0
-WaterGrassBDiagTR;256;128;128;128; 0.5;0.5; 0;0;0;0
-WaterGrassBL;256;0;128;128; 0.5;0.5; 0;0;0;0
-WaterGrassBR;384;640;128;128; 0.5;0.5; 0;0;0;0
-WaterGrassL;512;640;128;128; 0.5;0.5; 0;0;0;0
-WaterGrassLDiagTL;640;640;128;128; 0.5;0.5; 0;0;0;0
-WaterGrassR;768;640;128;128; 0.5;0.5; 0;0;0;0
-WaterGrassRDiagTr;896;640;128;128; 0.5;0.5; 0;0;0;0
-WaterGrassT;384;512;128;128; 0.5;0.5; 0;0;0;0
-WaterGrassTCurveTL;384;384;128;128; 0.5;0.5; 0;0;0;0
-WaterGrassTCurveTR;384;256;128;128; 0.5;0.5; 0;0;0;0
-WaterGrassTL;384;128;128;128; 0.5;0.5; 0;0;0;0
-WaterGrassTLDiagB;384;0;128;128; 0.5;0.5; 0;0;0;0
-WaterGrassTLDiagL;512;512;128;128; 0.5;0.5; 0;0;0;0
-WaterGrassTR;640;512;128;128; 0.5;0.5; 0;0;0;0
-WaterGrassTRDiagB;768;512;128;128; 0.5;0.5; 0;0;0;0
-WaterGrassTRDiagR;896;512;128;128; 0.5;0.5; 0;0;0;0
+GroundRocks;896;516;128;124; 0.5;0.5; 0;0;0;0
+WaterBase;0;640;128;128; 0.5;0.5; 0;0;0;0
+WaterDiagDirtBL;0;512;128;128; 0.5;0.5; 0;0;0;0
+WaterDiagDirtBR;0;384;128;128; 0.5;0.5; 0;0;0;0
+WaterDiagDirtTL;0;256;128;128; 0.5;0.5; 0;0;0;0
+WaterDiagDirtTR;0;128;128;128; 0.5;0.5; 0;0;0;0
+WaterDiagGrassBL;0;0;128;128; 0.5;0.5; 0;0;0;0
+WaterDiagGrassBR;128;896;128;128; 0.5;0.5; 0;0;0;0
+WaterDiagGrassTL;256;896;128;128; 0.5;0.5; 0;0;0;0
+WaterDiagGrassTR;384;896;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtB;512;896;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtBDiagTL;640;896;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtBDiagTR;768;896;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtBL;896;896;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtBR;128;768;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtL;128;640;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtLDiagTL;128;512;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtR;128;384;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtRDiagTr;128;256;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtT;128;128;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtTCurveTL;128;0;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtTCurveTR;256;768;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtTL;384;768;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtTLDiagB;512;768;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtTLDiagL;640;768;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtTR;768;768;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtTRDiagB;896;768;128;128; 0.5;0.5; 0;0;0;0
+WaterDirtTRDiagR;256;640;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassB;256;512;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassBDiagTL;256;384;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassBDiagTR;256;256;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassBL;256;128;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassBR;256;0;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassL;384;640;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassLDiagTL;512;640;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassR;640;640;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassRDiagTr;768;640;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassT;896;640;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassTCurveTL;384;512;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassTCurveTR;384;384;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassTL;384;256;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassTLDiagB;384;128;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassTLDiagL;384;0;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassTR;512;512;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassTRDiagB;640;512;128;128; 0.5;0.5; 0;0;0;0
+WaterGrassTRDiagR;768;512;128;128; 0.5;0.5; 0;0;0;0
