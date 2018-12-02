@@ -33,21 +33,7 @@ public class APCController : MonoBehaviour {
 	
 	private void Update () {
         CheckDestinationReached();
-    }
-
-    private void FixedUpdate()
-    {
-        // TODO: If stopping, gradual slowdown, gradual turn for skid.
-        if (_isStopping == true) {
-            //_myRigidBody.MoveRotation(_myRigidBody.rotation + stopRotationSpeed * Time.fixedDeltaTime);
-
-            //if(_myRigidBody.velocity.magnitude <= 0f) {
-            //    _myRigidBody.velocity = Vector2.zero;
-            //    _isStopping = false;
-
-            //    DeployOrder();
-            //}
-        }
+        CheckAPCHasStopped();
     }
 
     /// <summary>
@@ -80,6 +66,7 @@ public class APCController : MonoBehaviour {
 
     private void DeployOrder()
     {
+        Debug.Log("Deploy Order Executed");
         // TODO: Construct navigation components to make this an obstacle.
 
         // TODO: Spawn Troops.
@@ -97,6 +84,16 @@ public class APCController : MonoBehaviour {
                 _isMoving = false;
                 _isStopping = true;
                 StopOrder();
+            }
+        }
+    }
+
+    private void CheckAPCHasStopped()
+    {
+        if (_isStopping == true) {
+            if (_myRigidBody.velocity.magnitude <= 0f) {
+                _isStopping = false;
+                DeployOrder();
             }
         }
     }
