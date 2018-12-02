@@ -44,7 +44,6 @@ public class WaveController : MonoBehaviour {
     /// </summary>
     private void StartWave()
     {
-        Debug.Log("Start Wave");
         _currentWave++;
         _waveStartTimer = waveDelay;
         _isWaveActive = true;

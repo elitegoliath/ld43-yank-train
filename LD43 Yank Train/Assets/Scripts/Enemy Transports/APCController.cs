@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class APCController : MonoBehaviour {
     public float speed = 1f;
+    public float drag = 1f;
+    public float angularDrag = 1f;
     public float torque = 1f;
 
     private TransportSpawnController _spawnController;
@@ -11,6 +13,7 @@ public class APCController : MonoBehaviour {
     private Vector2 _spawnPoint;
     private Vector2 _destination;
     private bool _isMoving = false;
+    private bool _isStopping = false;
     
     private void Start () {
         _myRigidBody = gameObject.GetComponent<Rigidbody2D>();
@@ -32,12 +35,26 @@ public class APCController : MonoBehaviour {
         CheckDestinationReached();
     }
 
+    private void FixedUpdate()
+    {
+        // TODO: If stopping, gradual slowdown, gradual turn for skid.
+        if (_isStopping == true) {
+            //_myRigidBody.MoveRotation(_myRigidBody.rotation + stopRotationSpeed * Time.fixedDeltaTime);
+
+            //if(_myRigidBody.velocity.magnitude <= 0f) {
+            //    _myRigidBody.velocity = Vector2.zero;
+            //    _isStopping = false;
+
+            //    DeployOrder();
+            //}
+        }
+    }
+
     /// <summary>
     /// Face target destination then advance towards it at a pre-defined speed.
     /// </summary>
     private void MoveToDestination()
     {
-        Debug.Log("Move Order Executed");
         Vector2 direction = new Vector2(
             _destination.x - transform.position.x,
             _destination.y - transform.position.y
@@ -50,29 +67,21 @@ public class APCController : MonoBehaviour {
         _isMoving = true;
     }
 
+    /// <summary>
+    /// When the APC is ready to stop, it will gradually slow it's velocity until completely stopped.
+    /// Will then execute the Deploy Order.
+    /// </summary>
     private void StopOrder()
     {
-        Debug.Log("Stop Order Executed");
-        // Remove the driving force behind the vehicle.
-        _myRigidBody.velocity = Vector2.zero;
-
-        // Applies some torque for dramatic effect
-        float torqueDirection = Random.Range(0f, 100f);
-        float torqueToApply = torque;
-
-        if (torqueDirection <= 50f) {
-            torqueToApply = -torque;
-        }
-
-        _myRigidBody.AddTorque(torqueToApply);
-
-        // TODO: Once stopped, execute Deploy Order.
-
-        // TODO: Construct navigation components to make this an obstacle.
+        _myRigidBody.AddTorque(torque);
+        _myRigidBody.drag = drag;
+        _myRigidBody.angularDrag = angularDrag;
     }
 
     private void DeployOrder()
     {
+        // TODO: Construct navigation components to make this an obstacle.
+
         // TODO: Spawn Troops.
     }
 
@@ -82,7 +91,13 @@ public class APCController : MonoBehaviour {
     private void CheckDestinationReached()
     {
         if (_isMoving == true) {
-
+            float distance = Vector2.Distance(transform.position, _destination);
+            
+            if (distance <= 2f) {
+                _isMoving = false;
+                _isStopping = true;
+                StopOrder();
+            }
         }
     }
 }

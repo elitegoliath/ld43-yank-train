@@ -19,7 +19,7 @@ TagManager:
   - 
   - Area Mapping
   - Rigs
-  - 
+  - Transports
   - 
   - 
   - 
@@ -51,17 +51,20 @@ TagManager:
   - name: Ground Enemy
     uniqueID: 1685585229
     locked: 0
-  - name: Ground Transport
-    uniqueID: 1834852901
-    locked: 0
   - name: Companion
     uniqueID: 1018322019
     locked: 0
   - name: Player
     uniqueID: 3818964307
     locked: 0
+  - name: Ground Transport
+    uniqueID: 1834852901
+    locked: 0
   - name: Flyer Enemy
     uniqueID: 487061805
+    locked: 0
+  - name: Flying Companion
+    uniqueID: 145201989
     locked: 0
   - name: Flyer Transport
     uniqueID: 787840707
