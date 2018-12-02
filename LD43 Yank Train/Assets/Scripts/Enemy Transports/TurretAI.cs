@@ -11,7 +11,6 @@ public class TurretAI : MonoBehaviour {
     public GameObject rightGun;
 
     private Transform _playerTransform;
-    //private Rigidbody2D _myRigidBody;
     private bool _canFireWeapon = true;
     private bool _altFire = false;
     private GunController _leftGunController;
@@ -20,7 +19,6 @@ public class TurretAI : MonoBehaviour {
     private void Start () {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         _playerTransform = player.transform;
-        //_myRigidBody = gameObject.GetComponent<Rigidbody2D>();
 
         _leftGunController = leftGun.GetComponent<GunController>();
         _rightGunController = rightGun.GetComponent<GunController>();
@@ -37,8 +35,8 @@ public class TurretAI : MonoBehaviour {
     private void FacePlayer()
     {
         Vector3 direction = _playerTransform.position - transform.position;
-        float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg - 90;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
     }
 
     /// <summary>
