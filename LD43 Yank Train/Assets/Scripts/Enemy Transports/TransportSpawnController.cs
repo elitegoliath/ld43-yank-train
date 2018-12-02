@@ -16,6 +16,8 @@ public class TransportSpawnController : MonoBehaviour {
     private DestinationColliderController _destinationColliderController;
 
     private void Start () {
+        Debug.Log("Transport Spawned");
+
         // Compile list of spawn sector colliders.
         GameObject[] spawnSectorObjects = GameObject.FindGameObjectsWithTag("SpawnSector");
         for (int i = 0; i < spawnSectorObjects.Length; i++) {

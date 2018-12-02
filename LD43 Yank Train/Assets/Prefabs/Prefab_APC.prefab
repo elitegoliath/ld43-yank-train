@@ -129,7 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe50d28c6abcf0348b6498adcd780aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 100
+  speed: 1
+  torque: 1
 --- !u!114 &114737397733441734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -143,6 +144,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnCollider: {fileID: 1604712162758264, guid: 5d0c53c862b535c47833a1ad9b5eda10,
     type: 2}
+  minEnemyPayload: 3
+  maxEnemyPayload: 8
 --- !u!212 &212504374588217876
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class APCController : MonoBehaviour {
     public float speed = 1f;
+    public float torque = 1f;
 
     private TransportSpawnController _spawnController;
     private Rigidbody2D _myRigidBody;
@@ -36,6 +37,7 @@ public class APCController : MonoBehaviour {
     /// </summary>
     private void MoveToDestination()
     {
+        Debug.Log("Move Order Executed");
         Vector2 direction = new Vector2(
             _destination.x - transform.position.x,
             _destination.y - transform.position.y
@@ -50,8 +52,19 @@ public class APCController : MonoBehaviour {
 
     private void StopOrder()
     {
-        // TODO: Apply rotation and no longer apply force.
-        //_myRigidBody
+        Debug.Log("Stop Order Executed");
+        // Remove the driving force behind the vehicle.
+        _myRigidBody.velocity = Vector2.zero;
+
+        // Applies some torque for dramatic effect
+        float torqueDirection = Random.Range(0f, 100f);
+        float torqueToApply = torque;
+
+        if (torqueDirection <= 50f) {
+            torqueToApply = -torque;
+        }
+
+        _myRigidBody.AddTorque(torqueToApply);
 
         // TODO: Once stopped, execute Deploy Order.
 

@@ -453,15 +453,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyWaveMultiplier: 1.2
-  waveDelay: 100
+  waveDelay: 2
   startingWave: 1
   numberOfWaves: 10
   baseTransportCount: 2
-  baseEnemyCountPerTransport: 5
   enemyEndWaveThreshold: 10
-  minEnemyPerTransport: 3
-  maxEnemyPerTransport: 8
-  transportPrefabList: []
+  transportPrefabList:
+  - {fileID: 1722753128056126, guid: e18ab76959598434e946f0793424d127, type: 2}
 --- !u!1 &739327204
 GameObject:
   m_ObjectHideFlags: 0
@@ -21952,6 +21950,14 @@ Prefab:
     - target: {fileID: 1813537230650146, guid: d7afe43763fb7e74cb324b175d037139, type: 2}
       propertyPath: m_Name
       value: Obj_DestinationSector
+      objectReference: {fileID: 0}
+    - target: {fileID: 4383127125750196, guid: d7afe43763fb7e74cb324b175d037139, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4383127125750196, guid: d7afe43763fb7e74cb324b175d037139, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7afe43763fb7e74cb324b175d037139, type: 2}
