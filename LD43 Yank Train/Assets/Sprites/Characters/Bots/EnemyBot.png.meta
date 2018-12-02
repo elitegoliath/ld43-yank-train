@@ -13,6 +13,7 @@ TextureImporter:
     21300016: EnemyBotTorso
     21300018: EnemyBotUpperArmL
     21300020: EnemyBotUpperArmR
+    21300022: EnemyBotGun
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -87,8 +88,8 @@ TextureImporter:
       name: EnemyBotAmature
       rect:
         serializedVersion: 2
-        x: 77
-        y: 228
+        x: 143
+        y: 174
         width: 107
         height: 56
       alignment: 9
@@ -98,7 +99,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9eac220ec2fbd0247a821daeb0ce3f62
+      spriteID: 7b5315220c5ea1c4eaa4f55b7a31ad85
       vertices: []
       indices: 
       edges: []
@@ -107,18 +108,18 @@ TextureImporter:
       name: EnemyBotForearmL
       rect:
         serializedVersion: 2
-        x: 111
-        y: 114
+        x: 1
+        y: 94
         width: 55
         height: 112
       alignment: 9
-      pivot: {x: 0.5090909, y: 0.49107143}
+      pivot: {x: 0.80683714, y: 0.8343581}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8e8436749c5f83a49b50938a9568faa7
+      spriteID: f50a1b6f17c842b42959079c3e118f13
       vertices: []
       indices: 
       edges: []
@@ -127,18 +128,38 @@ TextureImporter:
       name: EnemyBotForearmR
       rect:
         serializedVersion: 2
-        x: 168
-        y: 117
+        x: 198
+        y: 232
         width: 55
         height: 109
       alignment: 9
-      pivot: {x: 0.5090909, y: 0.48623854}
+      pivot: {x: 0.23723672, y: 0.82590926}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8a151928883bff047a3f6806d68ae490
+      spriteID: 25722d0b9f169c44892f876f166bae50
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyBotGun
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 197
+        width: 66
+        height: 180
+      alignment: 9
+      pivot: {x: 0.5583031, y: 0.9295564}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67f1b6e85bc94d94599b115d266b32e4
       vertices: []
       indices: 
       edges: []
@@ -147,18 +168,18 @@ TextureImporter:
       name: EnemyBotHandL
       rect:
         serializedVersion: 2
-        x: 164
-        y: 291
+        x: 58
+        y: 109
         width: 83
         height: 86
       alignment: 9
-      pivot: {x: 0.5, y: 0.49418604}
+      pivot: {x: 0.46568695, y: 0.89158255}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a3bccaf19c2d1874a9790b4d3ed199d4
+      spriteID: c0d3e0e6731f0c042b46bcffea30197c
       vertices: []
       indices: 
       edges: []
@@ -167,18 +188,18 @@ TextureImporter:
       name: EnemyBotHandR
       rect:
         serializedVersion: 2
-        x: 77
-        y: 286
+        x: 2
+        y: 1
         width: 85
         height: 91
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5083766, y: 0.8755614}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c306251c26a1334caade4e09bcc52a2
+      spriteID: da4620c3d5245724fa1cd84d1bd4733e
       vertices: []
       indices: 
       edges: []
@@ -187,8 +208,8 @@ TextureImporter:
       name: EnemyBotOptics
       rect:
         serializedVersion: 2
-        x: 111
-        y: 49
+        x: 143
+        y: 109
         width: 66
         height: 63
       alignment: 9
@@ -198,7 +219,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: deae76de4c23f514fb258387e40e2761
+      spriteID: b9c8438905b975b47b2fd01f6a9b9516
       vertices: []
       indices: 
       edges: []
@@ -207,8 +228,8 @@ TextureImporter:
       name: EnemyBotReactorHeart
       rect:
         serializedVersion: 2
-        x: 1
-        y: 66
+        x: 88
+        y: 3
         width: 108
         height: 104
       alignment: 9
@@ -218,7 +239,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 87b60d124ec113e45a6c8131ef00f1d7
+      spriteID: 39f3a8b58c82be74494cfbb0758606a0
       vertices: []
       indices: 
       edges: []
@@ -227,7 +248,7 @@ TextureImporter:
       name: EnemyBotTorso
       rect:
         serializedVersion: 2
-        x: 75
+        x: 1
         y: 379
         width: 152
         height: 132
@@ -238,7 +259,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 344688d20cfb0e14791b03f88740439c
+      spriteID: 7df6252024b0e9d4bb1c5c6c98c2d5d2
       vertices: []
       indices: 
       edges: []
@@ -248,17 +269,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 342
+        y: 208
         width: 72
         height: 169
       alignment: 9
-      pivot: {x: 0.5138889, y: 0.50591713}
+      pivot: {x: 0.34725156, y: 0.9137954}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a6e3c58d052ba8c4d96fd77609b61d65
+      spriteID: 0ff1150934f2e9e4ea4b841156df64a8
       vertices: []
       indices: 
       edges: []
@@ -267,18 +288,18 @@ TextureImporter:
       name: EnemyBotUpperArmR
       rect:
         serializedVersion: 2
-        x: 1
-        y: 172
+        x: 155
+        y: 343
         width: 74
         height: 168
       alignment: 9
-      pivot: {x: 0.4864865, y: 0.49702382}
+      pivot: {x: 0.66793555, y: 0.89467895}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9fd917315108b03468d52ac175dfc371
+      spriteID: 005dac9f258d0b44885079619169bccb
       vertices: []
       indices: 
       edges: []
