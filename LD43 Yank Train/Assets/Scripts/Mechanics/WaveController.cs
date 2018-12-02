@@ -18,6 +18,9 @@ public class WaveController : MonoBehaviour {
     private int _currentWave;
     private bool _isWaveActive;
 
+    private GameObject _destinationCollider;
+    private DestinationColliderController _destinationColliderController;
+
     /// <summary>
     /// Initialize
     /// </summary>
@@ -25,7 +28,10 @@ public class WaveController : MonoBehaviour {
         _waveStartTimer = waveDelay;
         _isWaveActive = false;
         _currentWave = startingWave - 1;
-	}
+
+        _destinationCollider = GameObject.FindGameObjectWithTag("DestinationArea");
+        _destinationColliderController = _destinationCollider.GetComponent<DestinationColliderController>();
+    }
 
     /// <summary>
     /// Per-frame logic.
@@ -52,7 +58,8 @@ public class WaveController : MonoBehaviour {
         _waveStartTimer = waveDelay;
         _isWaveActive = true;
 
-        // TODO: Spawn Bitches.
+        _destinationColliderController.Activate();
+
         // Determine wave size.
         // TODO: Currently linear, want to make more of a ramp.
         int transportCount = baseTransportCount * _currentWave;
@@ -68,6 +75,8 @@ public class WaveController : MonoBehaviour {
     /// </summary>
     private void MonitorWave()
     {
+        // TODO: Once there are no instances of SpawnCollider clones, deactivate the Destination Collider.
+
         // TODO: Watch for death toll to reach threshold. Once reached...
 
         // TODO: Offer up perks

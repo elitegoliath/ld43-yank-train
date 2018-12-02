@@ -7,7 +7,10 @@ public class TransportSpawnController : MonoBehaviour {
 
     private List<BoxCollider2D> _spawnSectors = new List<BoxCollider2D>();
     private GameObject _spawnColliderClone;
+    private GameObject _destinationCollider;
+
     private SpawnColliderController _spawnColliderController;
+    private DestinationColliderController _destinationColliderController;
 
     // Use this for initialization
     void Start () {
@@ -20,6 +23,10 @@ public class TransportSpawnController : MonoBehaviour {
         // Instantiate the collider that will be used to check for free space.
         _spawnColliderClone = Instantiate(spawnCollider);
         _spawnColliderController = _spawnColliderClone.GetComponent<SpawnColliderController>();
+
+        // Instantiate the collider that will be used to obtain waypoints for transports.
+        _destinationCollider = GameObject.FindGameObjectWithTag("DestinationArea");
+        _destinationColliderController = _destinationCollider.GetComponent<DestinationColliderController>();
     }
 
     /// <summary>
@@ -34,8 +41,6 @@ public class TransportSpawnController : MonoBehaviour {
         // Check to see if it's free.
         bool canSpawnHere = CheckForCollision(foundSpawnPoint);
 
-        Debug.Log(canSpawnHere);
-
         // If not, invoke recursion until one is found.
         if(canSpawnHere == false) {
             foundSpawnPoint = GetSpawnPoint();
@@ -44,9 +49,15 @@ public class TransportSpawnController : MonoBehaviour {
         return foundSpawnPoint;
     }
 
-    public void GetWaypoint()
+    /// <summary>
+    /// Calls the Destination Collider Controller to return a rnadom point within itself.
+    /// </summary>
+    /// <returns></returns>
+    public Vector2 GetDestination()
     {
-        // TODO: Find a random location inside the arena to go to.
+        Vector2 foundDestination = _destinationColliderController.GetRandomPoint();
+
+        return foundDestination;
     }
 
     /// <summary>
@@ -77,5 +88,14 @@ public class TransportSpawnController : MonoBehaviour {
         bool isFree = _spawnColliderController.CheckIfFree();
 
         return isFree;
+    }
+
+    /// <summary>
+    /// We really should keep unused assets and scripts cleaned up.
+    /// </summary>
+    public void TearDown()
+    {
+        Destroy(_spawnColliderClone);
+        Destroy(this);
     }
 }

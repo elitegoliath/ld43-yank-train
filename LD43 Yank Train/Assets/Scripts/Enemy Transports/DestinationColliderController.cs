@@ -1,0 +1,62 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DestinationColliderController : MonoBehaviour {
+
+    private PolygonCollider2D _myCollider;
+    private Bounds _myBounds;
+    private Vector2 _myCenter;
+
+    private void Start()
+    {
+        _myCollider = gameObject.GetComponent<PolygonCollider2D>();
+        _myBounds = _myCollider.bounds;
+        _myCenter = _myBounds.center;
+    }
+
+    /// <summary>
+    /// Used to turn on the collider programmatically.
+    /// </summary>
+    public void Activate()
+    {
+        _myCollider.enabled = true;
+    }
+
+    /// <summary>
+    /// Used to turn on the collider programmatically.
+    /// </summary>
+    public void Deactivate()
+    {
+        _myCollider.enabled = false;
+    }
+
+    public Vector2 GetRandomPoint()
+    {
+        Vector2 retVal = new Vector2();
+
+        float x = Random.Range(_myCenter.x - _myBounds.extents.x, _myCenter.x + _myBounds.extents.x);
+        float y = Random.Range(_myCenter.y - _myBounds.extents.y, _myCenter.y + _myBounds.extents.y);
+
+        Vector2 foundCoordinate = new Vector2(x, y);
+
+        RaycastHit2D[] foundHits = Physics2D.RaycastAll(foundCoordinate, Vector2.zero, Mathf.Infinity);
+
+        bool isHitWithinBounds = false;
+
+        foreach (RaycastHit2D hit in foundHits) {
+            if (hit.collider.tag == "DestinationArea") {
+                isHitWithinBounds = true;
+                Debug.Log("Within Bounds");
+                retVal = foundCoordinate;
+            }
+        }
+
+        if (isHitWithinBounds == false) {
+            Debug.Log("Not Within Bounds");
+            retVal = GetRandomPoint();
+        }
+
+        return retVal;
+    }
+}

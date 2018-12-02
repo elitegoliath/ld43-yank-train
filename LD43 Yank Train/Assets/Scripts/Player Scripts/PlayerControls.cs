@@ -57,9 +57,6 @@ public class PlayerControls : MonoBehaviour
         // Get the mouse position in the world space, while using the camera distance for Z, for some reason.
         Vector3 mousePos = _cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDis));
 
-        float angleY = mousePos.y - _my.position.y;
-        float angleX = mousePos.x - _my.position.x;
-
         // Fuckin fancy ass math... I really don't get it, but it works, so yolo.
         float AngleRad = Mathf.Atan2(mousePos.y - _my.position.y, mousePos.x - _my.position.x);
         float angle = (180 / Mathf.PI) * AngleRad;
