@@ -830,7 +830,7 @@ MonoBehaviour:
   armor: 5
   weaponRange: 16
   weaponDelay: 0.4
-  weaponAccuracy: 15
+  weaponAccuracy: 20
   weaponDamage: 1
   weaponMunitionPrefab: {fileID: 1273437431022602, guid: 7149c311b1d05f04a87c6f7afa7b051c,
     type: 2}
