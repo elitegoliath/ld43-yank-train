@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5837c445cc48144ad33e429adfac34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 100
+  moveSpeed: 200
 --- !u!114 &114849897592492632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,10 +115,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ef66453f88bfc45919e47b06ff9f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Influence: {x: 1, y: 1}
+  m_Influence: {x: 0.1, y: 0.2}
   m_DrawDebug: 0
   m_Offset: {x: 0, y: 0}
-  m_VelocityToOffset: {x: 0.1, y: 0.1}
+  m_VelocityToOffset: {x: 0.1, y: 0.2}
 --- !u!212 &212197379302165192
 SpriteRenderer:
   m_ObjectHideFlags: 1
