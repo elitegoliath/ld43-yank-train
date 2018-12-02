@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyMunitionController : MonoBehaviour {
     public float speed = 1f;
+    public int damage = 1;
 
 	// Use this for initialization
 	void Start () {

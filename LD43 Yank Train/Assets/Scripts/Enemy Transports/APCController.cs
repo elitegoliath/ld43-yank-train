@@ -14,7 +14,7 @@ public class APCController : MonoBehaviour {
     private Vector2 _destination;
     private bool _isMoving = false;
     private bool _isStopping = false;
-    
+
     private void Start () {
         _myRigidBody = gameObject.GetComponent<Rigidbody2D>();
 
@@ -88,6 +88,9 @@ public class APCController : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Once the AP has stopped, discard uneeded AI and deploy!
+    /// </summary>
     private void CheckAPCHasStopped()
     {
         if (_isStopping == true) {

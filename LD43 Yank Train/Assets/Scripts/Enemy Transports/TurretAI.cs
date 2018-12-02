@@ -11,40 +11,41 @@ public class TurretAI : MonoBehaviour {
     public GameObject rightGun;
 
     private Transform _playerTransform;
-    private Rigidbody2D _myRigidBody;
+    //private Rigidbody2D _myRigidBody;
     private bool _canFireWeapon = true;
     private bool _altFire = false;
     private GunController _leftGunController;
     private GunController _rightGunController;
-
-    // Use this for initialization
-    void Start () {
+    
+    private void Start () {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         _playerTransform = player.transform;
-        _myRigidBody = gameObject.GetComponent<Rigidbody2D>();
+        //_myRigidBody = gameObject.GetComponent<Rigidbody2D>();
 
         _leftGunController = leftGun.GetComponent<GunController>();
         _rightGunController = rightGun.GetComponent<GunController>();
     }
 	
-	// Update is called once per frame
-	void Update () {
+	private void Update () {
         FacePlayer();
         AttackPlayer();
     }
 
+    /// <summary>
+    /// Always faces it's target, the Player.
+    /// </summary>
     private void FacePlayer()
     {
-        Vector2 playerPos = _playerTransform.position;
-        float AngleRad = Mathf.Atan2(playerPos.y - transform.position.y, playerPos.x - transform.position.x);
-        float angle = (180 / Mathf.PI) * AngleRad;
-
-        _myRigidBody.rotation = angle;
+        Vector3 direction = _playerTransform.position - transform.position;
+        float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 
+    /// <summary>
+    /// AI Attack Mode that's always on.
+    /// </summary>
     private void AttackPlayer()
     {
-        // TODO: Check if within firing range.
         float distance = Vector2.Distance(transform.position, _playerTransform.position);
 
         if (distance <= weaponRange) {
@@ -52,6 +53,9 @@ public class TurretAI : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Fires the turrets guns, alternating between left and right.
+    /// </summary>
     private void FireWeapons()
     {
         if (_canFireWeapon == true) {
@@ -68,6 +72,9 @@ public class TurretAI : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Once weapon cooldown has been reached, reset flag.
+    /// </summary>
     private void WeaponCooldown()
     {
         _canFireWeapon = true;
