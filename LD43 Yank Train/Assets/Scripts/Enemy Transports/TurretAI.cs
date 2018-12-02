@@ -3,25 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TurretAI : MonoBehaviour {
-    public float weaponRange = 4f;
-    public float weaponDelay = 2f;
-    public float weaponAccuracy = 10f;
-    public int weaponDamage = 1;
     public GameObject leftGun;
     public GameObject rightGun;
-
-    private Transform _playerTransform;
+    
     private bool _canFireWeapon = true;
     private bool _altFire = false;
-    private GunController _leftGunController;
-    private GunController _rightGunController;
-    
-    private void Start () {
+    private float _engagementRange = 1f;
+    private CombatController _myCombatController;
+    private CombatController _leftGunCombatController;
+    private CombatController _rightGunCombatController;
+    private Transform _playerTransform;
+
+    private void Awake()
+    {
+        _myCombatController = gameObject.GetComponent<CombatController>();
+        _leftGunCombatController = leftGun.GetComponent<CombatController>();
+        _rightGunCombatController = rightGun.GetComponent<CombatController>();
+    }
+
+    private void Start ()
+    {
+        // Set each turret's stats.
+        float accuracy = _myCombatController.GetWeaponAccuracy();
+        float wpnRange = _myCombatController.GetWeaponRange();
+        int dmg = _myCombatController.GetWeaponDamage();
+        GameObject munition = _myCombatController.GetWeaponMunition();
+        _engagementRange = _myCombatController.GetWeaponRange();
+        
+        _leftGunCombatController.SetRangedWeaponStats(accuracy, wpnRange, dmg, munition);
+        _rightGunCombatController.SetRangedWeaponStats(accuracy, wpnRange, dmg, munition);
+
+        // Grab player info.
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         _playerTransform = player.transform;
-
-        _leftGunController = leftGun.GetComponent<GunController>();
-        _rightGunController = rightGun.GetComponent<GunController>();
     }
 	
 	private void Update () {
@@ -46,7 +60,7 @@ public class TurretAI : MonoBehaviour {
     {
         float distance = Vector2.Distance(transform.position, _playerTransform.position);
 
-        if (distance <= weaponRange) {
+        if(distance <= _engagementRange) {
             FireWeapons();
         }
     }
@@ -56,16 +70,18 @@ public class TurretAI : MonoBehaviour {
     /// </summary>
     private void FireWeapons()
     {
-        if (_canFireWeapon == true) {
+        if(_canFireWeapon == true) {
+            float wpnDelay = _myCombatController.GetWeaponDelay();
             _canFireWeapon = false;
-            Invoke("WeaponCooldown", weaponDelay);
 
-            if (_altFire == true) {
+            Invoke("WeaponCooldown", wpnDelay);
+
+            if(_altFire == true) {
                 _altFire = false;
-                _leftGunController.FireGun(weaponAccuracy);
+                _leftGunCombatController.FireRangedWeapon();
             } else {
                 _altFire = true;
-                _rightGunController.FireGun(weaponAccuracy);
+                _rightGunCombatController.FireRangedWeapon();
             }
         }
     }

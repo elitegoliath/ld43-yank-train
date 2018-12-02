@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4467678363864732}
   - component: {fileID: 50906242450204276}
-  - component: {fileID: 114838143494867474}
   - component: {fileID: 58321307954474352}
+  - component: {fileID: 114011785843416402}
   m_Layer: 11
   m_Name: Prefab_EnemyLaser
   m_TagString: Untagged
@@ -107,7 +107,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.05
---- !u!114 &114838143494867474
+--- !u!114 &114011785843416402
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,11 +115,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1273437431022602}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62fdb7943b7200145bea69c6a88b4bd3, type: 3}
+  m_Script: {fileID: 11500000, guid: d62e5e1407bf5d2498ac13062da723cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 800
-  damage: 1
+  collidableTags:
+  - Player
 --- !u!212 &212685465034903034
 SpriteRenderer:
   m_ObjectHideFlags: 1

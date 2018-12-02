@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4405486094168718}
   - component: {fileID: 212523905076184936}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HandR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4352416634802046}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Head_CTRL_GRP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4774714355854378}
   - component: {fileID: 212181066807754852}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Spr_EnemyBotUpperArmL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4676324121431630}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GunL_POLE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4213474229530454}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: ArmatureSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 4658369280020772}
   - component: {fileID: 212813679384572066}
   - component: {fileID: 114995291469217252}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GunR_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4192236092925326}
   - component: {fileID: 212817107178347142}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: UpperArmL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 4551005843449188}
   - component: {fileID: 212171575570513162}
   - component: {fileID: 114893257509048934}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Root_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4096437240301728}
   - component: {fileID: 95390272456934976}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Rig_EnemyBot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4672784297954418}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: ForearmLSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4595438635880312}
   - component: {fileID: 212511937849710730}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: UpperArmR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,9 +193,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4869294092947766}
-  m_Layer: 9
+  - component: {fileID: 114972364963039216}
+  - component: {fileID: 50512529723873404}
+  m_Layer: 12
   m_Name: Prefab_EnemyGroundBot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,7 +211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4163528072621960}
   - component: {fileID: 212803271744461918}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4509853302911254}
   - component: {fileID: 212110871988277954}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Spr_EnemyBotReactorHeart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4460538317476782}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: UpperArmLSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4698878041286654}
   - component: {fileID: 212860300686656256}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GunL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4067379829126706}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: UpperArmRSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431568695841056}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: ForearmRSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4894702021159706}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: HandRSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4920710446125748}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GunR_CTRL_GRP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4078490137070532}
   - component: {fileID: 212107562713858498}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ForearmR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +351,7 @@ GameObject:
   - component: {fileID: 4029864581223844}
   - component: {fileID: 212413548296829658}
   - component: {fileID: 114702273036364840}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: hiddenBone_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4685666087547496}
   - component: {fileID: 212277296691535100}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Spr_EnemyBotOptics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4018323242579480}
   - component: {fileID: 212716556165677638}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Spr_EnemyBotHandR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,7 +400,7 @@ GameObject:
   - component: {fileID: 4118847912046434}
   - component: {fileID: 212342807447412848}
   - component: {fileID: 114583160725264446}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Head_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,7 +417,7 @@ GameObject:
   - component: {fileID: 4650751453377806}
   - component: {fileID: 212794886727942610}
   - component: {fileID: 114694807185219520}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: hiddenBone_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +434,7 @@ GameObject:
   - component: {fileID: 4714849808219846}
   - component: {fileID: 212820238510643326}
   - component: {fileID: 114696062018640940}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: hiddenBone_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,7 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4219527676442276}
   - component: {fileID: 212575488606247022}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Spr_EnemyBotChest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -463,23 +465,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4941554148704254}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GunL_CTRL_GRP
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1603735555117986
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4468225726819922}
-  m_Layer: 0
-  m_Name: UpperArmRSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -495,7 +482,7 @@ GameObject:
   - component: {fileID: 4098802360751286}
   - component: {fileID: 212652471533617462}
   - component: {fileID: 114595929594753114}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: hiddenBone_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4623407666539336}
   - component: {fileID: 212814223379993734}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Spr_EnemyBotArmature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -528,7 +515,7 @@ GameObject:
   - component: {fileID: 4387788374294700}
   - component: {fileID: 212740682127987572}
   - component: {fileID: 114443226406126426}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: hiddenBone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,7 +531,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4544674907818576}
   - component: {fileID: 212176690367708550}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Spr_EnemyBotUpperArmR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,7 +546,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4952833593991986}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: ChestSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4668631801537440}
   - component: {fileID: 212610768780951254}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,7 +577,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4419680371810170}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GunLSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -605,7 +592,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4056351970402216}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GunR_POLE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -620,7 +607,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4663925419404772}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HeartSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,7 +623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4437096066092498}
   - component: {fileID: 212441918825969024}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Spr_EnemyBotForearmL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -651,7 +638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4958438770331104}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: OpticsSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,7 +655,7 @@ GameObject:
   - component: {fileID: 4233287223589700}
   - component: {fileID: 212946171240250858}
   - component: {fileID: 114430667027120530}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: hiddenBone_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +672,7 @@ GameObject:
   - component: {fileID: 4795049649689244}
   - component: {fileID: 212942691868740284}
   - component: {fileID: 114394447775863038}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GunL_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -701,7 +688,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4368845123381712}
   - component: {fileID: 212878294196625748}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ForearmL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -716,7 +703,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4232166046432382}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Root_CTRL_GRP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -733,7 +720,7 @@ GameObject:
   - component: {fileID: 4405715045468828}
   - component: {fileID: 212080061836878850}
   - component: {fileID: 114371905232730996}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: hiddenBone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -749,7 +736,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4066780832591384}
   - component: {fileID: 212388037509880394}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Spr_EnemyBotForearmR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -766,7 +753,7 @@ GameObject:
   - component: {fileID: 4850029833445792}
   - component: {fileID: 114879587615428174}
   - component: {fileID: 114567594874726322}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Global_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -782,7 +769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4002508990848190}
   - component: {fileID: 212934198087244496}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Spr_EnemyBotGunL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +869,7 @@ Transform:
   - {fileID: 4431568695841056}
   - {fileID: 4714849808219846}
   m_Father: {fileID: 4595438635880312}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4096437240301728
 Transform:
@@ -909,7 +896,7 @@ Transform:
   m_LocalScale: {x: 1.0000001, y: 1.0000002, z: 1.0000002}
   m_Children: []
   m_Father: {fileID: 4595438635880312}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4118847912046434
 Transform:
@@ -1140,19 +1127,6 @@ Transform:
   m_Father: {fileID: 4192236092925326}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.120000005, y: 0, z: 161.51501}
---- !u!4 &4468225726819922
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1603735555117986}
-  m_LocalRotation: {x: 0.00038174645, y: 0.0005602708, z: 0.16479298, w: 0.98632795}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.568321, y: 0.5683213, z: 0.5683202}
-  m_Children: []
-  m_Father: {fileID: 4595438635880312}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4509853302911254
 Transform:
   m_ObjectHideFlags: 1
@@ -1203,7 +1177,6 @@ Transform:
   m_LocalScale: {x: 1.5434054, y: 1.5434055, z: 1.5434059}
   m_Children:
   - {fileID: 4067379829126706}
-  - {fileID: 4468225726819922}
   - {fileID: 4078490137070532}
   - {fileID: 4098802360751286}
   m_Father: {fileID: 4163528072621960}
@@ -1397,8 +1370,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202173623782010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.8, y: -10.25, z: -0.034179688}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -9, y: 2.05, z: -0.034179688}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4096437240301728}
   m_Father: {fileID: 0}
@@ -1474,6 +1447,26 @@ Transform:
   m_Father: {fileID: 4668631801537440}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50512529723873404
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1202173623782010}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!95 &95390272456934976
 Animator:
   serializedVersion: 3
@@ -1733,6 +1726,20 @@ MonoBehaviour:
   OffsetPos: {x: 0, y: 0, z: 0}
   OffsetScale: {x: 0.95487946, y: 0.95487946, z: 0.95487934}
   OffsetOrient: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114972364963039216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1202173623782010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96b38d93b95422e44808e24a58a44190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enagementRange: 10
+  target: {fileID: 0}
+  targetCombatController: {fileID: 0}
 --- !u!114 &114995291469217252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1894,8 +1901,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1685585229
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300014, guid: ab5fcbc6ce34bfd42be5520070aaa243, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1986,8 +1993,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1685585229
+  m_SortingLayer: 2
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300020, guid: ab5fcbc6ce34bfd42be5520070aaa243, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2032,8 +2039,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1685585229
+  m_SortingLayer: 2
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300018, guid: ab5fcbc6ce34bfd42be5520070aaa243, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2078,8 +2085,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1685585229
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300012, guid: ab5fcbc6ce34bfd42be5520070aaa243, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2170,8 +2177,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1685585229
+  m_SortingLayer: 2
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300006, guid: ab5fcbc6ce34bfd42be5520070aaa243, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2262,8 +2269,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1685585229
+  m_SortingLayer: 2
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300004, guid: ab5fcbc6ce34bfd42be5520070aaa243, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2400,8 +2407,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1685585229
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300016, guid: ab5fcbc6ce34bfd42be5520070aaa243, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2538,8 +2545,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1685585229
+  m_SortingLayer: 2
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300010, guid: ab5fcbc6ce34bfd42be5520070aaa243, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2768,8 +2775,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1685585229
+  m_SortingLayer: 2
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300002, guid: ab5fcbc6ce34bfd42be5520070aaa243, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2998,8 +3005,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1685585229
+  m_SortingLayer: 2
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300022, guid: ab5fcbc6ce34bfd42be5520070aaa243, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
