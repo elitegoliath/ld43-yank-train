@@ -18,7 +18,7 @@ TagManager:
   - 
   - 
   - Area Mapping
-  - 
+  - Bot Rig
   - 
   - 
   - 
@@ -65,4 +65,10 @@ TagManager:
     locked: 0
   - name: Flyer Transport
     uniqueID: 787840707
+    locked: 0
+  - name: Rigging
+    uniqueID: 998107903
+    locked: 0
+  - name: Animation Controls
+    uniqueID: 592529321
     locked: 0
