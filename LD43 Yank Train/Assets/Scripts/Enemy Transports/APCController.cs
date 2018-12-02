@@ -7,6 +7,8 @@ public class APCController : MonoBehaviour {
     public float drag = 1f;
     public float angularDrag = 1f;
     public float torque = 1f;
+    public GameObject payloadPrefab;
+    public Transform[] deployDirections;
 
     private TransportSpawnController _spawnController;
     private Rigidbody2D _myRigidBody;
