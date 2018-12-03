@@ -13,6 +13,8 @@ TextureImporter:
     21300016: AvatarHelmet
     21300018: AvatarUpperArmL
     21300020: AvatarUpperArmR
+    21300022: AvatarGun
+    21300024: AvatarGunFiring
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -87,18 +89,18 @@ TextureImporter:
       name: AvatarArmatureL
       rect:
         serializedVersion: 2
-        x: 335
-        y: 309
-        width: 92
-        height: 99
+        x: 338
+        y: 305
+        width: 94
+        height: 103
       alignment: 9
-      pivot: {x: 0.5163044, y: 0.5050505}
+      pivot: {x: 0.5159575, y: 0.5048544}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 83b89cf7062ab9147be73ce6f281fae2
+      spriteID: 83ef4c7784405274ca26a699ef14a35a
       vertices: []
       indices: 
       edges: []
@@ -107,18 +109,18 @@ TextureImporter:
       name: AvatarArmatureR
       rect:
         serializedVersion: 2
-        x: 335
+        x: 338
         y: 410
-        width: 94
+        width: 97
         height: 101
       alignment: 9
-      pivot: {x: 0.48404256, y: 0.5148515}
+      pivot: {x: 0.5, y: 0.5049505}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 10333edb4614073438a0f05e1ac60355
+      spriteID: 1e152251edb72bb4ebe80a84fa0f6b63
       vertices: []
       indices: 
       edges: []
@@ -127,18 +129,18 @@ TextureImporter:
       name: AvatarChest
       rect:
         serializedVersion: 2
-        x: 181
-        y: 398
+        x: 184
+        y: 391
         width: 152
-        height: 113
+        height: 120
       alignment: 9
-      pivot: {x: 0.50986844, y: 0.5}
+      pivot: {x: 0.4901316, y: 0.4875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: afa399abe7090684da4582e46249c10f
+      spriteID: c3525b8044963804d8b858896dd051a9
       vertices: []
       indices: 
       edges: []
@@ -147,18 +149,18 @@ TextureImporter:
       name: AvatarForearmL
       rect:
         serializedVersion: 2
-        x: 1
-        y: 75
-        width: 65
-        height: 152
+        x: 437
+        y: 358
+        width: 70
+        height: 153
       alignment: 9
-      pivot: {x: 0.6257521, y: 0.8601242}
+      pivot: {x: 0.62410015, y: 0.8510373}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e880c0684abbe8a40bf1a6400615eb53
+      spriteID: a2762641029c5b8498ddc3161a8b731b
       vertices: []
       indices: 
       edges: []
@@ -167,58 +169,58 @@ TextureImporter:
       name: AvatarForearmR
       rect:
         serializedVersion: 2
-        x: 68
-        y: 75
-        width: 65
-        height: 152
-      alignment: 9
-      pivot: {x: 0.40501732, y: 0.85068494}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e42e9f0f9c885d740b0950178909a3c1
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AvatarGunL
-      rect:
-        serializedVersion: 2
-        x: 77
-        y: 261
-        width: 71
-        height: 118
-      alignment: 9
-      pivot: {x: 0.50704235, y: 0.6556735}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 44c816df07592764880e38405fa21e9b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AvatarGunR
-      rect:
-        serializedVersion: 2
         x: 1
-        y: 258
-        width: 74
-        height: 121
+        y: 69
+        width: 68
+        height: 155
       alignment: 9
-      pivot: {x: 0.52320796, y: 0.6606173}
+      pivot: {x: 0.36193386, y: 0.8509659}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 848ab40dd7ce5b3458396bb1bb047d20
+      spriteID: 7ae7c25b1b19dd14593152198b498615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AvatarGun
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 275
+        width: 68
+        height: 114
+      alignment: 9
+      pivot: {x: 0.5, y: 0.51754385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 035a5fd19da5aee459cc63e652052ccd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AvatarGunFiring
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 275
+        width: 67
+        height: 114
+      alignment: 9
+      pivot: {x: 0.5074627, y: 0.51754385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 180ea072d973e8e40a85bc5ab2f9d110
       vertices: []
       indices: 
       edges: []
@@ -229,16 +231,16 @@ TextureImporter:
         serializedVersion: 2
         x: 1
         y: 381
-        width: 178
+        width: 181
         height: 130
       alignment: 9
-      pivot: {x: 0.5083968, y: 0.6762052}
+      pivot: {x: 0.5188585, y: 0.7097518}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 91f91d64e2bfa47438de5b23629b1590
+      spriteID: 7bd15a098ce9e004995d04c054ccde5d
       vertices: []
       indices: 
       edges: []
@@ -247,18 +249,18 @@ TextureImporter:
       name: AvatarUpperArmL
       rect:
         serializedVersion: 2
-        x: 429
-        y: 229
-        width: 74
-        height: 140
+        x: 434
+        y: 226
+        width: 70
+        height: 130
       alignment: 9
-      pivot: {x: 0.5164515, y: 0.74596167}
+      pivot: {x: 0.5214281, y: 0.81211406}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6e90de4f99f4ad04eba297b79d3555dd
+      spriteID: 7f795ee3b0e374a40933f47cbbc0b012
       vertices: []
       indices: 
       edges: []
@@ -267,18 +269,18 @@ TextureImporter:
       name: AvatarUpperArmR
       rect:
         serializedVersion: 2
-        x: 431
-        y: 371
-        width: 75
-        height: 140
+        x: 1
+        y: 243
+        width: 68
+        height: 136
       alignment: 9
-      pivot: {x: 0.5191309, y: 0.76133424}
+      pivot: {x: 0.49719092, y: 0.771089}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2b28b0ce6dc8ab74ea5f6d6cc8415e06
+      spriteID: 8f89871c96ca80441a26379a82062dc8
       vertices: []
       indices: 
       edges: []
