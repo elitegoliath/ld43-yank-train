@@ -167,4 +167,13 @@ public class CombatController : MonoBehaviour {
         newMunitionController.SetDamage(_weaponDamage);
         newMunitionController.SetLifeSpan(_weaponRange);
     }
+
+    /*****************************************
+     *            Combat Actions             *
+     ****************************************/
+    public void TakeDamage(int damage)
+    {
+        _currentHealth -= damage;
+        Debug.Log("I'm takin damage, yo.");
+    }
 }

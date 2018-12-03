@@ -119,8 +119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 800
-  collidableTags:
-  - Player
 --- !u!212 &212685465034903034
 SpriteRenderer:
   m_ObjectHideFlags: 1

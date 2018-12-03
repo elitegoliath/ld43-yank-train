@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MunitionController : MonoBehaviour {
     public float speed = 1f;
-    public string[] collidableTags;
 
     private float _lifeSpan = 1f;
     private int _damage = 1;
@@ -17,11 +16,16 @@ public class MunitionController : MonoBehaviour {
         Destroy(gameObject, _lifeSpan);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        // TODO: Apply damage to whatever was hit defined by the array of collidable tags.
+        CombatController entity = collider.GetComponent<CombatController>();
 
-        //Destroy(gameObject);
+        if (entity == null) {
+            // This was a mistake. How did we get here? What is life, even?
+        } else {
+            entity.TakeDamage(_damage);
+            Die();
+        }
     }
 
     public void SetDamage(int damage)
@@ -32,5 +36,10 @@ public class MunitionController : MonoBehaviour {
     public void SetLifeSpan(float lifeSpan)
     {
         _lifeSpan = lifeSpan;
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 }
