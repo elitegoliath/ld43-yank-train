@@ -1854,6 +1854,8 @@ MonoBehaviour:
   moveSpeed: 110
   attackingTurnSpeed: 35
   engagementRange: 6
+  companionLightIndicator: {fileID: 1873473179076264, guid: dd00fb9fecef2264abf05bc6901a31f5,
+    type: 2}
   attackRange: 8
   attackDelay: 0.7
   accuracy: 20

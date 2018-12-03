@@ -13,6 +13,7 @@ public class EnemyGroundBotAI : MonoBehaviour {
     public float moveSpeed = 100f;
     public float attackingTurnSpeed = 30f;
     public float engagementRange = 3f;
+    public GameObject companionLightIndicator;
     
     [Header("Weapon Stats")]
     public float attackRange = 5f;
