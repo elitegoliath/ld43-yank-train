@@ -88,18 +88,18 @@ TextureImporter:
       name: EnemyBotAmature
       rect:
         serializedVersion: 2
-        x: 143
-        y: 174
+        x: 146
+        y: 181
         width: 107
-        height: 56
+        height: 52
       alignment: 9
-      pivot: {x: 0.48598132, y: 0.5089286}
+      pivot: {x: 0.49532712, y: 0.52884614}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7b5315220c5ea1c4eaa4f55b7a31ad85
+      spriteID: 9339fcf4fab89f04ba1b6f2dade01dc9
       vertices: []
       indices: 
       edges: []
@@ -108,18 +108,18 @@ TextureImporter:
       name: EnemyBotForearmL
       rect:
         serializedVersion: 2
-        x: 1
-        y: 94
-        width: 55
-        height: 112
+        x: 152
+        y: 404
+        width: 59
+        height: 107
       alignment: 9
-      pivot: {x: 0.80683714, y: 0.8343581}
+      pivot: {x: 0.7224812, y: 0.810003}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f50a1b6f17c842b42959079c3e118f13
+      spriteID: 5edb7dcff4f799a4e8cdb16f7c772b2e
       vertices: []
       indices: 
       edges: []
@@ -128,18 +128,18 @@ TextureImporter:
       name: EnemyBotForearmR
       rect:
         serializedVersion: 2
-        x: 198
-        y: 232
-        width: 55
-        height: 109
+        x: 76
+        y: 229
+        width: 58
+        height: 113
       alignment: 9
-      pivot: {x: 0.23723672, y: 0.82590926}
+      pivot: {x: 0.28230363, y: 0.8023925}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 25722d0b9f169c44892f876f166bae50
+      spriteID: 374e36f70d164f541bad72734e7a47dc
       vertices: []
       indices: 
       edges: []
@@ -148,18 +148,18 @@ TextureImporter:
       name: EnemyBotGun
       rect:
         serializedVersion: 2
-        x: 75
-        y: 197
-        width: 66
-        height: 180
+        x: 1
+        y: 330
+        width: 72
+        height: 181
       alignment: 9
-      pivot: {x: 0.5583031, y: 0.9295564}
+      pivot: {x: 0.54871285, y: 0.95619595}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 67f1b6e85bc94d94599b115d266b32e4
+      spriteID: 5941eb14522a65c48a770584d20dfff6
       vertices: []
       indices: 
       edges: []
@@ -168,18 +168,18 @@ TextureImporter:
       name: EnemyBotHandL
       rect:
         serializedVersion: 2
-        x: 58
-        y: 109
-        width: 83
-        height: 86
+        x: 213
+        y: 346
+        width: 85
+        height: 81
       alignment: 9
-      pivot: {x: 0.46568695, y: 0.89158255}
+      pivot: {x: 0.5, y: 0.915683}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0d3e0e6731f0c042b46bcffea30197c
+      spriteID: cbceb06922e35d74d96229e880bc2568
       vertices: []
       indices: 
       edges: []
@@ -188,18 +188,18 @@ TextureImporter:
       name: EnemyBotHandR
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1
-        width: 85
-        height: 91
+        x: 213
+        y: 429
+        width: 87
+        height: 82
       alignment: 9
-      pivot: {x: 0.5083766, y: 0.8755614}
+      pivot: {x: 0.5080626, y: 0.908157}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: da4620c3d5245724fa1cd84d1bd4733e
+      spriteID: 965d2430139b87143a1b95985e1cc050
       vertices: []
       indices: 
       edges: []
@@ -208,18 +208,18 @@ TextureImporter:
       name: EnemyBotOptics
       rect:
         serializedVersion: 2
-        x: 143
-        y: 109
-        width: 66
-        height: 63
-      alignment: 9
-      pivot: {x: 0.5151515, y: 0.50793654}
+        x: 76
+        y: 163
+        width: 68
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b9c8438905b975b47b2fd01f6a9b9516
+      spriteID: 99b983a8337faa4449ba58849bdd0e5d
       vertices: []
       indices: 
       edges: []
@@ -228,18 +228,18 @@ TextureImporter:
       name: EnemyBotReactorHeart
       rect:
         serializedVersion: 2
-        x: 88
-        y: 3
-        width: 108
-        height: 104
+        x: 136
+        y: 235
+        width: 107
+        height: 107
       alignment: 9
-      pivot: {x: 0.5, y: 0.49519232}
+      pivot: {x: 0.5046729, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 39f3a8b58c82be74494cfbb0758606a0
+      spriteID: 7c2651defde0f864ca62e9c5188d5068
       vertices: []
       indices: 
       edges: []
@@ -249,17 +249,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 379
-        width: 152
+        y: 26
+        width: 151
         height: 132
       alignment: 9
-      pivot: {x: 0.50328946, y: 0.5037879}
+      pivot: {x: 0.51324505, y: 0.5037879}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7df6252024b0e9d4bb1c5c6c98c2d5d2
+      spriteID: 038d73074a785e344832905550909f8c
       vertices: []
       indices: 
       edges: []
@@ -268,18 +268,18 @@ TextureImporter:
       name: EnemyBotUpperArmL
       rect:
         serializedVersion: 2
-        x: 1
-        y: 208
-        width: 72
-        height: 169
+        x: 75
+        y: 344
+        width: 75
+        height: 167
       alignment: 9
-      pivot: {x: 0.34725156, y: 0.9137954}
+      pivot: {x: 0.3663735, y: 0.8828609}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ff1150934f2e9e4ea4b841156df64a8
+      spriteID: 80744c116b5f382478dd8968a96a8990
       vertices: []
       indices: 
       edges: []
@@ -288,18 +288,18 @@ TextureImporter:
       name: EnemyBotUpperArmR
       rect:
         serializedVersion: 2
-        x: 155
-        y: 343
-        width: 74
+        x: 1
+        y: 160
+        width: 73
         height: 168
       alignment: 9
-      pivot: {x: 0.66793555, y: 0.89467895}
+      pivot: {x: 0.6468966, y: 0.89546293}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 005dac9f258d0b44885079619169bccb
+      spriteID: 8982154d5fbe89c4694ee49b20f5dec4
       vertices: []
       indices: 
       edges: []

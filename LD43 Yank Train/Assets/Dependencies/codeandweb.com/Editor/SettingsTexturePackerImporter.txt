@@ -1,12 +1,12 @@
 version: 2
 importPivots: 1
 tpsheetFileNames:
-- Assets/Sprites/Characters/Avatar/AvatarSheet.tpsheet
+- Assets/Sprites/Characters/Bots/EnemyBot.tpsheet
 - Assets/Sprites/Environment/Tiles/ArenaTiles.tpsheet
 - Assets/Sprites/UI/UI Atlas.tpsheet
 - Assets/Sprites/Vehicles/APC.tpsheet
 textureFileNames:
-- Assets/Sprites/Characters/Avatar/AvatarSheet.png
+- Assets/Sprites/Characters/Bots/EnemyBot.png
 - Assets/Sprites/Environment/Tiles/ArenaTiles.png
 - Assets/Sprites/UI/UI Atlas.png
 - Assets/Sprites/Vehicles/APC.png
