@@ -2,10 +2,33 @@
 
 public class PlayerControls : MonoBehaviour
 {
+    [Header("Characteristics")]
     public float moveSpeed = 100f;
 
+    [Header("Combat Stats")]
+    public int maxHealth = 200;
+    public int armor = 1;
+    public float rangedAttackDelay = 0.5f;
+    public float rangedWeaponRange = 1f;
+    public int rangedWeaponDamage = 2;
+    public GameObject rangedWeaponMunition;
+
+    [Header("Weapons")]
+    public CombatController leftGun;
+    public CombatController rightGun;
+
+    private bool _canFireRangedWeapons = true;
     private Rigidbody2D _myRigidBody;
     private Camera _cam;
+    private CombatController _myCombatController;
+
+    private void Awake()
+    {
+        _myCombatController = gameObject.GetComponent<CombatController>();
+
+        leftGun.SetRangedWeaponStats(0f, rangedWeaponRange, rangedWeaponDamage, rangedWeaponMunition);
+        rightGun.SetRangedWeaponStats(0f, rangedWeaponRange, rangedWeaponDamage, rangedWeaponMunition);
+    }
 
     /// <summary>
     /// Runs once when the script has been initialized.
@@ -22,6 +45,7 @@ public class PlayerControls : MonoBehaviour
     private void Update()
     {
         FaceAvatar();
+        FireRangedWeapons();
     }
 
     /// <summary>
@@ -59,6 +83,23 @@ public class PlayerControls : MonoBehaviour
         float AngleRad = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x);
         float angle = (180 / Mathf.PI) * AngleRad;
 
-        _myRigidBody.rotation = angle;
+        _myRigidBody.rotation = angle + 90;
+    }
+
+    private void FireRangedWeapons()
+    {
+        if (Input.GetAxis("Fire1") != 0 && _canFireRangedWeapons == true) {
+            _canFireRangedWeapons = false;
+
+            leftGun.FireRangedWeapon();
+            rightGun.FireRangedWeapon();
+
+            Invoke("FireRangedWeaponsCooldown", rangedAttackDelay);
+        }
+    }
+
+    private void FireRangedWeaponsCooldown()
+    {
+        _canFireRangedWeapons = true;
     }
 }

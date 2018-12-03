@@ -579,7 +579,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1722753128056126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.0903854, y: -14.035246, z: 0}
+  m_LocalPosition: {x: -2.7695205, y: 3.6486914, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children:
   - {fileID: 4341131623092966}
@@ -774,8 +774,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0b54014569608418c9a3c4ffa11b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftGun: {fileID: 1743919294901878}
-  rightGun: {fileID: 1861873980690744}
+  leftGunCombatController: {fileID: 114527767615658836}
+  rightGunCombatController: {fileID: 114561329680228594}
 --- !u!114 &114470945389034010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -787,8 +787,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0b54014569608418c9a3c4ffa11b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftGun: {fileID: 1375548073000680}
-  rightGun: {fileID: 1910716469322586}
+  leftGunCombatController: {fileID: 114208981210416086}
+  rightGunCombatController: {fileID: 114293681319792742}
 --- !u!114 &114527767615658836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -828,14 +828,15 @@ MonoBehaviour:
   torque: 280
   maxHealth: 50
   armor: 5
-  weaponRange: 20
+  attackRange: 5
+  weaponRange: 2
   weaponDelay: 0.3
   weaponAccuracy: 30
   weaponDamage: 2
   weaponMunitionPrefab: {fileID: 1273437431022602, guid: 7149c311b1d05f04a87c6f7afa7b051c,
     type: 2}
-  foreTurretCombatController: {fileID: 114812091570703508}
-  aftTurretCombatController: {fileID: 114812585322845844}
+  foreTurret: {fileID: 1368444749696026}
+  aftTurret: {fileID: 1624798307895634}
   minPayload: 1
   maxPayload: 3
   payloadPrefab: {fileID: 1202173623782010, guid: b8c1f37e3d58e0b41823adc5d6348037,
@@ -857,8 +858,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnCollider: {fileID: 1604712162758264, guid: 5d0c53c862b535c47833a1ad9b5eda10,
     type: 2}
-  minEnemyPayload: 3
-  maxEnemyPayload: 8
 --- !u!114 &114812091570703508
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -97,9 +97,12 @@ public class AIController : MonoBehaviour {
 
     private void PickNewDeployLocation()
     {
-        DeployToRandomLocation(_availableDeployLocations);
-
-        // TODO: If no spawn points are valid, guess I'll just die.
+        // If no deploy locations are viable, fuckin die.
+        if (_availableDeployLocations.Count == 0) {
+            Die();
+        } else {
+            DeployToRandomLocation(_availableDeployLocations);
+        }
     }
 
     public void ActivateAI()
@@ -200,6 +203,13 @@ public class AIController : MonoBehaviour {
         float rot = -Mathf.Atan2(dir.x, dir.y) * 180 / Mathf.PI;
         float angle = Mathf.MoveTowardsAngle(transform.localEulerAngles.z, rot, _attackingTurnSpeed * Time.deltaTime);
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, angle);
+    }
+
+    private void Die()
+    {
+        // TODO: Spawn debris on death.
+        // TODO: Cause explosion FX on death (sound and viz);
+        Destroy(gameObject);
     }
 
     /*****************************************

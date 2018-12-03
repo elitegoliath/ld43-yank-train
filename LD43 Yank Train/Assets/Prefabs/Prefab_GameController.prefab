@@ -54,11 +54,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyWaveMultiplier: 1.2
   waveDelay: 100
+  initialWaveDelay: 6
   startingWave: 1
   numberOfWaves: 10
-  baseTransportCount: 2
-  enemyEndWaveThreshold: 10
-  transportPrefabList: []
+  baseTransportCount: 1
+  enemyEndWaveThreshold: 2
+  transportPrefabList:
+  - {fileID: 1722753128056126, guid: e18ab76959598434e946f0793424d127, type: 2}
 --- !u!114 &114421613589057668
 MonoBehaviour:
   m_ObjectHideFlags: 1

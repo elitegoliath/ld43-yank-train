@@ -5,15 +5,17 @@ using UnityEngine;
 public class TransportSpawnController : MonoBehaviour {
     public GameObject spawnCollider;
 
-    public int minEnemyPayload = 3;
-    public int maxEnemyPayload = 8;
-
     private List<BoxCollider2D> _spawnSectors = new List<BoxCollider2D>();
     private GameObject _spawnColliderClone;
     private GameObject _destinationCollider;
-
     private SpawnColliderController _spawnColliderController;
     private DestinationColliderController _destinationColliderController;
+    private int _payloadMultiplier = 1;
+
+    public int payloadMultiplier {
+        get { return _payloadMultiplier; }
+        set { _payloadMultiplier = value; }
+    }
 
     private void Start () {
         // Compile list of spawn sector colliders.
@@ -97,6 +99,7 @@ public class TransportSpawnController : MonoBehaviour {
     /// </summary>
     public void TearDown()
     {
+        EventManager.TriggerEvent("spawnCheckerCloneRemoved");
         Destroy(_spawnColliderClone);
         Destroy(this);
     }

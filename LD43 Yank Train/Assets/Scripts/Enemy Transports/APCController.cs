@@ -15,13 +15,14 @@ public class APCController : MonoBehaviour {
     public int armor = 5;
 
     [Header("Weapons")]
-    public float weaponRange = 4f;
+    public float attackRange = 5f;
+    public float weaponRange = 1f;
     public float weaponDelay = 2f;
     public float weaponAccuracy = 10f;
     public int weaponDamage = 1;
     public GameObject weaponMunitionPrefab;
-    public CombatController foreTurretCombatController;
-    public CombatController aftTurretCombatController;
+    public GameObject foreTurret;
+    public GameObject aftTurret;
 
     [Header("Deployment")]
     public int minPayload = 1;
@@ -35,10 +36,16 @@ public class APCController : MonoBehaviour {
     private Vector2 _destination;
     private bool _isMoving = false;
     private bool _isStopping = false;
+    private int _payloadMultiplier = 1;
 
     private void Awake()
     {
         _myRigidBody = gameObject.GetComponent<Rigidbody2D>();
+        CombatController foreTurretCombatController = foreTurret.GetComponent<CombatController>();
+        TurretAI foreTurretAI = foreTurret.GetComponent<TurretAI>();
+
+        CombatController aftTurretCombatController = aftTurret.GetComponent<CombatController>();
+        TurretAI aftTurretAI = aftTurret.GetComponent<TurretAI>();
 
         // Set combat stats for Fore Turret.
         foreTurretCombatController.SetWeaponRange(weaponRange);
@@ -61,6 +68,7 @@ public class APCController : MonoBehaviour {
         _spawnController = gameObject.GetComponent<TransportSpawnController>();
         _spawnPoint = _spawnController.GetSpawnPoint();
         _destination = _spawnController.GetDestination();
+        _payloadMultiplier = _spawnController.payloadMultiplier;
         _spawnController.TearDown();
 
         // Move to spawn location.
@@ -105,10 +113,11 @@ public class APCController : MonoBehaviour {
 
     private void DeployOrder()
     {
-        // TODO: When the event system can handle event with parameters, add wave multiplier to payload.
+        // TODO: Have alternative spawn locations within APC so that we don't rely on
+        // a single point and if within nav barrier payload won't spawn.
 
         // Dump payload.
-        int payload = Random.Range(minPayload, maxPayload);
+        int payload = Random.Range(minPayload, (maxPayload * _payloadMultiplier));
 
         for (int i = 0; i < payload; i++) {
             GameObject freshSpawn = Instantiate(payloadPrefab);
