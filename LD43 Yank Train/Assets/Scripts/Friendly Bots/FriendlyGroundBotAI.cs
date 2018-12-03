@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using PolyNav;
 
-public class EnemyGroundBotAI : MonoBehaviour {
+public class FriendlyGroundBotAI : MonoBehaviour {
     [Header("Navigation")]
     public float checkRangesCooldown = 0.2f;
-    
+
     [Header("Characteristics")]
     public int maxHealth = 10;
     public int armor = 1;
     public float moveSpeed = 100f;
     public float attackingTurnSpeed = 30f;
-    public float engagementRange = 3f;
-    
+    //public float followRange = 1f;
+
     [Header("Weapon Stats")]
     public float attackRange = 5f;
     public float attackDelay = 1f;
@@ -42,7 +42,7 @@ public class EnemyGroundBotAI : MonoBehaviour {
     {
         // TODO: Categorize these.
         _myAIController.SetAttackRange(attackRange);
-        _myAIController.SetEnagementRange(engagementRange);
+        //_myAIController.SetEnagementRange(engagementRange);
         _myAIController.SetAttackDelay(attackDelay);
         _myAIController.SetRangedWeaponCombatController(rangedWeaponCombatController);
         _myAIController.SetAttackingTurnSpeed(attackingTurnSpeed);
@@ -58,12 +58,12 @@ public class EnemyGroundBotAI : MonoBehaviour {
         // Initialize weapon.
         rangedWeaponCombatController.SetRangedWeaponStats(accuracy, weaponRange, weaponDamage, rangedWeaponMunition);
 
-        // Initialize target. Player is gona be the default target for now.
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        _myAIController.SetTarget(player);
+        //// Initialize target. Player is gona be the default target for now.
+        //GameObject player = GameObject.FindGameObjectWithTag("Player");
+        //_myAIController.SetTarget(player);
 
         // Register self with Wave Controller.
-        EventManager.TriggerEvent("registerEnemy");
+        EventManager.TriggerEvent("registerCompanion");
     }
 
     /// <summary>
@@ -84,7 +84,7 @@ public class EnemyGroundBotAI : MonoBehaviour {
 
     private void OnDestroy()
     {
-        EventManager.TriggerEvent("enemyDeath");
+        EventManager.TriggerEvent("companionDeath");
     }
 
     /// <summary>

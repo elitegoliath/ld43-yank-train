@@ -851,8 +851,13 @@ MonoBehaviour:
   aftTurret: {fileID: 1624798307895634}
   minPayload: 1
   maxPayload: 3
+  companionSpawnChance: 100
   deployRate: 0.5
   payloadPrefab: {fileID: 1202173623782010, guid: b8c1f37e3d58e0b41823adc5d6348037,
+    type: 2}
+  companionLightIndicator: {fileID: 1873473179076264, guid: dd00fb9fecef2264abf05bc6901a31f5,
+    type: 2}
+  companionPrefab: {fileID: 1202173623782010, guid: da0fce3e04aba0647bb0eddd59c4a7bd,
     type: 2}
   deployLocatons:
   - {fileID: 4261036760662658}
