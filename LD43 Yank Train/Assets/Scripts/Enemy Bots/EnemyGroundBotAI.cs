@@ -82,6 +82,11 @@ public class EnemyGroundBotAI : MonoBehaviour {
         _myAIController.AIAttackTarget();
     }
 
+    private void OnDestroy()
+    {
+        EventManager.TriggerEvent("enemyDeath");
+    }
+
     /// <summary>
     /// Public method for telling the AI to deploy to one of the locations given.
     /// Each location will be tested before deployment begins.

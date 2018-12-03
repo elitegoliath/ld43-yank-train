@@ -838,13 +838,13 @@ MonoBehaviour:
   drag: 3.7
   angularDrag: 4
   torque: 500
-  maxHealth: 20
+  maxHealth: 200
   armor: 5
   attackRange: 20
   weaponRange: 1.5
-  weaponDelay: 0.3
-  weaponAccuracy: 30
-  weaponDamage: 2
+  weaponDelay: 0.35
+  weaponAccuracy: 20
+  weaponDamage: 1
   weaponMunitionPrefab: {fileID: 1273437431022602, guid: 7149c311b1d05f04a87c6f7afa7b051c,
     type: 2}
   foreTurret: {fileID: 1368444749696026}

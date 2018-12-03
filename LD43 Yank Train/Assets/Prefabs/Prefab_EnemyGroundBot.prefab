@@ -1404,7 +1404,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202173623782010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.233503, y: 3.917366, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4096437240301728}
@@ -1848,16 +1848,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b38d93b95422e44808e24a58a44190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkRangesCooldown: 0.4
+  checkRangesCooldown: 0.5
   maxHealth: 10
   armor: 1
-  moveSpeed: 100
-  attackingTurnSpeed: 30
+  moveSpeed: 110
+  attackingTurnSpeed: 35
   engagementRange: 6
   attackRange: 8
-  attackDelay: 1
-  accuracy: 10
-  weaponDamage: 2
+  attackDelay: 0.7
+  accuracy: 20
+  weaponDamage: 1
   weaponRange: 1
   rangedWeaponCombatController: {fileID: 114903528608290828}
   rangedWeaponMunition: {fileID: 1273437431022602, guid: 7149c311b1d05f04a87c6f7afa7b051c,
