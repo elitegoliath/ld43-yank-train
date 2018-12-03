@@ -2118,7 +2118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FocusList:
-  - {fileID: 1192673161}
+  - {fileID: 1192673160}
   m_ActionRectSpaceAdded: 12
   m_CameraLimits:
     serializedVersion: 2
@@ -4297,9 +4297,9 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbfc7652fdbf9524b97f1e12b4c9ec93, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &1192673161 stripped
+--- !u!114 &1192673160 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114849897592492632, guid: cbfc7652fdbf9524b97f1e12b4c9ec93,
+  m_CorrespondingSourceObject: {fileID: 114588177265385914, guid: cbfc7652fdbf9524b97f1e12b4c9ec93,
     type: 2}
   m_PrefabInternal: {fileID: 1192673159}
   m_Script: {fileID: 11500000, guid: c5ef66453f88bfc45919e47b06ff9f19, type: 3}

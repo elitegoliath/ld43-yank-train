@@ -3,22 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TurretAI : MonoBehaviour {
-    public GameObject leftGun;
-    public GameObject rightGun;
-    
+    public CombatController leftGunCombatController;
+    public CombatController rightGunCombatController;
+
     private bool _canFireWeapon = true;
     private bool _altFire = false;
     private float _attackRange = 1f;
     private CombatController _myCombatController;
-    private CombatController _leftGunCombatController;
-    private CombatController _rightGunCombatController;
     private Transform _playerTransform;
 
     private void Awake()
     {
         _myCombatController = gameObject.GetComponent<CombatController>();
-        _leftGunCombatController = leftGun.GetComponent<CombatController>();
-        _rightGunCombatController = rightGun.GetComponent<CombatController>();
     }
 
     private void Start ()
@@ -29,8 +25,8 @@ public class TurretAI : MonoBehaviour {
         int dmg = _myCombatController.GetWeaponDamage();
         GameObject munition = _myCombatController.GetWeaponMunition();
         
-        _leftGunCombatController.SetRangedWeaponStats(accuracy, wpnRange, dmg, munition);
-        _rightGunCombatController.SetRangedWeaponStats(accuracy, wpnRange, dmg, munition);
+        leftGunCombatController.SetRangedWeaponStats(accuracy, wpnRange, dmg, munition);
+        rightGunCombatController.SetRangedWeaponStats(accuracy, wpnRange, dmg, munition);
 
         // Grab player info.
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -82,10 +78,10 @@ public class TurretAI : MonoBehaviour {
 
             if(_altFire == true) {
                 _altFire = false;
-                _leftGunCombatController.FireRangedWeapon();
+                leftGunCombatController.FireRangedWeapon();
             } else {
                 _altFire = true;
-                _rightGunCombatController.FireRangedWeapon();
+                rightGunCombatController.FireRangedWeapon();
             }
         }
     }

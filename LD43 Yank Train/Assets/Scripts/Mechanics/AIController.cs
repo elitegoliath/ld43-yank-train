@@ -202,6 +202,13 @@ public class AIController : MonoBehaviour {
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, angle);
     }
 
+    private void Die()
+    {
+        // TODO: Spawn debris on death.
+        // TODO: Cause explosion FX on death (sound and viz);
+        Destroy(gameObject);
+    }
+
     /*****************************************
      *                Helpers                *
      ****************************************/
