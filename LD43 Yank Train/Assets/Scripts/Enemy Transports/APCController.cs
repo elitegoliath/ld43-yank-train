@@ -113,6 +113,9 @@ public class APCController : MonoBehaviour {
 
     private void DeployOrder()
     {
+        // TODO: Have alternative spawn locations within APC so that we don't rely on
+        // a single point and if within nav barrier payload won't spawn.
+
         // Dump payload.
         int payload = Random.Range(minPayload, (maxPayload * _payloadMultiplier));
 

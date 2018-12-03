@@ -97,9 +97,12 @@ public class AIController : MonoBehaviour {
 
     private void PickNewDeployLocation()
     {
-        DeployToRandomLocation(_availableDeployLocations);
-
-        // TODO: If no spawn points are valid, guess I'll just die.
+        // If no deploy locations are viable, fuckin die.
+        if (_availableDeployLocations.Count == 0) {
+            Die();
+        } else {
+            DeployToRandomLocation(_availableDeployLocations);
+        }
     }
 
     public void ActivateAI()
