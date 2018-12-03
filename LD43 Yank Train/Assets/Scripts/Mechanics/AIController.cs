@@ -112,6 +112,8 @@ public class AIController : MonoBehaviour {
         _canSetDestination = true;
         _canFireRangedWeapon = true;
 
+        gameObject.GetComponent<CircleCollider2D>().enabled = true;
+
         // Un-register events listeners.
         _myNavAgent.OnDestinationReached -= ActivateAI;
         _myNavAgent.OnDestinationInvalid -= PickNewDeployLocation;

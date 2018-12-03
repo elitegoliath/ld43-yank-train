@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 114737397733441734}
   - component: {fileID: 61289925178393584}
   - component: {fileID: 50830621663433702}
+  - component: {fileID: 114116114344037104}
   m_Layer: 10
   m_Name: Prefab_APC
   m_TagString: Transport
@@ -579,7 +580,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1722753128056126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.7695205, y: 3.6486914, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children:
   - {fileID: 4341131623092966}
@@ -741,6 +742,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.28, y: 8.88}
   m_EdgeRadius: 0
+--- !u!114 &114116114344037104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1722753128056126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c519433b5340f97478a0be5935f00ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114208981210416086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -825,11 +837,11 @@ MonoBehaviour:
   speed: 700
   drag: 3.7
   angularDrag: 4
-  torque: 280
-  maxHealth: 50
+  torque: 500
+  maxHealth: 20
   armor: 5
   attackRange: 20
-  weaponRange: 2
+  weaponRange: 1.5
   weaponDelay: 0.3
   weaponAccuracy: 30
   weaponDamage: 2
@@ -839,6 +851,7 @@ MonoBehaviour:
   aftTurret: {fileID: 1624798307895634}
   minPayload: 1
   maxPayload: 3
+  deployRate: 0.5
   payloadPrefab: {fileID: 1202173623782010, guid: b8c1f37e3d58e0b41823adc5d6348037,
     type: 2}
   deployLocatons:

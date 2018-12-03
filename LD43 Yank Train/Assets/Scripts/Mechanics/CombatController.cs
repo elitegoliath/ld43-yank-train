@@ -182,6 +182,7 @@ public class CombatController : MonoBehaviour {
      ****************************************/
     public void TakeDamage(int damage)
     {
+
         _currentHealth -= damage;
         CheckHealth();
     }

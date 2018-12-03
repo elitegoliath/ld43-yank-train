@@ -1507,7 +1507,7 @@ CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202173623782010}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1642,10 +1642,10 @@ MonoBehaviour:
   slowingDistance: 2
   accelerationRate: 0.8
   decelerationRate: 0.2
-  lookAheadDistance: 0.5
+  lookAheadDistance: 0.25
   avoidRadius: 0.6
   avoidanceConsiderStuckedTime: 3
-  avoidanceConsiderReachedDistance: 1
+  avoidanceConsiderReachedDistance: 0.05
   rotateTransform: 0
   rotateSpeed: 1100
   centerOffset: {x: 0, y: 0}

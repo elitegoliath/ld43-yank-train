@@ -27,20 +27,27 @@ public class APCController : MonoBehaviour {
     [Header("Deployment")]
     public int minPayload = 1;
     public int maxPayload = 3;
+    public float deployRate = 1f;
     public GameObject payloadPrefab;
     public List<Transform> deployLocatons;
 
+    private bool _isMoving = false;
+    private bool _isStopping = false;
+    private int _payloadMultiplier = 1;
     private TransportSpawnController _spawnController;
     private Rigidbody2D _myRigidBody;
     private Vector2 _spawnPoint;
     private Vector2 _destination;
-    private bool _isMoving = false;
-    private bool _isStopping = false;
-    private int _payloadMultiplier = 1;
+    private CombatController _myCombatController;
 
     private void Awake()
     {
+        // Set APC stats.
+        _myCombatController = gameObject.GetComponent<CombatController>();
         _myRigidBody = gameObject.GetComponent<Rigidbody2D>();
+
+        _myCombatController.SetMaxHealth(maxHealth);
+
         CombatController foreTurretCombatController = foreTurret.GetComponent<CombatController>();
         TurretAI foreTurretAI = foreTurret.GetComponent<TurretAI>();
 
@@ -121,16 +128,19 @@ public class APCController : MonoBehaviour {
         // Dump payload.
         int payload = Random.Range(minPayload, (maxPayload * _payloadMultiplier));
 
-        for (int i = 0; i < payload; i++) {
-            GameObject freshSpawn = Instantiate(payloadPrefab);
-            freshSpawn.transform.position = transform.position;
-            AIController freshSpawnAI = freshSpawn.GetComponent<AIController>();
-            freshSpawnAI.DeployToRandomLocation(deployLocatons);
-        }
+        _myRigidBody.bodyType = RigidbodyType2D.Kinematic;
 
-        gameObject.AddComponent<PolyNavObstacle>();
-        PolyNav2D navMap = FindObjectOfType<PolyNav2D>();
-        navMap.GenerateMap();
+        for (int i = 0; i < payload; i++) {
+            Invoke("DropPayload", deployRate * i);
+        }
+    }
+
+    private void DropPayload()
+    {
+        GameObject freshSpawn = Instantiate(payloadPrefab);
+        freshSpawn.transform.position = transform.position;
+        AIController freshSpawnAI = freshSpawn.GetComponent<AIController>();
+        freshSpawnAI.DeployToRandomLocation(deployLocatons);
     }
 
     /// <summary>
