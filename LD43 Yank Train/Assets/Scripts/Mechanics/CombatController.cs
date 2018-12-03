@@ -14,6 +14,7 @@ public class CombatController : MonoBehaviour {
     private float _weaponAccuracy = 10f;
     private int _weaponDamage = 1;
     private GameObject _weaponMunition;
+    private GameObject _debris;
 
     /*****************************************
      *              Max Health               *
@@ -117,7 +118,7 @@ public class CombatController : MonoBehaviour {
     }
 
     /*****************************************
-     *          Fire Ranged Weapon           *
+     *            Weapon Munition            *
      ****************************************/
     public void SetWeaponMunition(GameObject weaponMunition)
     {
@@ -127,6 +128,14 @@ public class CombatController : MonoBehaviour {
     public GameObject GetWeaponMunition()
     {
         return _weaponMunition;
+    }
+
+    /*****************************************
+     *                Debris                 *
+     ****************************************/
+    public void SetDebris(GameObject debris)
+    {
+        _debris = debris;
     }
 
     /*****************************************
@@ -174,6 +183,20 @@ public class CombatController : MonoBehaviour {
     public void TakeDamage(int damage)
     {
         _currentHealth -= damage;
-        Debug.Log("I'm takin damage, yo.");
+        CheckHealth();
+    }
+
+    public void CheckHealth()
+    {
+        if (_currentHealth <= 0) {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        //Instantiate(_debris, transform.position, transform.rotation);
+
+        Destroy(gameObject);
     }
 }
