@@ -66,6 +66,14 @@ public class WaveController : MonoBehaviour {
             // Convert it to M:SS.
             float minutes = Mathf.FloorToInt(timeRemaining / 60f);
             float seconds = Mathf.FloorToInt(timeRemaining - minutes * 60);
+
+            // If time's up, make sure the counter didn't go negative, then begin next wave.
+            if (timeRemaining <= 0) {
+                minutes = 0;
+                seconds = 0;
+                StartWave();
+            }
+
             _uiNextWaveTimer.text = string.Format("{0:0}:{1:00}", minutes, seconds);
         }
     }

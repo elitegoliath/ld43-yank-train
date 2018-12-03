@@ -15,13 +15,14 @@ public class APCController : MonoBehaviour {
     public int armor = 5;
 
     [Header("Weapons")]
-    public float weaponRange = 4f;
+    public float attackRange = 5f;
+    public float weaponRange = 1f;
     public float weaponDelay = 2f;
     public float weaponAccuracy = 10f;
     public int weaponDamage = 1;
     public GameObject weaponMunitionPrefab;
-    public CombatController foreTurretCombatController;
-    public CombatController aftTurretCombatController;
+    public GameObject foreTurret;
+    public GameObject aftTurret;
 
     [Header("Deployment")]
     public int minPayload = 1;
@@ -40,6 +41,11 @@ public class APCController : MonoBehaviour {
     private void Awake()
     {
         _myRigidBody = gameObject.GetComponent<Rigidbody2D>();
+        CombatController foreTurretCombatController = foreTurret.GetComponent<CombatController>();
+        TurretAI foreTurretAI = foreTurret.GetComponent<TurretAI>();
+
+        CombatController aftTurretCombatController = aftTurret.GetComponent<CombatController>();
+        TurretAI aftTurretAI = aftTurret.GetComponent<TurretAI>();
 
         // Set combat stats for Fore Turret.
         foreTurretCombatController.SetWeaponRange(weaponRange);

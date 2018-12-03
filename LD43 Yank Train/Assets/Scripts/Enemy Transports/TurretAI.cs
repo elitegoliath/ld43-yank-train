@@ -8,7 +8,7 @@ public class TurretAI : MonoBehaviour {
     
     private bool _canFireWeapon = true;
     private bool _altFire = false;
-    private float _engagementRange = 1f;
+    private float _attackRange = 1f;
     private CombatController _myCombatController;
     private CombatController _leftGunCombatController;
     private CombatController _rightGunCombatController;
@@ -28,7 +28,6 @@ public class TurretAI : MonoBehaviour {
         float wpnRange = _myCombatController.GetWeaponRange();
         int dmg = _myCombatController.GetWeaponDamage();
         GameObject munition = _myCombatController.GetWeaponMunition();
-        _engagementRange = _myCombatController.GetWeaponRange();
         
         _leftGunCombatController.SetRangedWeaponStats(accuracy, wpnRange, dmg, munition);
         _rightGunCombatController.SetRangedWeaponStats(accuracy, wpnRange, dmg, munition);
@@ -41,6 +40,11 @@ public class TurretAI : MonoBehaviour {
 	private void Update () {
         FacePlayer();
         AttackPlayer();
+    }
+
+    public void SetAttackRange(float attackRange)
+    {
+        _attackRange = attackRange;
     }
 
     /// <summary>
@@ -60,7 +64,7 @@ public class TurretAI : MonoBehaviour {
     {
         float distance = Vector2.Distance(transform.position, _playerTransform.position);
 
-        if(distance <= _engagementRange) {
+        if(distance <= _attackRange) {
             FireWeapons();
         }
     }
