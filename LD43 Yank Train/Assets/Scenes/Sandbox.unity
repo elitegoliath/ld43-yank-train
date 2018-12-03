@@ -803,7 +803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclesMask:
     serializedVersion: 2
-    m_Bits: 16384
+    m_Bits: 17408
   autoRegenerateInterval: 0
   radiusOffset: 0.65
   invertMasterPolygon: 0

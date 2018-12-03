@@ -157,7 +157,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 28828714}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavObstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 31614506}
   - component: {fileID: 31614508}
   - component: {fileID: 31614507}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 76700656}
   - component: {fileID: 76700658}
   - component: {fileID: 76700657}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 100045865}
   - component: {fileID: 100045867}
   - component: {fileID: 100045866}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 127644019}
   - component: {fileID: 127644021}
   - component: {fileID: 127644020}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (64)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 188740378}
   - component: {fileID: 188740380}
   - component: {fileID: 188740379}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 198000663}
   - component: {fileID: 198000665}
   - component: {fileID: 198000664}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (46)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -712,12 +712,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 207329453}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.25, y: -30.3, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.73, y: -28.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 284842140}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &226528733
 GameObject:
@@ -729,7 +729,7 @@ GameObject:
   - component: {fileID: 226528734}
   - component: {fileID: 226528736}
   - component: {fileID: 226528735}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,7 +796,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 284842140}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Obj_Arena
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -810,10 +810,15 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 284842139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.879008, y: -2.8042467, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1483822874}
+  - {fileID: 458078067}
+  - {fileID: 739327206}
+  - {fileID: 207329455}
+  - {fileID: 1580756813}
+  - {fileID: 1253608881}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -862,7 +867,7 @@ GameObject:
   - component: {fileID: 341194316}
   - component: {fileID: 341194318}
   - component: {fileID: 341194317}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (42)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1075,7 +1080,7 @@ GameObject:
   - component: {fileID: 377471787}
   - component: {fileID: 377471789}
   - component: {fileID: 377471788}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavRiver (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1089,7 +1094,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 377471786}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.5, y: 12.5, z: 0}
+  m_LocalPosition: {x: 22.5, y: 27.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 28828714}
@@ -1139,7 +1144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shapeType: 0
   extraOffset: 0
-  invertPolygon: 0
+  invertPolygon: 1
 --- !u!1 &386386406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,7 +1155,7 @@ GameObject:
   - component: {fileID: 386386407}
   - component: {fileID: 386386409}
   - component: {fileID: 386386408}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (54)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1219,7 +1224,7 @@ GameObject:
   - component: {fileID: 389828212}
   - component: {fileID: 389828214}
   - component: {fileID: 389828213}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1288,7 +1293,7 @@ GameObject:
   - component: {fileID: 414653162}
   - component: {fileID: 414653167}
   - component: {fileID: 414653166}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavLake (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1359,7 +1364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shapeType: 0
   extraOffset: 0
-  invertPolygon: 0
+  invertPolygon: 1
 --- !u!1 &433138330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,7 +1375,7 @@ GameObject:
   - component: {fileID: 433138331}
   - component: {fileID: 433138333}
   - component: {fileID: 433138332}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavRiver (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1384,7 +1389,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 433138330}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: -10, z: 0}
+  m_LocalPosition: {x: 10, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 28828714}
@@ -1445,7 +1450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shapeType: 0
   extraOffset: 0
-  invertPolygon: 0
+  invertPolygon: 1
 --- !u!1 &448358547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,7 +1496,7 @@ GameObject:
   - component: {fileID: 457301751}
   - component: {fileID: 457301753}
   - component: {fileID: 457301752}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1597,12 +1602,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 458078065}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.8, y: 0.09, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -44.01, y: 0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 284842140}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &485869486
 GameObject:
@@ -1614,7 +1619,7 @@ GameObject:
   - component: {fileID: 485869487}
   - component: {fileID: 485869489}
   - component: {fileID: 485869488}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1683,7 +1688,7 @@ GameObject:
   - component: {fileID: 514192885}
   - component: {fileID: 514192887}
   - component: {fileID: 514192886}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (50)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1752,7 +1757,7 @@ GameObject:
   - component: {fileID: 532767083}
   - component: {fileID: 532767085}
   - component: {fileID: 532767084}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1871,7 +1876,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &558995579
 GameObject:
@@ -1883,7 +1888,7 @@ GameObject:
   - component: {fileID: 558995580}
   - component: {fileID: 558995582}
   - component: {fileID: 558995581}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1952,7 +1957,7 @@ GameObject:
   - component: {fileID: 651876693}
   - component: {fileID: 651876695}
   - component: {fileID: 651876694}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2084,7 +2089,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 652493057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -100}
+  m_LocalPosition: {x: -10.1, y: 4.04, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2133,7 +2138,7 @@ GameObject:
   - component: {fileID: 658118945}
   - component: {fileID: 658118947}
   - component: {fileID: 658118946}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (58)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2202,7 +2207,7 @@ GameObject:
   - component: {fileID: 660323033}
   - component: {fileID: 660323035}
   - component: {fileID: 660323034}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (41)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2261,54 +2266,6 @@ MonoBehaviour:
   shapeType: 1
   extraOffset: 0
   invertPolygon: 0
---- !u!1 &674889003
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 674889004}
-  - component: {fileID: 674889005}
-  m_Layer: 0
-  m_Name: Obj_ArenaController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &674889004
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 674889003}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &674889005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 674889003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6680d6b222b45a4baff33f507cbe331, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyWaveMultiplier: 1.2
-  waveDelay: 2
-  startingWave: 1
-  numberOfWaves: 10
-  baseTransportCount: 1
-  enemyEndWaveThreshold: 10
-  transportPrefabList:
-  - {fileID: 1722753128056126, guid: e18ab76959598434e946f0793424d127, type: 2}
 --- !u!1 &677422128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2319,7 +2276,7 @@ GameObject:
   - component: {fileID: 677422129}
   - component: {fileID: 677422131}
   - component: {fileID: 677422130}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2388,7 +2345,7 @@ GameObject:
   - component: {fileID: 700167385}
   - component: {fileID: 700167387}
   - component: {fileID: 700167386}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2494,12 +2451,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 739327204}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.55, y: 21, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.08, y: 24.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 284842140}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &742596828
 GameObject:
@@ -2511,7 +2468,7 @@ GameObject:
   - component: {fileID: 742596829}
   - component: {fileID: 742596831}
   - component: {fileID: 742596830}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (56)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2580,7 +2537,7 @@ GameObject:
   - component: {fileID: 744931050}
   - component: {fileID: 744931052}
   - component: {fileID: 744931051}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2649,7 +2606,7 @@ GameObject:
   - component: {fileID: 747508482}
   - component: {fileID: 747508484}
   - component: {fileID: 747508483}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2718,7 +2675,7 @@ GameObject:
   - component: {fileID: 752919445}
   - component: {fileID: 752919447}
   - component: {fileID: 752919446}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2822,7 +2779,7 @@ GameObject:
   - component: {fileID: 763309956}
   - component: {fileID: 763309958}
   - component: {fileID: 763309957}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (65)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2891,7 +2848,7 @@ GameObject:
   - component: {fileID: 767187637}
   - component: {fileID: 767187639}
   - component: {fileID: 767187638}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2960,7 +2917,7 @@ GameObject:
   - component: {fileID: 771061470}
   - component: {fileID: 771061472}
   - component: {fileID: 771061471}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3104,7 +3061,7 @@ GameObject:
   - component: {fileID: 792138567}
   - component: {fileID: 792138569}
   - component: {fileID: 792138568}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (48)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3173,7 +3130,7 @@ GameObject:
   - component: {fileID: 804224896}
   - component: {fileID: 804224898}
   - component: {fileID: 804224897}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Tilemap Layer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3321,7 +3278,7 @@ GameObject:
   - component: {fileID: 805072414}
   - component: {fileID: 805072416}
   - component: {fileID: 805072415}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (59)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3390,7 +3347,7 @@ GameObject:
   - component: {fileID: 836755239}
   - component: {fileID: 836755241}
   - component: {fileID: 836755240}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3459,7 +3416,7 @@ GameObject:
   - component: {fileID: 855303200}
   - component: {fileID: 855303202}
   - component: {fileID: 855303201}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (61)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3528,7 +3485,7 @@ GameObject:
   - component: {fileID: 871958452}
   - component: {fileID: 871958454}
   - component: {fileID: 871958453}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3597,7 +3554,7 @@ GameObject:
   - component: {fileID: 881451971}
   - component: {fileID: 881451973}
   - component: {fileID: 881451972}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3666,7 +3623,7 @@ GameObject:
   - component: {fileID: 921837908}
   - component: {fileID: 921837910}
   - component: {fileID: 921837909}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3735,7 +3692,7 @@ GameObject:
   - component: {fileID: 927220228}
   - component: {fileID: 927220230}
   - component: {fileID: 927220229}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (51)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3804,7 +3761,7 @@ GameObject:
   - component: {fileID: 951599782}
   - component: {fileID: 951599784}
   - component: {fileID: 951599783}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3873,7 +3830,7 @@ GameObject:
   - component: {fileID: 980814074}
   - component: {fileID: 980814076}
   - component: {fileID: 980814075}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (47)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3932,6 +3889,86 @@ MonoBehaviour:
   shapeType: 1
   extraOffset: 0
   invertPolygon: 0
+--- !u!1 &1094791459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1094791462}
+  - component: {fileID: 1094791461}
+  - component: {fileID: 1094791460}
+  m_Layer: 0
+  m_Name: '@PolyNav2D'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!60 &1094791460
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1094791459}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 28.095713, y: 17.863754}
+      - {x: 0.28836226, y: 22.284967}
+      - {x: -29.741072, y: 21.584156}
+      - {x: -43.9231, y: 11.834086}
+      - {x: -39.937664, y: -19.249125}
+      - {x: -25.82989, y: -25.38195}
+      - {x: 12.277499, y: -21.554138}
+      - {x: 30.100353, y: -15.991247}
+      - {x: 31.492496, y: 2.7786746}
+--- !u!114 &1094791461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1094791459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f01b895e078212419b3a7c52085d19e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclesMask:
+    serializedVersion: 2
+    m_Bits: 17408
+  autoRegenerateInterval: 60
+  radiusOffset: 0.65
+  invertMasterPolygon: 0
+--- !u!4 &1094791462
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1094791459}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1099178826
 GameObject:
   m_ObjectHideFlags: 0
@@ -3942,7 +3979,7 @@ GameObject:
   - component: {fileID: 1099178827}
   - component: {fileID: 1099178829}
   - component: {fileID: 1099178828}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavRiver (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3956,7 +3993,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1099178826}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17, y: -21.5, z: 0}
+  m_LocalPosition: {x: -10, y: -6.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 28828714}
@@ -4010,7 +4047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shapeType: 0
   extraOffset: 0
-  invertPolygon: 0
+  invertPolygon: 1
 --- !u!1 &1103584801
 GameObject:
   m_ObjectHideFlags: 0
@@ -4090,7 +4127,7 @@ GameObject:
   - component: {fileID: 1116064709}
   - component: {fileID: 1116064711}
   - component: {fileID: 1116064710}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (57)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4159,7 +4196,7 @@ GameObject:
   - component: {fileID: 1124822921}
   - component: {fileID: 1124822923}
   - component: {fileID: 1124822922}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4227,11 +4264,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4585582339885976, guid: cbfc7652fdbf9524b97f1e12b4c9ec93, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.96
+      value: -10.17
       objectReference: {fileID: 0}
     - target: {fileID: 4585582339885976, guid: cbfc7652fdbf9524b97f1e12b4c9ec93, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.68
+      value: 4.02
       objectReference: {fileID: 0}
     - target: {fileID: 4585582339885976, guid: cbfc7652fdbf9524b97f1e12b4c9ec93, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4276,7 +4313,7 @@ GameObject:
   - component: {fileID: 1200645870}
   - component: {fileID: 1200645872}
   - component: {fileID: 1200645871}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4346,7 +4383,7 @@ GameObject:
   - component: {fileID: 1225718418}
   - component: {fileID: 1225718417}
   - component: {fileID: 1225718419}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25798,15 +25835,15 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 284842140}
     m_Modifications:
     - target: {fileID: 4383127125750196, guid: d7afe43763fb7e74cb324b175d037139, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -7.84
       objectReference: {fileID: 0}
     - target: {fileID: 4383127125750196, guid: d7afe43763fb7e74cb324b175d037139, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.74
       objectReference: {fileID: 0}
     - target: {fileID: 4383127125750196, guid: d7afe43763fb7e74cb324b175d037139, type: 2}
       propertyPath: m_LocalPosition.z
@@ -25814,15 +25851,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4383127125750196, guid: d7afe43763fb7e74cb324b175d037139, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4383127125750196, guid: d7afe43763fb7e74cb324b175d037139, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4383127125750196, guid: d7afe43763fb7e74cb324b175d037139, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4383127125750196, guid: d7afe43763fb7e74cb324b175d037139, type: 2}
       propertyPath: m_LocalRotation.w
@@ -25830,23 +25867,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4383127125750196, guid: d7afe43763fb7e74cb324b175d037139, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1813537230650146, guid: d7afe43763fb7e74cb324b175d037139, type: 2}
       propertyPath: m_Name
       value: Obj_DestinationSector
       objectReference: {fileID: 0}
-    - target: {fileID: 4383127125750196, guid: d7afe43763fb7e74cb324b175d037139, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 4383127125750196, guid: d7afe43763fb7e74cb324b175d037139, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.24
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7afe43763fb7e74cb324b175d037139, type: 2}
   m_IsPrefabAsset: 0
+--- !u!4 &1253608881 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4383127125750196, guid: d7afe43763fb7e74cb324b175d037139,
+    type: 2}
+  m_PrefabInternal: {fileID: 1253608880}
 --- !u!1 &1321230675
 GameObject:
   m_ObjectHideFlags: 0
@@ -25857,7 +25891,7 @@ GameObject:
   - component: {fileID: 1321230676}
   - component: {fileID: 1321230678}
   - component: {fileID: 1321230677}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (52)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26007,7 +26041,7 @@ RectTransform:
   - {fileID: 755746595}
   - {fileID: 293558951}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -26093,7 +26127,7 @@ GameObject:
   - component: {fileID: 1339145902}
   - component: {fileID: 1339145904}
   - component: {fileID: 1339145903}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26237,7 +26271,7 @@ GameObject:
   - component: {fileID: 1398793592}
   - component: {fileID: 1398793594}
   - component: {fileID: 1398793593}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26376,7 +26410,7 @@ GameObject:
   - component: {fileID: 1459784608}
   - component: {fileID: 1459784610}
   - component: {fileID: 1459784609}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (38)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26445,7 +26479,7 @@ GameObject:
   - component: {fileID: 1471468164}
   - component: {fileID: 1471468166}
   - component: {fileID: 1471468165}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (40)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26514,7 +26548,7 @@ GameObject:
   - component: {fileID: 1476446226}
   - component: {fileID: 1476446228}
   - component: {fileID: 1476446227}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26582,7 +26616,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1483822874}
   - component: {fileID: 1483822873}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26625,7 +26659,7 @@ GameObject:
   - component: {fileID: 1494496961}
   - component: {fileID: 1494496963}
   - component: {fileID: 1494496962}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26684,6 +26718,53 @@ MonoBehaviour:
   shapeType: 1
   extraOffset: 0
   invertPolygon: 0
+--- !u!1001 &1521429184
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114209253028603272, guid: a49ce874ddd5da244b318626566e2410,
+        type: 2}
+      propertyPath: transportPrefabList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688694636906354, guid: a49ce874ddd5da244b318626566e2410, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688694636906354, guid: a49ce874ddd5da244b318626566e2410, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688694636906354, guid: a49ce874ddd5da244b318626566e2410, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688694636906354, guid: a49ce874ddd5da244b318626566e2410, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688694636906354, guid: a49ce874ddd5da244b318626566e2410, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688694636906354, guid: a49ce874ddd5da244b318626566e2410, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688694636906354, guid: a49ce874ddd5da244b318626566e2410, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688694636906354, guid: a49ce874ddd5da244b318626566e2410, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a49ce874ddd5da244b318626566e2410, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1545902378
 GameObject:
   m_ObjectHideFlags: 0
@@ -26694,7 +26775,7 @@ GameObject:
   - component: {fileID: 1545902379}
   - component: {fileID: 1545902381}
   - component: {fileID: 1545902380}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (36)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26800,12 +26881,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1580756811}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.8, y: 0.09, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 33.86, y: 0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 284842140}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1619214287
 GameObject:
@@ -26817,7 +26898,7 @@ GameObject:
   - component: {fileID: 1619214288}
   - component: {fileID: 1619214290}
   - component: {fileID: 1619214289}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (55)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26886,7 +26967,7 @@ GameObject:
   - component: {fileID: 1647324331}
   - component: {fileID: 1647324333}
   - component: {fileID: 1647324332}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (49)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27030,7 +27111,7 @@ GameObject:
   - component: {fileID: 1659936657}
   - component: {fileID: 1659936659}
   - component: {fileID: 1659936658}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27174,7 +27255,7 @@ GameObject:
   - component: {fileID: 1680818375}
   - component: {fileID: 1680818377}
   - component: {fileID: 1680818376}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27243,7 +27324,7 @@ GameObject:
   - component: {fileID: 1714281583}
   - component: {fileID: 1714281585}
   - component: {fileID: 1714281584}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (62)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27312,7 +27393,7 @@ GameObject:
   - component: {fileID: 1752918202}
   - component: {fileID: 1752918204}
   - component: {fileID: 1752918203}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (45)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27381,7 +27462,7 @@ GameObject:
   - component: {fileID: 1756414740}
   - component: {fileID: 1756414742}
   - component: {fileID: 1756414741}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (60)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27450,7 +27531,7 @@ GameObject:
   - component: {fileID: 1759837083}
   - component: {fileID: 1759837085}
   - component: {fileID: 1759837084}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavLake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27520,7 +27601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shapeType: 0
   extraOffset: 0
-  invertPolygon: 0
+  invertPolygon: 1
 --- !u!1 &1883359071
 GameObject:
   m_ObjectHideFlags: 0
@@ -27531,7 +27612,7 @@ GameObject:
   - component: {fileID: 1883359072}
   - component: {fileID: 1883359074}
   - component: {fileID: 1883359073}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27600,7 +27681,7 @@ GameObject:
   - component: {fileID: 1914086308}
   - component: {fileID: 1914086310}
   - component: {fileID: 1914086309}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (63)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27669,7 +27750,7 @@ GameObject:
   - component: {fileID: 1922041538}
   - component: {fileID: 1922041540}
   - component: {fileID: 1922041539}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27738,7 +27819,7 @@ GameObject:
   - component: {fileID: 1925386211}
   - component: {fileID: 1925386213}
   - component: {fileID: 1925386212}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (39)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27807,7 +27888,7 @@ GameObject:
   - component: {fileID: 1932188064}
   - component: {fileID: 1932188066}
   - component: {fileID: 1932188065}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27876,7 +27957,7 @@ GameObject:
   - component: {fileID: 1948264011}
   - component: {fileID: 1948264013}
   - component: {fileID: 1948264012}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavRiver (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27890,7 +27971,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1948264010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.5, y: 4.5, z: 0}
+  m_LocalPosition: {x: 18.5, y: 19.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 28828714}
@@ -27940,7 +28021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shapeType: 0
   extraOffset: 0
-  invertPolygon: 0
+  invertPolygon: 1
 --- !u!1 &1949040601
 GameObject:
   m_ObjectHideFlags: 0
@@ -27951,7 +28032,7 @@ GameObject:
   - component: {fileID: 1949040602}
   - component: {fileID: 1949040604}
   - component: {fileID: 1949040603}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28055,7 +28136,7 @@ GameObject:
   - component: {fileID: 1978604130}
   - component: {fileID: 1978604132}
   - component: {fileID: 1978604131}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28124,7 +28205,7 @@ GameObject:
   - component: {fileID: 1979323667}
   - component: {fileID: 1979323669}
   - component: {fileID: 1979323668}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (43)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28193,7 +28274,7 @@ GameObject:
   - component: {fileID: 2033177754}
   - component: {fileID: 2033177756}
   - component: {fileID: 2033177755}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavRiver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28207,7 +28288,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2033177753}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7, y: -15, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 28828714}
@@ -28261,7 +28342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shapeType: 0
   extraOffset: 0
-  invertPolygon: 0
+  invertPolygon: 1
 --- !u!1 &2052907213
 GameObject:
   m_ObjectHideFlags: 0
@@ -28341,7 +28422,7 @@ GameObject:
   - component: {fileID: 2057160258}
   - component: {fileID: 2057160260}
   - component: {fileID: 2057160259}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (66)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28410,7 +28491,7 @@ GameObject:
   - component: {fileID: 2066803498}
   - component: {fileID: 2066803500}
   - component: {fileID: 2066803499}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (53)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28479,7 +28560,7 @@ GameObject:
   - component: {fileID: 2078293147}
   - component: {fileID: 2078293149}
   - component: {fileID: 2078293148}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28617,7 +28698,7 @@ GameObject:
   - component: {fileID: 2143419348}
   - component: {fileID: 2143419350}
   - component: {fileID: 2143419349}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PolyNavWall (44)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

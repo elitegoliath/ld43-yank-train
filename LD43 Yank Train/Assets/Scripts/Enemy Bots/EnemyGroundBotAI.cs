@@ -19,6 +19,7 @@ public class EnemyGroundBotAI : MonoBehaviour {
     public float attackDelay = 1f;
     public float accuracy = 10f;
     public int weaponDamage = 2;
+    public float weaponRange = 1f;
     public CombatController rangedWeaponCombatController;
     public GameObject rangedWeaponMunition;
 
@@ -55,7 +56,7 @@ public class EnemyGroundBotAI : MonoBehaviour {
         _myCombatController.SetArmor(armor);
 
         // Initialize weapon.
-        rangedWeaponCombatController.SetRangedWeaponStats(accuracy, attackRange, weaponDamage, rangedWeaponMunition);
+        rangedWeaponCombatController.SetRangedWeaponStats(accuracy, weaponRange, weaponDamage, rangedWeaponMunition);
 
         // Initialize target. Player is gona be the default target for now.
         GameObject player = GameObject.FindGameObjectWithTag("Player");

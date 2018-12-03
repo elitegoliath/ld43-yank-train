@@ -26,26 +26,32 @@ public class WaveController : MonoBehaviour {
         EventManager.StartListening("enemyDeath", EnemyDeath);
     }
 
+    private void OnDestroy()
+    {
+        EventManager.StopListening("registerEnemy", RegisterEnemy);
+        EventManager.StopListening("enemyDeath", EnemyDeath);
+    }
+
     private void Start () {
         _waveStartTimer = waveDelay;
         _isWaveActive = false;
         _currentWave = startingWave - 1;
 
-        //_destinationCollider = GameObject.FindGameObjectWithTag("DestinationArea");
-        //_destinationColliderController = _destinationCollider.GetComponent<DestinationColliderController>();
+        _destinationCollider = GameObject.FindGameObjectWithTag("DestinationArea");
+        _destinationColliderController = _destinationCollider.GetComponent<DestinationColliderController>();
     }
 
     private void Update() {
-        //if (_isWaveActive == false) {
-        //    _waveStartTimer -= Time.deltaTime;
+        if(_isWaveActive == false) {
+            _waveStartTimer -= Time.deltaTime;
 
-        //    if (_waveStartTimer <= 0f) {
-        //        StartWave();
-        //    }
-        //} else {
-        //    MonitorWave();
-        //}
-	}
+            if(_waveStartTimer <= 0f) {
+                StartWave();
+            }
+        } else {
+            MonitorWave();
+        }
+    }
 
     /// <summary>
     /// Begin a new wave.
@@ -57,7 +63,7 @@ public class WaveController : MonoBehaviour {
         _newWaveEnemyCount = 0;
         _isWaveActive = true;
 
-        //_destinationColliderController.Activate();
+        _destinationColliderController.Activate();
 
         // Determine wave size.
         // TODO: Currently linear, want to make more of a ramp.

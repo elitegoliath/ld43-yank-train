@@ -10,10 +10,10 @@ public class AIController : MonoBehaviour {
     private float _engagementRange = 3f;
     private float _attackingTurnSpeed = 30f;
     private bool _attackTargetModeActive = false;
-    private bool _engageTargetModeActive = true;
-    private bool _canUpdateTracks = true;
-    private bool _canSetDestination = true;
-    private bool _canFireRangedWeapon = true;
+    private bool _engageTargetModeActive = false;
+    private bool _canUpdateTracks = false;
+    private bool _canSetDestination = false;
+    private bool _canFireRangedWeapon = false;
     private PolyNavAgent _myNavAgent;
     private List<Transform> _availableDeployLocations;
     private Transform _target;
@@ -84,7 +84,7 @@ public class AIController : MonoBehaviour {
     public void DeployToRandomLocation(List<Transform> waypoints)
     {
         // TODO: Make this code better like MephDaddyX's.
-        _availableDeployLocations = waypoints;
+        _availableDeployLocations = new List<Transform>(waypoints);
         Transform chosenDeployLocation = _availableDeployLocations[Random.Range(0, _availableDeployLocations.Count)];
 
         // Remove deploy location from the list in case it isn't valid.
@@ -104,7 +104,6 @@ public class AIController : MonoBehaviour {
 
     public void ActivateAI()
     {
-        Debug.Log("AI Activated");
         _engageTargetModeActive = true;
         _canUpdateTracks = true;
         _canSetDestination = true;

@@ -35,7 +35,6 @@ public class APCController : MonoBehaviour {
     private Vector2 _destination;
     private bool _isMoving = false;
     private bool _isStopping = false;
-    private bool _isWaitingToBecomeObstacle = false;
 
     private void Awake()
     {
@@ -60,27 +59,20 @@ public class APCController : MonoBehaviour {
     {
         // Grab the spawn point for this unit.
         _spawnController = gameObject.GetComponent<TransportSpawnController>();
-        //_spawnPoint = _spawnController.GetSpawnPoint();
-        //_destination = _spawnController.GetDestination();
-        //_spawnController.TearDown();
+        _spawnPoint = _spawnController.GetSpawnPoint();
+        _destination = _spawnController.GetDestination();
+        _spawnController.TearDown();
 
         // Move to spawn location.
-        //transform.position = _spawnPoint;
+        transform.position = _spawnPoint;
 
         // Apply movement towards destination.
-        //MoveToDestination();
-
-        // TODO: Remove when done testing.
-        DeployOrder();
+        MoveToDestination();
     }
 	
 	private void Update () {
-        //CheckDestinationReached();
-        //CheckAPCHasStopped();
-
-        //if (_isWaitingToBecomeObstacle == true) {
-
-        //}
+        CheckDestinationReached();
+        CheckAPCHasStopped();
     }
 
     /// <summary>
@@ -126,6 +118,8 @@ public class APCController : MonoBehaviour {
         }
 
         gameObject.AddComponent<PolyNavObstacle>();
+        PolyNav2D navMap = FindObjectOfType<PolyNav2D>();
+        navMap.GenerateMap();
     }
 
     /// <summary>

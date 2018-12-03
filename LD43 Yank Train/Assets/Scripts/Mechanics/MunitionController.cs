@@ -6,13 +6,15 @@ public class MunitionController : MonoBehaviour {
     public float speed = 1f;
     public string[] collidableTags;
 
-    private float _lifeSpan = 5f;
+    private float _lifeSpan = 1f;
     private int _damage = 1;
 
     private void Start()
     {
         Rigidbody2D _myRigidBody = gameObject.GetComponent<Rigidbody2D>();
         _myRigidBody.AddForce(transform.up * speed);
+
+        Destroy(gameObject, _lifeSpan);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
