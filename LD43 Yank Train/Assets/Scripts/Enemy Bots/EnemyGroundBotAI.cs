@@ -1,19 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PolyNav;
 
 public class EnemyGroundBotAI : MonoBehaviour {
-    // Navigation
+    [Header("Navigation")]
     public float checkRangesCooldown = 0.2f;
     
-    // Characteristics
+    [Header("Characteristics")]
     public int maxHealth = 10;
     public int armor = 1;
     public float moveSpeed = 100f;
     public float turnSpeed = 10f;
     public float engagementRange = 3f;
     
-    // Weapon Stats
+    [Header("Weapon Stats")]
     public float attackRange = 5f;
     public float attackDelay = 1f;
     public float accuracy = 10f;
@@ -21,19 +22,25 @@ public class EnemyGroundBotAI : MonoBehaviour {
     public CombatController rangedWeapon;
     public GameObject rangedWeaponMunition;
 
+    // Private Properties
     private bool _engageTargetModeActive = true;
     private bool _attackTargetModeActive = false;
-    private bool _checkRanges = true;
+    private bool _canUpdateTracks = true;
+    private bool _canSetDestination = true;
     private bool _canFireRangedWeapon = true;
+    private bool _isNavStopped = false;
     private CombatController _myCombatController;
     private Rigidbody2D _myRigidBody;
     private Transform _target;
     private CombatController _targetCombatController;
+    private PolyNavAgent _myNavAgent;
 
     private void Start()
     {
+        // Get components
         _myRigidBody = gameObject.GetComponent<Rigidbody2D>();
         _myCombatController = gameObject.GetComponent<CombatController>();
+        _myNavAgent = gameObject.GetComponent<PolyNavAgent>();
 
         // Initialize characteristics.
         _myCombatController.SetMaxHealth(maxHealth);
@@ -52,20 +59,10 @@ public class EnemyGroundBotAI : MonoBehaviour {
     private void Update()
     {
         // These ranges drive the aggressive behavior of this robot.
-        if (_checkRanges == true) {
-            // Let's not check too much. Performance + robots can be slow.
-            _checkRanges = false;
-            Invoke("CheckRangesCooldown", checkRangesCooldown);
+        AITrackTarget();
 
-            // Depending on distance from target, do some things.
-            _engageTargetModeActive = !CheckWithinRange(_target.position, engagementRange);
-            _attackTargetModeActive = CheckWithinRange(_target.position, attackRange);
-        }
-
-        // If too far away from target, engage.
-        if (_engageTargetModeActive == true) {
-            AIEngageTarget();
-        }
+        // Fuck it, we're always lookin to engage. Every fuckin frame.
+        AIEngageTarget();
 
         // If within weapon range, fire fire fire!!
         if (_attackTargetModeActive == true) {
@@ -78,9 +75,61 @@ public class EnemyGroundBotAI : MonoBehaviour {
         // TODO: Listen for when the APC has been exitted. Continue a short distance then activate AI Modes.
     }
 
+    /// <summary>
+    /// Like radar, track and report. Other behaviors rely on this information.
+    /// </summary>
+    private void AITrackTarget()
+    {
+        if(_canUpdateTracks == true) {
+            _canUpdateTracks = false;
+
+            // Let's not check too much. Performance + robots can be slow.
+            Invoke("UpdateTracksCooldown", checkRangesCooldown);
+
+            // Set flag to allow for attacks.
+            _attackTargetModeActive = CheckWithinRange(_target.position, attackRange);
+
+            // If attacking, we want to be in charge of rotation. Otherwise let the nav do it.
+            if(_attackTargetModeActive) {
+                _myNavAgent.rotateTransform = false;
+            } else {
+                _myNavAgent.rotateTransform = true;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Handles all navigational behaviors.
+    /// </summary>
     private void AIEngageTarget()
     {
-        // TODO: Insert Pathfinding AI here
+        // Refresh the destination to the target since, you know, they tend to move.
+        if (_canSetDestination) {
+            _canSetDestination = false;
+            Invoke("SetDestinationCooldown", checkRangesCooldown);
+
+            // If AI is currently pathing after the traget...
+            if (_myNavAgent.hasPath == true) {
+                bool isInEngagementRange = _myNavAgent.remainingDistance <= engagementRange;
+
+                // Stop navigation, clear path.
+                if (isInEngagementRange == true) {
+                    _myNavAgent.activePath.Clear();
+                } else {
+                    // Otherwise, update the path.
+                    _myNavAgent.SetDestination(_target.position);
+                }
+            } else {
+                // If no path exists, AI is not moving. Check range then start moving if needed.
+                _myNavAgent.SetDestination(_target.position);
+                bool isInRange = _myNavAgent.remainingDistance <= engagementRange;
+                
+                // If Ai is still close enough to the target, don't start moving again. Clear the set path.
+                if (isInRange == true) {
+                    _myNavAgent.activePath.Clear();
+                }
+            }
+        }
     }
 
     /// <summary>
@@ -104,10 +153,10 @@ public class EnemyGroundBotAI : MonoBehaviour {
     /// </summary>
     private void FaceTarget()
     {
-        Vector2 direction = _target.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rot = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, turnSpeed * Time.deltaTime);
+        Vector2 dir = _target.position - transform.position;
+        float rot = -Mathf.Atan2(dir.x, dir.y) * 180 / Mathf.PI;
+        float angle = Mathf.MoveTowardsAngle(transform.localEulerAngles.z, rot, turnSpeed * Time.deltaTime);
+        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, angle);
     }
 
     /// <summary>
@@ -127,11 +176,11 @@ public class EnemyGroundBotAI : MonoBehaviour {
     }
 
     /// <summary>
-    /// Cooldown flag that resets, allowing for AI to do stuff.
+    /// Cooldown flag that resets the range checking flag.
     /// </summary>
-    private void CheckRangesCooldown()
+    private void UpdateTracksCooldown()
     {
-        _checkRanges = true;
+        _canUpdateTracks = true;
     }
 
     /// <summary>
@@ -140,5 +189,13 @@ public class EnemyGroundBotAI : MonoBehaviour {
     private void FireRangedWeaponCooldown()
     {
         _canFireRangedWeapon = true;
+    }
+
+    /// <summary>
+    /// Cooldown flag that resets the flag that allows for pathing updates.
+    /// </summary>
+    private void SetDestinationCooldown()
+    {
+        _canSetDestination = true;
     }
 }

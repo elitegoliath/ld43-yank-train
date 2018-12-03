@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using PolyNav;
 
 /*
 * This is an example script of how you could make stuff happen when the agent is changing direction.

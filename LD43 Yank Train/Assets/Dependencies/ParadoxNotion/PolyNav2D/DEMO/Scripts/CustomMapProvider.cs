@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using Polygon = PolyNav2D.Polygon;
-using PolyMap = PolyNav2D.PolyMap;
+using PolyNav;
+using Polygon = PolyNav.PolyNav2D.Polygon;
+using PolyMap = PolyNav.PolyNav2D.PolyMap;
 
 //You can provide a custom PolyMap to PolyNav for usage. Doing this disregards all PolyNavObstacles.
 

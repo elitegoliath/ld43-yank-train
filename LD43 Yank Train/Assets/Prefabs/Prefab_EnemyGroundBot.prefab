@@ -212,6 +212,8 @@ GameObject:
   - component: {fileID: 114972364963039216}
   - component: {fileID: 50512529723873404}
   - component: {fileID: 114282093714302766}
+  - component: {fileID: 58597938273094032}
+  - component: {fileID: 114458641205617308}
   m_Layer: 12
   m_Name: Prefab_EnemyGroundBot
   m_TagString: Enemy
@@ -894,14 +896,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1145884383301362}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0.25, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4850029833445792}
   m_Father: {fileID: 4869294092947766}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!4 &4098802360751286
 Transform:
   m_ObjectHideFlags: 1
@@ -1401,7 +1403,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202173623782010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.531307, y: 0.21445656, z: 0}
+  m_LocalPosition: {x: 14.42, y: -13.98, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4096437240301728}
@@ -1498,6 +1500,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &58597938273094032
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1202173623782010}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1, y: -0.05}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!95 &95390272456934976
 Animator:
   serializedVersion: 3
@@ -1606,6 +1623,35 @@ MonoBehaviour:
   boneToAimAt: {fileID: 4368845123381712}
   InEditBoneMode: 0
   _newSelection: []
+--- !u!114 &114458641205617308
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1202173623782010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cc6a4987f7c684798156c56d545838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _map: {fileID: 0}
+  maxSpeed: 6
+  mass: 50
+  stoppingDistance: 0.1
+  slowingDistance: 2
+  accelerationRate: 1
+  decelerationRate: 0.2
+  lookAheadDistance: 1
+  avoidRadius: 0.6
+  avoidanceConsiderStuckedTime: 3
+  avoidanceConsiderReachedDistance: 1
+  rotateTransform: 0
+  rotateSpeed: 250
+  centerOffset: {x: 0, y: 0}
+  repath: 0
+  restrict: 0
+  closerPointOnInvalid: 1
+  debugPath: 1
 --- !u!114 &114567594874726322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1790,13 +1836,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b38d93b95422e44808e24a58a44190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkRangesCooldown: 0.1
+  checkRangesCooldown: 0.2
   maxHealth: 10
   armor: 1
   moveSpeed: 100
   turnSpeed: 45
-  engagementRange: 8
-  attackRange: 15
+  engagementRange: 5
+  attackRange: 5
   attackDelay: 1
   accuracy: 10
   weaponDamage: 2
