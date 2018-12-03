@@ -17,24 +17,30 @@ public class WaveController : MonoBehaviour {
     private float _waveStartTimer;
     private int _currentWave;
     private int _enemiesAlive = 0;
+    private int _companionsAlive = 0;
     private int _spawnCheckerCloneCount = 0;
     private bool _isWaveActive;
     private GameObject _destinationCollider;
     private DestinationColliderController _destinationColliderController;
     private Text _uiWaveCounter;
     private Text _uiNextWaveTimer;
+    private Text _uiCompanionTracker;
 
     private void Awake()
     {
         EventManager.StartListening("registerEnemy", RegisterEnemy);
+        EventManager.StartListening("registerCompanion", RegisterCompanion);
         EventManager.StartListening("enemyDeath", EnemyDeath);
+        EventManager.StartListening("companionDeath", CompanionDeath);
         EventManager.StartListening("spawnCheckerCloneRemoved", SpawnCheckerCloneRemoved);
     }
 
     private void OnDestroy()
     {
         EventManager.StopListening("registerEnemy", RegisterEnemy);
+        EventManager.StopListening("registerCompanion", RegisterCompanion);
         EventManager.StopListening("enemyDeath", EnemyDeath);
+        EventManager.StopListening("companionDeath", CompanionDeath);
         EventManager.StopListening("spawnCheckerCloneRemoved", SpawnCheckerCloneRemoved);
     }
 
@@ -54,6 +60,9 @@ public class WaveController : MonoBehaviour {
 
         GameObject nextWaveTimer = GameObject.Find("NextWaveTimer");
         _uiNextWaveTimer = nextWaveTimer.GetComponent<Text>();
+
+        GameObject companionTracker = GameObject.Find("CompanionTracker");
+        _uiCompanionTracker = companionTracker.GetComponent<Text>();
     }
 
     private void Update()
@@ -113,10 +122,22 @@ public class WaveController : MonoBehaviour {
         _enemiesAlive += 1;
     }
 
+    private void RegisterCompanion()
+    {
+        _companionsAlive += 1;
+        UpdateCompanionTracker();
+    }
+
     private void EnemyDeath()
     {
         _enemiesAlive -= 1;
         CheckDeathThreshold();
+    }
+
+    private void CompanionDeath()
+    {
+        _companionsAlive -= 1;
+        UpdateCompanionTracker();
     }
 
     private void SpawnCheckerCloneRemoved()
@@ -138,5 +159,10 @@ public class WaveController : MonoBehaviour {
             // Time is all made up. It's all relative. Whatever.
             _waveStartTimer = Time.time + _waveStartTimer;
         }
+    }
+
+    private void UpdateCompanionTracker()
+    {
+        _uiCompanionTracker.text = _companionsAlive.ToString();
     }
 }

@@ -27,8 +27,11 @@ public class APCController : MonoBehaviour {
     [Header("Deployment")]
     public int minPayload = 1;
     public int maxPayload = 3;
+    public int companionSpawnChance = 100;
     public float deployRate = 1f;
     public GameObject payloadPrefab;
+    public GameObject companionLightIndicator;
+    public GameObject companionPrefab;
     public List<Transform> deployLocatons;
 
     private bool _isMoving = false;
@@ -130,6 +133,12 @@ public class APCController : MonoBehaviour {
 
         _myRigidBody.bodyType = RigidbodyType2D.Kinematic;
 
+        // Spawns the companion last.
+        if ((Random.value * 100) <= companionSpawnChance) {
+            Invoke("DropCompanionPayload", deployRate * payload);
+        }
+
+        // Spawns each payload one at a time for performance and, well, it's pretty awesome.
         for (int i = 0; i < payload; i++) {
             Invoke("DropPayload", deployRate * i);
         }
@@ -140,6 +149,15 @@ public class APCController : MonoBehaviour {
         GameObject freshSpawn = Instantiate(payloadPrefab);
         freshSpawn.transform.position = transform.position;
         AIController freshSpawnAI = freshSpawn.GetComponent<AIController>();
+        freshSpawnAI.DeployToRandomLocation(deployLocatons);
+    }
+
+    private void DropCompanionPayload()
+    {
+        GameObject freshSpawn = Instantiate(payloadPrefab);
+        freshSpawn.transform.position = transform.position;
+        AIController freshSpawnAI = freshSpawn.GetComponent<AIController>();
+        freshSpawnAI.InstantiateCompanionOnDeath(companionPrefab, companionLightIndicator);
         freshSpawnAI.DeployToRandomLocation(deployLocatons);
     }
 

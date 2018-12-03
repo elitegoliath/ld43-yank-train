@@ -14,11 +14,14 @@ public class AIController : MonoBehaviour {
     private bool _canUpdateTracks = false;
     private bool _canSetDestination = false;
     private bool _canFireRangedWeapon = false;
+    private bool _isCompanionOnDeath = false;
     private PolyNavAgent _myNavAgent;
     private List<Transform> _availableDeployLocations;
     private Transform _target;
     private CombatController _targetCombatController;
     private CombatController _rangedWeaponCombatController;
+    private GameObject _companionLightIndicator;
+    private GameObject _companion;
 
     /*****************************************
      *              Lifecycles               *
@@ -76,6 +79,21 @@ public class AIController : MonoBehaviour {
     public void SetAttackingTurnSpeed(float attackingTurnSpeed)
     {
         _attackingTurnSpeed = attackingTurnSpeed;
+    }
+
+    public void SetCompanionOnDeath(bool companionOnDeath)
+    {
+        _isCompanionOnDeath = companionOnDeath;
+    }
+
+    public void SetCompanionLightIndicator(GameObject light)
+    {
+        _companionLightIndicator = light;
+    }
+
+    public void SetCompanion(GameObject companion)
+    {
+        _companion = companion;
     }
 
     /*****************************************
@@ -209,8 +227,13 @@ public class AIController : MonoBehaviour {
 
     private void Die()
     {
-        // TODO: Spawn debris on death.
-        // TODO: Cause explosion FX on death (sound and viz);
+        if (_isCompanionOnDeath) {
+
+        } else {
+            // TODO: Spawn debris on death.
+            // TODO: Cause explosion FX on death (sound and viz);
+        }
+
         Destroy(gameObject);
     }
 
@@ -231,6 +254,19 @@ public class AIController : MonoBehaviour {
         }
 
         return retVal;
+    }
+
+    public void InstantiateCompanionOnDeath(GameObject companionPrefab, GameObject indicatorLight)
+    {
+        // Set properties.
+        _companion = companionPrefab;
+        _companionLightIndicator = indicatorLight;
+        _isCompanionOnDeath = true;
+
+        // Instantiate light;
+        GameObject newLight = Instantiate(indicatorLight);
+        newLight.transform.parent = transform;
+        newLight.transform.localPosition = Vector3.zero;
     }
 
     /*****************************************
