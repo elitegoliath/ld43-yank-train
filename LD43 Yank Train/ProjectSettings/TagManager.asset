@@ -9,6 +9,7 @@ TagManager:
   - Transport
   - DestinationArea
   - Enemy
+  - WaveController
   layers:
   - Default
   - TransparentFX

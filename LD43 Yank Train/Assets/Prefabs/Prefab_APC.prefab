@@ -579,7 +579,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1722753128056126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.3335376, y: -1.5057831, z: 0}
+  m_LocalPosition: {x: 5.0903854, y: -14.035246, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children:
   - {fileID: 4341131623092966}
@@ -836,9 +836,11 @@ MonoBehaviour:
     type: 2}
   foreTurretCombatController: {fileID: 114812091570703508}
   aftTurretCombatController: {fileID: 114812585322845844}
+  minPayload: 1
+  maxPayload: 3
   payloadPrefab: {fileID: 1202173623782010, guid: b8c1f37e3d58e0b41823adc5d6348037,
     type: 2}
-  deployDirections:
+  deployLocatons:
   - {fileID: 4261036760662658}
   - {fileID: 4974560167193782}
   - {fileID: 4940073994481920}

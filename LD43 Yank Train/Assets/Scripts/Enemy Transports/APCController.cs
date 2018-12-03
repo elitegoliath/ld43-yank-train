@@ -1,19 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PolyNav;
 
 public class APCController : MonoBehaviour {
-    // Vehicle Attributes
+    [Header("Engines")]
     public float speed = 1f;
     public float drag = 1f;
     public float angularDrag = 1f;
     public float torque = 1f;
-
-    // Armor Stats
+    
+    [Header("Armor")]
     public int maxHealth = 50;
     public int armor = 5;
 
-    // Weapon Stats
+    [Header("Weapons")]
     public float weaponRange = 4f;
     public float weaponDelay = 2f;
     public float weaponAccuracy = 10f;
@@ -22,9 +23,11 @@ public class APCController : MonoBehaviour {
     public CombatController foreTurretCombatController;
     public CombatController aftTurretCombatController;
 
-    // Deployment Vars
+    [Header("Deployment")]
+    public int minPayload = 1;
+    public int maxPayload = 3;
     public GameObject payloadPrefab;
-    public Transform[] deployDirections;
+    public List<Transform> deployLocatons;
 
     private TransportSpawnController _spawnController;
     private Rigidbody2D _myRigidBody;
@@ -32,6 +35,7 @@ public class APCController : MonoBehaviour {
     private Vector2 _destination;
     private bool _isMoving = false;
     private bool _isStopping = false;
+    private bool _isWaitingToBecomeObstacle = false;
 
     private void Awake()
     {
@@ -56,20 +60,27 @@ public class APCController : MonoBehaviour {
     {
         // Grab the spawn point for this unit.
         _spawnController = gameObject.GetComponent<TransportSpawnController>();
-        _spawnPoint = _spawnController.GetSpawnPoint();
-        _destination = _spawnController.GetDestination();
-        _spawnController.TearDown();
+        //_spawnPoint = _spawnController.GetSpawnPoint();
+        //_destination = _spawnController.GetDestination();
+        //_spawnController.TearDown();
 
         // Move to spawn location.
-        transform.position = _spawnPoint;
+        //transform.position = _spawnPoint;
 
         // Apply movement towards destination.
-        MoveToDestination();
+        //MoveToDestination();
+
+        // TODO: Remove when done testing.
+        DeployOrder();
     }
 	
 	private void Update () {
-        CheckDestinationReached();
-        CheckAPCHasStopped();
+        //CheckDestinationReached();
+        //CheckAPCHasStopped();
+
+        //if (_isWaitingToBecomeObstacle == true) {
+
+        //}
     }
 
     /// <summary>
@@ -102,7 +113,19 @@ public class APCController : MonoBehaviour {
 
     private void DeployOrder()
     {
-        // TODO: Spawn Troops and 
+        // TODO: When the event system can handle event with parameters, add wave multiplier to payload.
+
+        // Dump payload.
+        int payload = Random.Range(minPayload, maxPayload);
+
+        for (int i = 0; i < payload; i++) {
+            GameObject freshSpawn = Instantiate(payloadPrefab);
+            freshSpawn.transform.position = transform.position;
+            AIController freshSpawnAI = freshSpawn.GetComponent<AIController>();
+            freshSpawnAI.DeployToRandomLocation(deployLocatons);
+        }
+
+        gameObject.AddComponent<PolyNavObstacle>();
     }
 
     /// <summary>

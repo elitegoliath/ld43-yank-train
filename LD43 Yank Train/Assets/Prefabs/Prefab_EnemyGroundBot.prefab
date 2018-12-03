@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 114282093714302766}
   - component: {fileID: 58597938273094032}
   - component: {fileID: 114458641205617308}
+  - component: {fileID: 114620944300656414}
   m_Layer: 12
   m_Name: Prefab_EnemyGroundBot
   m_TagString: Enemy
@@ -1343,13 +1344,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1142839961881182}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: -0, z: 0.99539626, w: -0.095845714}
   m_LocalPosition: {x: -0.05, y: -1.622, z: -0.002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4419680371810170}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 191}
 --- !u!4 &4774714355854378
 Transform:
   m_ObjectHideFlags: 1
@@ -1646,7 +1647,7 @@ MonoBehaviour:
   avoidanceConsiderStuckedTime: 3
   avoidanceConsiderReachedDistance: 1
   rotateTransform: 0
-  rotateSpeed: 250
+  rotateSpeed: 900
   centerOffset: {x: 0, y: 0}
   repath: 0
   restrict: 0
@@ -1699,6 +1700,17 @@ MonoBehaviour:
   boneToAimAt: {fileID: 4078490137070532}
   InEditBoneMode: 0
   _newSelection: []
+--- !u!114 &114620944300656414
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1202173623782010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4089de2eae27be54ea8204748447867f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114694807185219520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1836,17 +1848,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b38d93b95422e44808e24a58a44190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkRangesCooldown: 0.2
+  checkRangesCooldown: 0.4
   maxHealth: 10
   armor: 1
   moveSpeed: 100
-  turnSpeed: 45
-  engagementRange: 5
-  attackRange: 5
+  attackingTurnSpeed: 30
+  engagementRange: 6
+  attackRange: 8
   attackDelay: 1
   accuracy: 10
   weaponDamage: 2
-  rangedWeapon: {fileID: 114903528608290828}
+  rangedWeaponCombatController: {fileID: 114903528608290828}
   rangedWeaponMunition: {fileID: 1273437431022602, guid: 7149c311b1d05f04a87c6f7afa7b051c,
     type: 2}
 --- !u!114 &114995291469217252
