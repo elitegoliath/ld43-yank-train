@@ -26,6 +26,7 @@ public class SpawnColliderController : MonoBehaviour {
         // Reset the value after each check in case of recursion.
         bool retVal = _isInFreeSpace;
         _isInFreeSpace = true;
+
         return retVal;
     }
 }

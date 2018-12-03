@@ -35,6 +35,7 @@ public class APCController : MonoBehaviour {
     private Vector2 _destination;
     private bool _isMoving = false;
     private bool _isStopping = false;
+    private int _payloadMultiplier = 1;
 
     private void Awake()
     {
@@ -61,6 +62,7 @@ public class APCController : MonoBehaviour {
         _spawnController = gameObject.GetComponent<TransportSpawnController>();
         _spawnPoint = _spawnController.GetSpawnPoint();
         _destination = _spawnController.GetDestination();
+        _payloadMultiplier = _spawnController.payloadMultiplier;
         _spawnController.TearDown();
 
         // Move to spawn location.
@@ -105,10 +107,8 @@ public class APCController : MonoBehaviour {
 
     private void DeployOrder()
     {
-        // TODO: When the event system can handle event with parameters, add wave multiplier to payload.
-
         // Dump payload.
-        int payload = Random.Range(minPayload, maxPayload);
+        int payload = Random.Range(minPayload, (maxPayload * _payloadMultiplier));
 
         for (int i = 0; i < payload; i++) {
             GameObject freshSpawn = Instantiate(payloadPrefab);

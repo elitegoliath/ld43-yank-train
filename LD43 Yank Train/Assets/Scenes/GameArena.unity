@@ -26725,11 +26725,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114209253028603272, guid: a49ce874ddd5da244b318626566e2410,
-        type: 2}
-      propertyPath: transportPrefabList.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4688694636906354, guid: a49ce874ddd5da244b318626566e2410, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -27037,7 +27032,7 @@ GameObject:
   - component: {fileID: 1652863989}
   - component: {fileID: 1652863988}
   m_Layer: 5
-  m_Name: WaveCounter
+  m_Name: NextWaveTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27093,7 +27088,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3:00
+  m_Text: 0:00
 --- !u!222 &1652863989
 CanvasRenderer:
   m_ObjectHideFlags: 0
