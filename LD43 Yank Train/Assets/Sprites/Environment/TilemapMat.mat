@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: SpriteTest
+  m_Name: TilemapMat
   m_Shader: {fileID: 4800000, guid: f1c332c0884ef2b4bb26584f688eac3a, type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _COLOR_ADJUST
   m_LightmapFlags: 4
@@ -94,7 +94,7 @@ Material:
     - _Parallax: 0.02
     - _RenderQueue: 0
     - _RimPower: 2
-    - _Saturation: 1.1
+    - _Saturation: 1.15
     - _ShadowAlphaCutoff: 0.1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
