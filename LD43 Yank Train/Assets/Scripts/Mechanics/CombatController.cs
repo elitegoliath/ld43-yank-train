@@ -15,6 +15,7 @@ public class CombatController : MonoBehaviour {
     private int _weaponDamage = 1;
     private GameObject _weaponMunition;
     private GameObject _debris;
+    private List<SpriteRenderer> _mySprites = new List<SpriteRenderer>();
 
     /*****************************************
      *              Max Health               *
@@ -22,6 +23,9 @@ public class CombatController : MonoBehaviour {
     public void SetMaxHealth(int maxHealth)
     {
         _maxHealth = maxHealth;
+
+        // TODO: If max health can change mid-game, remove this.
+        _currentHealth = maxHealth;
 
         // Limits health to the maximum.
         if (_currentHealth > _maxHealth) {
@@ -182,9 +186,25 @@ public class CombatController : MonoBehaviour {
      ****************************************/
     public void TakeDamage(int damage)
     {
-
         _currentHealth -= damage;
         CheckHealth();
+
+        // If not dead yet, blink!
+        DamageBlink();
+    }
+
+    public void DamageBlink()
+    {
+        // If sprites aren't cached, do it.
+        if (_mySprites.Count == 0) {
+            _mySprites = new List<SpriteRenderer>(gameObject.GetComponentsInChildren<SpriteRenderer>());
+        }
+
+        foreach (SpriteRenderer sprite in _mySprites) {
+            sprite.color = new Color(221f, 0f, 0f, 0.5f);
+        }
+
+        Invoke("SetDefaultSpriteColors", 0.1f);
     }
 
     public void CheckHealth()
@@ -199,5 +219,41 @@ public class CombatController : MonoBehaviour {
         //Instantiate(_debris, transform.position, transform.rotation);
 
         Destroy(gameObject);
+    }
+
+    /*****************************************
+     *               Helpers                 *
+     ****************************************/
+    public void ChangeEntityColor(int r, int g, int b, int a = 1)
+    {
+        Color newColor = new Color(r, g, b, a);
+        // Get all the sprite renderers in the object.
+        SpriteRenderer[] spriteRenderers = gameObject.GetComponentsInChildren<SpriteRenderer>();
+        foreach (SpriteRenderer spriteRenderer in spriteRenderers) {
+            spriteRenderer.color = newColor;
+        }
+    }
+
+    public void ChangeEntityColor(Color newColor)
+    {
+        // Get all the sprite renderers in the object.
+        SpriteRenderer[] spriteRenderers = gameObject.GetComponentsInChildren<SpriteRenderer>();
+        foreach(SpriteRenderer spriteRenderer in spriteRenderers) {
+            spriteRenderer.color = newColor;
+        }
+    }
+
+    public void ChangeEntityColor(Color[] colorList, SpriteRenderer[] spriteList)
+    {
+        for (int i = 0; i < colorList.Length; i++) {
+            spriteList[i].color = colorList[i];
+        }
+    }
+
+    public void SetDefaultSpriteColors()
+    {
+        foreach(SpriteRenderer sprite in _mySprites) {
+            sprite.color = Color.white;
+        }
     }
 }
