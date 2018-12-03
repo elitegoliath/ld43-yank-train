@@ -13,6 +13,7 @@ TextureImporter:
     21300016: ReactorCore
     21300018: ReactorCoreDamaged
     21300020: ProgressBarFrame
+    21300022: BotCounterFrame
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -84,13 +85,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BuddyBots
+      name: BotCounterFrame
       rect:
         serializedVersion: 2
-        x: 1
-        y: 95
-        width: 160
-        height: 160
+        x: 905
+        y: 155
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -98,7 +99,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9e497084d61d35c4baf6a373ee9313b0
+      spriteID: e06199c0e0c84e845940c4f38d9999a5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BuddyBots
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 127
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 661fec45214b90e4b880047d85a12da9
       vertices: []
       indices: 
       edges: []
@@ -108,26 +129,6 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 23
-        width: 512
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c336cfc939429944fbaa68f8ba61c2bd
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ProgressBarFilled
-      rect:
-        serializedVersion: 2
-        x: 423
         y: 185
         width: 512
         height: 70
@@ -138,16 +139,16 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 672c49fbee7d83e4db097347a655a18e
+      spriteID: 79fb946881e167449ba05e9314f57c18
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProgressBarFrame
+      name: ProgressBarFilled
       rect:
         serializedVersion: 2
-        x: 423
+        x: 1
         y: 113
         width: 512
         height: 70
@@ -158,7 +159,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0092e77a1de70054c97181a8d4164250
+      spriteID: 1fa018ecff6fb704f9ebd85b790d236f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ProgressBarFrame
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 41
+        width: 512
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d0bcf7a7542d024d8fec99b5f5dec98
       vertices: []
       indices: 
       edges: []
@@ -167,7 +188,7 @@ TextureImporter:
       name: ReactorCore
       rect:
         serializedVersion: 2
-        x: 163
+        x: 645
         y: 127
         width: 128
         height: 128
@@ -178,7 +199,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 26026a37aa06ba941af2e268cffa5085
+      spriteID: 13758acb88392c24580e61040508ab21
       vertices: []
       indices: 
       edges: []
@@ -187,7 +208,7 @@ TextureImporter:
       name: ReactorCoreDamaged
       rect:
         serializedVersion: 2
-        x: 293
+        x: 775
         y: 127
         width: 128
         height: 128
@@ -198,7 +219,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b946236c4f2f29c4d9cc906dbcb33e17
+      spriteID: 0106937f3295a3e41999b45e292d9637
       vertices: []
       indices: 
       edges: []

@@ -4,7 +4,7 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # http://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:b4cabacf90d5190c1c5081328471db81:d21d72b0d10f464a24f529582370cd4b:ab52e9c49b03b01b90e397c31bcb36b4$
+# $TexturePacker:SmartUpdate:66f902594210410ee1243d2aa65e9671:8a97d8a5565f939ef2af6e824c80c581:ab52e9c49b03b01b90e397c31bcb36b4$
 #
 :format=40300
 :texture=UI Atlas.png
@@ -12,9 +12,10 @@
 :pivotpoints=enabled
 :borders=disabled
 
-BuddyBots;1;95;160;160; 0.5;0.5; 0;0;0;0
-ProgressBarEmpty;1;23;512;70; 0.5;0.5; 0;0;0;0
-ProgressBarFilled;423;185;512;70; 0.5;0.5; 0;0;0;0
-ProgressBarFrame;423;113;512;70; 0.5;0.5; 0;0;0;0
-ReactorCore;163;127;128;128; 0.5;0.5; 0;0;0;0
-ReactorCoreDamaged;293;127;128;128; 0.5;0.5; 0;0;0;0
+BotCounterFrame;905;155;100;100; 0.5;0.5; 0;0;0;0
+BuddyBots;515;127;128;128; 0.5;0.5; 0;0;0;0
+ProgressBarEmpty;1;185;512;70; 0.5;0.5; 0;0;0;0
+ProgressBarFilled;1;113;512;70; 0.5;0.5; 0;0;0;0
+ProgressBarFrame;1;41;512;70; 0.5;0.5; 0;0;0;0
+ReactorCore;645;127;128;128; 0.5;0.5; 0;0;0;0
+ReactorCoreDamaged;775;127;128;128; 0.5;0.5; 0;0;0;0
