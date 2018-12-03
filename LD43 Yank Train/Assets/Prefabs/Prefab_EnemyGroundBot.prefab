@@ -1636,18 +1636,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _map: {fileID: 0}
-  maxSpeed: 6
+  maxSpeed: 8
   mass: 50
   stoppingDistance: 0.01
   slowingDistance: 2
-  accelerationRate: 1
+  accelerationRate: 0.8
   decelerationRate: 0.2
-  lookAheadDistance: 1
+  lookAheadDistance: 0.5
   avoidRadius: 0.6
   avoidanceConsiderStuckedTime: 3
   avoidanceConsiderReachedDistance: 1
   rotateTransform: 0
-  rotateSpeed: 900
+  rotateSpeed: 1100
   centerOffset: {x: 0, y: 0}
   repath: 0
   restrict: 0
@@ -1858,6 +1858,7 @@ MonoBehaviour:
   attackDelay: 1
   accuracy: 10
   weaponDamage: 2
+  weaponRange: 1
   rangedWeaponCombatController: {fileID: 114903528608290828}
   rangedWeaponMunition: {fileID: 1273437431022602, guid: 7149c311b1d05f04a87c6f7afa7b051c,
     type: 2}

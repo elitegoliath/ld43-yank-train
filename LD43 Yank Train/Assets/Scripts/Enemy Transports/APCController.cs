@@ -53,6 +53,7 @@ public class APCController : MonoBehaviour {
         foreTurretCombatController.SetWeaponAccuracy(weaponAccuracy);
         foreTurretCombatController.SetWeaponDamage(weaponDamage);
         foreTurretCombatController.SetWeaponMunition(weaponMunitionPrefab);
+        foreTurretAI.SetAttackRange(attackRange);
 
         // Set combat stats for Aft Turret.
         aftTurretCombatController.SetWeaponRange(weaponRange);
@@ -60,6 +61,7 @@ public class APCController : MonoBehaviour {
         aftTurretCombatController.SetWeaponAccuracy(weaponAccuracy);
         aftTurretCombatController.SetWeaponDamage(weaponDamage);
         aftTurretCombatController.SetWeaponMunition(weaponMunitionPrefab);
+        aftTurretAI.SetAttackRange(attackRange);
     }
 
     private void Start ()

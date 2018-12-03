@@ -828,7 +828,7 @@ MonoBehaviour:
   torque: 280
   maxHealth: 50
   armor: 5
-  attackRange: 5
+  attackRange: 20
   weaponRange: 2
   weaponDelay: 0.3
   weaponAccuracy: 30
