@@ -16,6 +16,55 @@ public class CombatController : MonoBehaviour {
     private GameObject _weaponMunition;
 
     /*****************************************
+     *              Max Health               *
+     ****************************************/
+    public void SetMaxHealth(int maxHealth)
+    {
+        _maxHealth = maxHealth;
+
+        // Limits health to the maximum.
+        if (_currentHealth > _maxHealth) {
+            _currentHealth = _maxHealth;
+        }
+    }
+
+    public int GetMaxHealth()
+    {
+        return _maxHealth;
+    }
+
+    /*****************************************
+     *            Current Health             *
+     ****************************************/
+    public void SetCurrentHealth(int currentHealth)
+    {
+        _currentHealth = currentHealth;
+
+        // Limit health to the maximum.
+        if (_currentHealth > _maxHealth) {
+            _currentHealth = _maxHealth;
+        }
+    }
+
+    public int GetCurrentHealth()
+    {
+        return _currentHealth;
+    }
+
+    /*****************************************
+     *                Armor                  *
+     ****************************************/
+    public void SetArmor(int armor)
+    {
+        _armor = armor;
+    }
+
+    public int GetArmor()
+    {
+        return _armor;
+    }
+
+    /*****************************************
      *             Weapon Range              *
      ****************************************/
     public void SetWeaponRange(float weaponRange)

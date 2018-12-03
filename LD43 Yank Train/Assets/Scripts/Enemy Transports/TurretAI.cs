@@ -49,8 +49,8 @@ public class TurretAI : MonoBehaviour {
     private void FacePlayer()
     {
         Vector3 direction = _playerTransform.position - transform.position;
-        float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg - 90;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, -angle));
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 
     /// <summary>
