@@ -77,3 +77,6 @@ TagManager:
   - name: Animation Controls
     uniqueID: 592529321
     locked: 0
+  - name: Particles
+    uniqueID: 3179592055
+    locked: 0

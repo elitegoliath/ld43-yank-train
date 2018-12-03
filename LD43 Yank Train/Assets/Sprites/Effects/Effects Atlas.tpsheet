@@ -1,0 +1,16 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:04c43ae24f87a642abe671ece69da871:eed59daf22085d88e18010cdac8f26af:66d1dd1d57b7f00b1f58a8080f322328$
+#
+:format=40300
+:texture=Effects Atlas.png
+:size=64x256
+:pivotpoints=enabled
+:borders=disabled
+
+EnemyLaser;1;122;17;133; 0.5;0.5; 0;0;0;0
+FriendlyLaser;20;122;17;133; 0.5;0.5; 0;0;0;0
