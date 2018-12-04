@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 114480917155534602}
   m_Layer: 10
   m_Name: Prefab_APCDestroyed
-  m_TagString: Transport
+  m_TagString: TransportDebris
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
