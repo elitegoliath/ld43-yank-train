@@ -66,7 +66,8 @@ public class FriendlyGroundBotAI : MonoBehaviour {
         EventManager.TriggerEvent("registerCompanion");
 
         // Activate initial AI behaviors.
-        _myAIController.ActivateAIAfterDelay(1f);
+        // Do so after delay for effect and for the enemy to cleat the space.
+        _myAIController.ActivateAIAfterDelay(0.05f);
     }
 
     /// <summary>

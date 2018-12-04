@@ -126,12 +126,22 @@ public class AIController : MonoBehaviour {
     public void ActivateAIAfterDelay(float delay)
     {
         // TODO: If args need to be passed, make coroutine instead, maybe?
-        Invoke("ActivateAI", delay);
+        Invoke("ActivateAltAI", delay);
+    }
+
+    public void ActivateAltAI()
+    {
+        // TODO: Do better than this.
+        _canUpdateTracks = true;
+        _canFireRangedWeapon = true;
+
+        // TODO: Circle collider not guarenteed. Pass in reference to desired collider instead.
+        gameObject.GetComponent<CircleCollider2D>().enabled = true;
     }
 
     public void ActivateAI()
     {
-        // TODO: Pass in args to initial behavior routines.
+        // TODO: Do better than this.
         _engageTargetModeActive = true;
         _canUpdateTracks = true;
         _canSetDestination = true;
