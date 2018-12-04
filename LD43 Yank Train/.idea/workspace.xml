@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a68be13d-d689-4da6-a7df-d8c99d7424d8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Obj_EnemyBotDestroyed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Obj_EnemyBotDestroyed.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefab_APCDestroyed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefab_APCDestroyed.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/Prefab_ParticleEnemyLaserSparks.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/Prefab_ParticleFriendlyLaserSparks.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/Prefab_ParticleFriendlyLaserSparks.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/ParadoxNotion/PolyNav2D/PolyNav_NodeCanvas.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/ParadoxNotion/PolyNav2D/PolyNav_PlayMaker.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/Prefab_ParticleEnemyLaserSparks.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefab_ParticleExplosion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/Prefab_ParticleExplosion.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefab_ParticleExplosion.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/Prefab_ParticleExplosion.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefab_ParticleFireSmoke.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/Prefab_ParticleFireSmoke.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefab_ParticleFireSmoke.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Particles/Prefab_ParticleFireSmoke.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameArena.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameArena.unity" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player Scripts/PlayerControls.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+            <state relative-caret-position="176">
+              <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -138,15 +146,15 @@
       <workItem from="1543721519567" duration="1524000" />
       <workItem from="1543794093778" duration="814000" />
       <workItem from="1543874985200" duration="1403000" />
-      <workItem from="1543956063247" duration="415000" />
+      <workItem from="1543956063247" duration="1017000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4374000" />
+    <option name="totallyTimeSpent" value="4976000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="5" y="17" width="1898" height="1047" extended-state="1" />
+    <frame x="5" y="17" width="1898" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20511426" />
@@ -179,8 +187,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player Scripts/PlayerControls.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+        <state relative-caret-position="176">
+          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
         </state>
       </provider>
     </entry>

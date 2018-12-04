@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PolyNav;
 
 public class DebrisController : MonoBehaviour {
     public GameObject particles;
+    public bool isPolyNav = false;
 
-	// Use this for initialization
-	void Start () {
+    private PolyNav2D _navMapRef;
+    private PolyNavObstacle _myObstacle;
+    
+	private void Start () {
         if (particles != null) {
             GameObject parts = Instantiate(particles, transform);
             parts.transform.localPosition = Vector3.zero;
@@ -14,5 +18,18 @@ public class DebrisController : MonoBehaviour {
         } else {
             Debug.Log("No particles associated with this debris controller.");
         }
+
+        if (isPolyNav == true) {
+            _myObstacle = gameObject.GetComponent<PolyNavObstacle>();
+            _navMapRef = FindObjectOfType<PolyNav2D>();
+            _navMapRef.AddObstacle(_myObstacle);
+        }
 	}
+
+    private void OnDestroy()
+    {
+        if (isPolyNav == true) {
+            _navMapRef.RemoveObstacle(_myObstacle);
+        }
+    }
 }

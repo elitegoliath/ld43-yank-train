@@ -245,12 +245,12 @@ public class CombatController : MonoBehaviour {
         }
     }
 
-    public void Die()
+    public void Die(bool isViolentDeath = false)
     {
         if (_detonatesOnDeath == true) {
             Instantiate(_detonationEffect, transform.position, transform.rotation);
         } else {
-            if(_isCompanionOnDeath == true) {
+            if(_isCompanionOnDeath == true && isViolentDeath == false) {
                 Instantiate(_companion, transform.position, transform.rotation);
             } else {
                 SpawnDebris();

@@ -45,6 +45,8 @@ public class APCController : MonoBehaviour {
     private Vector2 _spawnPoint;
     private Vector2 _destination;
     private CombatController _myCombatController;
+    private PolyNav2D _navMapRef;
+    private PolyNavObstacle _myObstacle;
 
     private void Awake()
     {
@@ -86,6 +88,9 @@ public class APCController : MonoBehaviour {
         _destination = _spawnController.GetDestination();
         _payloadMultiplier = _spawnController.payloadMultiplier;
         _spawnController.TearDown();
+
+        _navMapRef = FindObjectOfType<PolyNav2D>();
+        _myObstacle = gameObject.GetComponent<PolyNavObstacle>();
 
         // Move to spawn location.
         transform.position = _spawnPoint;
@@ -137,16 +142,6 @@ public class APCController : MonoBehaviour {
 
         _myRigidBody.bodyType = RigidbodyType2D.Kinematic;
 
-        //// Spawns the companion last.
-        //if ((Random.value * 100) <= companionSpawnChance) {
-        //    Invoke("DropCompanionPayload", deployRate * payload);
-        //}
-
-        //// Spawns each payload one at a time for performance and, well, it's pretty awesome.
-        //for (int i = 0; i < payload; i++) {
-        //    Invoke("DropPayload", deployRate * i);
-        //}
-
         for (int i = 0; i < payload; i++) {
             float companionOrNot = Random.Range(0f, 100f);
 
@@ -156,6 +151,18 @@ public class APCController : MonoBehaviour {
                 Invoke("DropPayload", deployRate * i);
             }
         }
+
+        Invoke("MakeIntoObstacle", payload);
+    }
+
+    private void MakeIntoObstacle()
+    {
+        _navMapRef.AddObstacle(_myObstacle);
+    }
+
+    private void OnDestroy()
+    {
+        _navMapRef.RemoveObstacle(_myObstacle);
     }
 
     private void DropPayload()
