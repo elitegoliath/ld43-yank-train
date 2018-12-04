@@ -49,6 +49,8 @@ public class PlayerControls : MonoBehaviour
     {
         FaceAvatar();
         FireRangedWeapons();
+        SacrificeAFriend();
+        AssimilateABuddy();
     }
 
     /// <summary>
@@ -76,17 +78,24 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
     private void FaceAvatar()
     {
-        // Distance between player avatar and the camera so the angle can be properly derived.
-        float camDis = _cam.transform.position.y - transform.position.y;
-
-        // Get the mouse position in the world space, while using the camera distance for Z, for some reason.
-        Vector3 mousePos = _cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDis));
+        Vector3 mousePos = GetMousePos();
 
         // Fuckin fancy ass math... I really don't get it, but it works, so yolo.
         float AngleRad = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x);
         float angle = (180 / Mathf.PI) * AngleRad;
 
         _myRigidBody.rotation = angle + 90;
+    }
+
+    private Vector3 GetMousePos()
+    {
+        // Distance between player avatar and the camera so the angle can be properly derived.
+        float camDis = _cam.transform.position.y - transform.position.y;
+
+        // Get the mouse position in the world space, while using the camera distance for Z, for some reason.
+        Vector3 mousePos = _cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDis));
+
+        return mousePos;
     }
 
     private void FireRangedWeapons()
@@ -140,10 +149,16 @@ public class PlayerControls : MonoBehaviour
 
     private void SacrificeRandomCompanion()
     {
-        GameObject[] companions = GameObject.FindGameObjectsWithTag("");
+        GameObject[] companions = GameObject.FindGameObjectsWithTag("CompanionBot");
 
         if (companions.Length > 0) {
-            // Sacrifice logic here
+            int chosenIndex = Random.Range(0, companions.Length);
+            Vector3 deathPoint = GetMousePos();
+
+            FriendlyGroundBotAI newDeathBuddy = companions[chosenIndex].GetComponent<FriendlyGroundBotAI>();
+
+            // Tell him to wreck himself.
+            newDeathBuddy.SacrificeSelf(deathPoint);
         }
     }
 

@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - WaveController
   - CompanionBot
+  - TransportDebris
   layers:
   - Default
   - TransparentFX
