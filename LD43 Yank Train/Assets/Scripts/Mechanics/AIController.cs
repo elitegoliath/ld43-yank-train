@@ -20,7 +20,9 @@ public class AIController : MonoBehaviour {
     private List<Transform> _availableDeployLocations;
     private Transform _target;
     private CombatController _rangedWeaponCombatController;
+    private CombatController _myCombatController;
     private Transform _player;
+    
 
     /*****************************************
      *              Lifecycles               *
@@ -28,6 +30,7 @@ public class AIController : MonoBehaviour {
     private void Awake()
     {
         _myNavAgent = gameObject.GetComponent<PolyNavAgent>();
+        _myCombatController = gameObject.GetComponent<CombatController>();
 
         // Register events listeners.
         _myNavAgent.OnDestinationReached += ActivateAI;
@@ -161,6 +164,7 @@ public class AIController : MonoBehaviour {
         _myNavAgent.OnDestinationInvalid -= PickNewDeployLocation;
 
         // Register new "stuck" event listener;
+        // TODO: Handle entities that get stuck better.
         _myNavAgent.OnDestinationInvalid += ShamefulDeath;
     }
 
@@ -328,16 +332,19 @@ public class AIController : MonoBehaviour {
     {
         _myNavAgent.OnDestinationInvalid -= ShamefulDeath;
         _myNavAgent.rotateTransform = true;
-        _myNavAgent.Stop();
 
         // Explode if no collision and pathing is finished.
         _myNavAgent.OnDestinationReached += SelfDestruct;
         _myNavAgent.OnDestinationInvalid += SelfDestruct;
+
+        // Send him on his way.
+        _myNavAgent.maxSpeed = _myNavAgent.maxSpeed * 2;
+        _myNavAgent.SetDestination(destination);
     }
 
     private void SelfDestruct()
     {
-        // Create self destruct explosion
+        _myCombatController.Die();
     }
 
     private void ShamefulDeath()

@@ -22,11 +22,17 @@ public class CombatController : MonoBehaviour {
     // Death
     private bool _detonatesOnDeath = false;
     private GameObject _debris;
-    private AudioClip deathExplosionSound;
+    private AudioClip _deathExplosionSound;
+    private GameObject _detonationEffect;
 
     public void SetDetonationOnDeath(bool deathBoom)
     {
         _detonatesOnDeath = deathBoom;
+    }
+
+    public void SetDetonationEffect(GameObject detonEffect)
+    {
+        _detonationEffect = detonEffect;
     }
 
     /*****************************************
@@ -239,25 +245,43 @@ public class CombatController : MonoBehaviour {
         }
     }
 
-    public void Die(bool violently = false)
+    public void Die()
     {
         if (_detonatesOnDeath == true) {
-
-        } else if (_isCompanionOnDeath == true && violently == false) {
-            Instantiate(_companion, transform.position, transform.rotation);
+            Instantiate(_detonationEffect, transform);
         } else {
-            Instantiate(_debris, transform.position, transform.rotation);
-
-
-            // TODO: Cause explosion FX on death (sound and viz);
+            if(_isCompanionOnDeath == true) {
+                Instantiate(_companion, transform.position, transform.rotation);
+            } else {
+                // small explosion
+            }
         }
 
+        SpawnDebris();
         Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (_detonatesOnDeath == true) {
+            Collider2D col = collision.collider;
+            string tag = col.tag;
+
+            if(tag == "Enemy" || tag == "Transport") {
+                Die();
+            }
+        }
     }
 
     /*****************************************
      *               Helpers                 *
      ****************************************/
+    private void SpawnDebris()
+    {
+        Instantiate(_debris, transform.position, transform.rotation);
+        // TODO: Cause explosion FX on death (sound and viz);
+    }
+
     public void ChangeEntityColor(int r, int g, int b, int a = 1)
     {
         Color newColor = new Color(r, g, b, a);
@@ -299,6 +323,6 @@ public class CombatController : MonoBehaviour {
 
         // Instantiate light;
         GameObject newLight = Instantiate(indicatorLight, transform);
-        newLight.transform.localPosition = new Vector3(0, 0, -1);
+        newLight.transform.localPosition = new Vector3(0, 0, -0.7f);
     }
 }

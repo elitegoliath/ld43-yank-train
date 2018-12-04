@@ -34,6 +34,9 @@ public class APCController : MonoBehaviour {
     public GameObject companionPrefab;
     public List<Transform> deployLocatons;
 
+    [Header("Effects")]
+    public GameObject deathDebris;
+
     private bool _isMoving = false;
     private bool _isStopping = false;
     private int _payloadMultiplier = 1;
@@ -50,6 +53,7 @@ public class APCController : MonoBehaviour {
         _myRigidBody = gameObject.GetComponent<Rigidbody2D>();
 
         _myCombatController.SetMaxHealth(maxHealth);
+        _myCombatController.SetDebris(deathDebris);
 
         CombatController foreTurretCombatController = foreTurret.GetComponent<CombatController>();
         TurretAI foreTurretAI = foreTurret.GetComponent<TurretAI>();
