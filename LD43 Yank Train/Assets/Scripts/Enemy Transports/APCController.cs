@@ -46,6 +46,8 @@ public class APCController : MonoBehaviour {
     private Vector2 _destination;
     private CombatController _myCombatController;
     private bool _canCheckForBodies = false;
+    private PolyNav2D _navMapRef;
+    private PolyNavObstacle _myObstacle;
 
     private void Awake()
     {
@@ -87,6 +89,9 @@ public class APCController : MonoBehaviour {
         _destination = _spawnController.GetDestination();
         _payloadMultiplier = _spawnController.payloadMultiplier;
         _spawnController.TearDown();
+
+        _navMapRef = FindObjectOfType<PolyNav2D>();
+        _myObstacle = gameObject.GetComponent<PolyNavObstacle>();
 
         // Move to spawn location.
         transform.position = _spawnPoint;
@@ -159,18 +164,12 @@ public class APCController : MonoBehaviour {
 
     private void MakeIntoObstacle()
     {
-        PolyNav2D navMap = FindObjectOfType<PolyNav2D>();
-        PolyNavObstacle myObs = gameObject.GetComponent<PolyNavObstacle>();
-        //myObs.enabled = true;
-        navMap.AddObstacle(myObs);
+        _navMapRef.AddObstacle(_myObstacle);
     }
 
     private void OnDestroy()
     {
-        PolyNav2D navMap = FindObjectOfType<PolyNav2D>();
-        PolyNavObstacle myObs = gameObject.GetComponent<PolyNavObstacle>();
-        //myObs.enabled = true;
-        navMap.RemoveObstacle(myObs);
+        _navMapRef.RemoveObstacle(_myObstacle);
     }
 
     //private void BodyChecking()

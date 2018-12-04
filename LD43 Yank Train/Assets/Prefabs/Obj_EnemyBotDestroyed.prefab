@@ -82,6 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 1760409619119278, guid: 17c813a5ef16c0a4192b3c36eea8b979, type: 2}
+  isPolyNav: 0
 --- !u!212 &212258328111621932
 SpriteRenderer:
   m_ObjectHideFlags: 1
