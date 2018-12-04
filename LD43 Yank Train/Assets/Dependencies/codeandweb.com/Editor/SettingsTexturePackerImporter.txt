@@ -2,18 +2,15 @@ version: 2
 importPivots: 1
 tpsheetFileNames:
 - Assets/Sprites/Effects/Effects Atlas.tpsheet
-- Assets/Sprites/Environment/Decals/Arena Decals.tpsheet
 - Assets/Sprites/Environment/Tiles/ArenaTiles.tpsheet
 - Assets/Sprites/UI/UI Atlas.tpsheet
 - Assets/Sprites/Vehicles/APC.tpsheet
 textureFileNames:
 - Assets/Sprites/Effects/Effects Atlas.png
-- Assets/Sprites/Environment/Decals/Arena Decals.png
 - Assets/Sprites/Environment/Tiles/ArenaTiles.png
 - Assets/Sprites/UI/UI Atlas.png
 - Assets/Sprites/Vehicles/APC.png
 normalmapFileNames:
-- 
 - 
 - 
 - 

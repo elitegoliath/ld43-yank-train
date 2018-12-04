@@ -18,6 +18,12 @@ public class PlayerControls : MonoBehaviour
     public CombatController rightGun;
 
     private bool _canFireRangedWeapons = true;
+    private bool _isSacrificingPal = false;
+    private bool _isAssimilatingBro = false;
+    private bool _isSacrificeOnCooldown = false;
+    private bool _isAssimilateOnCooldown = false;
+    private bool _sacTrigger = false;
+    private bool _simTrigger = false;
     private Rigidbody2D _myRigidBody;
     private Camera _cam;
 
@@ -95,8 +101,66 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
+    private void SacrificeAFriend()
+    {
+        if (Input.GetAxis("Fire2") != 0 && _isSacrificeOnCooldown == false) {
+            _isSacrificingPal = true;
+
+            if (_sacTrigger == false) {
+                _sacTrigger = true;
+                SacrificeRandomCompanion();
+            }
+        } else if (_isSacrificingPal == true) {
+            // Begin cooldown after input stops.
+            _isSacrificingPal = false;
+            _isSacrificeOnCooldown = true;
+
+            Invoke("SacrificeCooldown", 0.2f);
+        }
+    }
+
+    private void AssimilateABuddy()
+    {
+        if (Input.GetAxis("Q") != 0 && _isAssimilateOnCooldown == false) {
+            _isAssimilatingBro = true;
+
+            if (_simTrigger == false) {
+                _simTrigger = true;
+
+                // sim logic here
+            }
+        } else if(_isAssimilatingBro == true) {
+            // Begin cooldown after input stops.
+            _isAssimilatingBro = false;
+            _isAssimilateOnCooldown = true;
+
+            Invoke("AssimilateCooldown", 0.2f);
+        }
+    }
+
+    private void SacrificeRandomCompanion()
+    {
+        GameObject[] companions = GameObject.FindGameObjectsWithTag("");
+
+        if (companions.Length > 0) {
+            // Sacrifice logic here
+        }
+    }
+
     private void FireRangedWeaponsCooldown()
     {
         _canFireRangedWeapons = true;
+    }
+
+    private void SacrificeCooldown()
+    {
+        _isSacrificeOnCooldown = false;
+        _sacTrigger = false;
+    }
+
+    private void AssimilateCooldown()
+    {
+        _isAssimilateOnCooldown = false;
+        _simTrigger = false;
     }
 }

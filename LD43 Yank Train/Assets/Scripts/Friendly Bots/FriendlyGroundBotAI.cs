@@ -68,6 +68,11 @@ public class FriendlyGroundBotAI : MonoBehaviour {
         _myAIController.ActivateAIAfterDelay(0.05f);
     }
 
+    private void OnDestroy()
+    {
+        EventManager.TriggerEvent("companionDeath");
+    }
+
     /// <summary>
     /// For the most part, the Update function in this class acts as an AI registry.
     /// They all know to behave with one another.
@@ -87,8 +92,5 @@ public class FriendlyGroundBotAI : MonoBehaviour {
         _myAIController.AIAttackTarget();
     }
 
-    private void OnDestroy()
-    {
-        EventManager.TriggerEvent("companionDeath");
-    }
+    
 }

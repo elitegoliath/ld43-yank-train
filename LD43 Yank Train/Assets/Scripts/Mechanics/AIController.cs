@@ -14,7 +14,7 @@ public class AIController : MonoBehaviour {
     private bool _canUpdateTracks = false;
     private bool _canSetDestination = false;
     private bool _canFireRangedWeapon = false;
-    private bool _canFindClosesTarget = false;
+    private bool _canFindClosestTarget = false;
     private bool _canUpdatePathToPlayer = false;
     private PolyNavAgent _myNavAgent;
     private List<Transform> _availableDeployLocations;
@@ -136,7 +136,7 @@ public class AIController : MonoBehaviour {
         // TODO: Do better than this.
         _canUpdateTracks = true;
         _canFireRangedWeapon = true;
-        _canFindClosesTarget = true;
+        _canFindClosestTarget = true;
         _canUpdatePathToPlayer = true;
 
         // TODO: Circle collider not guarenteed. Pass in reference to desired collider instead.
@@ -163,13 +163,17 @@ public class AIController : MonoBehaviour {
 
     public void AIFindClosestTarget()
     {
-        if (_canFindClosesTarget == true) {
-            _canFindClosesTarget = false;
+        if (_canFindClosestTarget == true) {
+            _canFindClosestTarget = false;
             GameObject foundTarget = null;
             float targetDistance = Mathf.Infinity;
 
+            // Since other methods may call this again before the invoke fires...
+            // and I don't know if they stack...
+            CancelInvoke("TrackClosestTargetCooldown");
+
             // Doesn't need to update nearly as much as the other routines.
-            Invoke("UpdateTracksCooldown", _checkRangesCooldown * 1.5f);
+            Invoke("TrackClosestTargetCooldown", _checkRangesCooldown * 1.5f);
 
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             GameObject[] transports = GameObject.FindGameObjectsWithTag("Transport");
@@ -206,7 +210,7 @@ public class AIController : MonoBehaviour {
             _canUpdateTracks = false;
 
             if (_target == null) {
-                _canFindClosesTarget = true;
+                _canFindClosestTarget = true;
             } else {
                 // Let's not check too much. Performance + robots can be slow.
                 Invoke("UpdateTracksCooldown", _checkRangesCooldown);
@@ -309,7 +313,7 @@ public class AIController : MonoBehaviour {
     /// </summary>
     private void FaceTarget()
     {
-        if(_target != null) {
+        if (_target != null) {
             Vector2 dir = _target.position - transform.position;
             float rot = -Mathf.Atan2(dir.x, dir.y) * 180 / Mathf.PI;
             float angle = Mathf.MoveTowardsAngle(transform.localEulerAngles.z, rot, _attackingTurnSpeed * Time.deltaTime);
@@ -378,7 +382,7 @@ public class AIController : MonoBehaviour {
 
     private void TrackClosestTargetCooldown()
     {
-        _canFindClosesTarget = true;
+        _canFindClosestTarget = true;
     }
 
     private void UpdatePathToPlayerCooldown()

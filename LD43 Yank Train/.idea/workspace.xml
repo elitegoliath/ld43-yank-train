@@ -2,53 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a68be13d-d689-4da6-a7df-d8c99d7424d8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Music/Yeetus.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Music/Yeetus.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Music/YeetusInGame.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Music/YeetusInGame.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Obj_EnemyBotDestroyed.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Obj_EnemyBotDestroyed.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefab_APCDestroyed.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefab_APCDestroyed.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefab_ParticleExplosion.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefab_ParticleExplosion.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Characters/Bots/EnemyBotDestroyed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Characters/Bots/EnemyBotDestroyed.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Effects/Materials/ParticleCore.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Effects/Materials/ParticleCore.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Effects/ParticleCore.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Effects/ParticleCore.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/Arena Decals.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/Arena Decals.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/Arena Decals.tpsheet" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/DesertBrush.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/DesertBrush.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/DesertShrub.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/DesertShrub.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/DirtDecal.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/DirtDecal.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/GrassMoss.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/GrassMoss.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/GrassShrub.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/GrassShrub.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/ParadoxNotion/PolyNav2D/PolyNav_NodeCanvas.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/Arena Decals.tpsheet.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/ParadoxNotion/PolyNav2D/PolyNav_PlayMaker.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Music.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Dependencies/codeandweb.com/Editor/SettingsTexturePackerImporter.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/codeandweb.com/Editor/SettingsTexturePackerImporter.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefab_APC.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefab_APC.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameArena.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameArena.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Effects/Materials/ParticleFire.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Effects/Materials/ParticleFire.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Environment/Tiles/New Palette.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Tiles/New Palette.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/UI Atlas.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/UI Atlas.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/UI Atlas.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/UI Atlas.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/UI Atlas.tpsheet" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/UI Atlas.tpsheet" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Vehicles/APC.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Vehicles/APC.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Vehicles/APC.tpsheet" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Vehicles/APC.tpsheet" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +14,7 @@
     <session id="63640059">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.36" value="1" />
@@ -182,12 +136,12 @@
       <workItem from="1543642375267" duration="21000" />
       <workItem from="1543721519567" duration="1524000" />
       <workItem from="1543794093778" duration="814000" />
-      <workItem from="1543874985200" duration="807000" />
+      <workItem from="1543874985200" duration="1403000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3363000" />
+    <option name="totallyTimeSpent" value="3959000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="5" y="17" width="1898" height="1047" extended-state="0" />
