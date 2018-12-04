@@ -22,7 +22,6 @@ public class AIController : MonoBehaviour {
     private CombatController _rangedWeaponCombatController;
     private CombatController _myCombatController;
     private Transform _player;
-    
 
     /*****************************************
      *              Lifecycles               *
@@ -344,6 +343,7 @@ public class AIController : MonoBehaviour {
 
     private void SelfDestruct()
     {
+        _myNavAgent.Stop();
         _myCombatController.Die();
     }
 

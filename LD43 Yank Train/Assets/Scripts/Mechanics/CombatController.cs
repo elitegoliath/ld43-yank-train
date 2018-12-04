@@ -248,16 +248,16 @@ public class CombatController : MonoBehaviour {
     public void Die()
     {
         if (_detonatesOnDeath == true) {
-            Instantiate(_detonationEffect, transform);
+            Instantiate(_detonationEffect, transform.position, transform.rotation);
         } else {
             if(_isCompanionOnDeath == true) {
                 Instantiate(_companion, transform.position, transform.rotation);
             } else {
+                SpawnDebris();
                 // small explosion
             }
         }
 
-        SpawnDebris();
         Destroy(gameObject);
     }
 
@@ -278,8 +278,10 @@ public class CombatController : MonoBehaviour {
      ****************************************/
     private void SpawnDebris()
     {
-        Instantiate(_debris, transform.position, transform.rotation);
-        // TODO: Cause explosion FX on death (sound and viz);
+        if (_debris != null) {
+            Instantiate(_debris, transform.position, transform.rotation);
+            // TODO: Cause explosion FX on death (sound and viz);
+        }
     }
 
     public void ChangeEntityColor(int r, int g, int b, int a = 1)

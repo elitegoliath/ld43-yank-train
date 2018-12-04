@@ -1642,11 +1642,11 @@ MonoBehaviour:
   slowingDistance: 2
   accelerationRate: 0.8
   decelerationRate: 0.2
-  lookAheadDistance: 0.7
+  lookAheadDistance: 1
   avoidRadius: 0.48
   avoidanceConsiderStuckedTime: 3
-  avoidanceConsiderReachedDistance: 0.4
-  rotateTransform: 0
+  avoidanceConsiderReachedDistance: 1
+  rotateTransform: 1
   rotateSpeed: 1100
   centerOffset: {x: 0, y: 0}
   repath: 0

@@ -12,6 +12,7 @@ TagManager:
   - WaveController
   - CompanionBot
   - TransportDebris
+  - Suicider
   layers:
   - Default
   - TransparentFX
