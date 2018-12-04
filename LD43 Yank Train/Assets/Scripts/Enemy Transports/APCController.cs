@@ -45,7 +45,6 @@ public class APCController : MonoBehaviour {
     private Vector2 _spawnPoint;
     private Vector2 _destination;
     private CombatController _myCombatController;
-    private bool _canCheckForBodies = false;
     private PolyNav2D _navMapRef;
     private PolyNavObstacle _myObstacle;
 
@@ -103,7 +102,6 @@ public class APCController : MonoBehaviour {
 	private void Update () {
         CheckDestinationReached();
         CheckAPCHasStopped();
-        //BodyChecking();
     }
 
     /// <summary>
@@ -157,11 +155,6 @@ public class APCController : MonoBehaviour {
         Invoke("MakeIntoObstacle", payload);
     }
 
-    private void CheckForBodies()
-    {
-        _canCheckForBodies = true;
-    }
-
     private void MakeIntoObstacle()
     {
         _navMapRef.AddObstacle(_myObstacle);
@@ -171,21 +164,6 @@ public class APCController : MonoBehaviour {
     {
         _navMapRef.RemoveObstacle(_myObstacle);
     }
-
-    //private void BodyChecking()
-    //{
-    //    if (_canCheckForBodies == true) {
-
-    //    }
-    //}
-
-    //private void OnCollisionStay2D(Collision2D collision)
-    //{
-    //    if (_canCheckForBodies == true) {
-
-    //    }
-    //    // AddObstacle
-    //}
 
     private void DropPayload()
     {
