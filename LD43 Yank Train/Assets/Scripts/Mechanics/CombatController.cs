@@ -22,7 +22,7 @@ public class CombatController : MonoBehaviour {
     // Death
     private bool _detonatesOnDeath = false;
     private GameObject _debris;
-    private AudioClip deathExplosionSound;
+    private AudioClip _deathExplosionSound;
 
     public void SetDetonationOnDeath(bool deathBoom)
     {
@@ -239,25 +239,37 @@ public class CombatController : MonoBehaviour {
         }
     }
 
-    public void Die(bool violently = false)
+    public void DieViolently()
+    {
+        SpawnDebris();
+        Destroy(gameObject);
+    }
+
+    public void Die()
     {
         if (_detonatesOnDeath == true) {
-
-        } else if (_isCompanionOnDeath == true && violently == false) {
-            Instantiate(_companion, transform.position, transform.rotation);
+            // Cause self-destruct then...
+            DieViolently();
         } else {
-            Instantiate(_debris, transform.position, transform.rotation);
+            if(_isCompanionOnDeath == true) {
+                Instantiate(_companion, transform.position, transform.rotation);
+            } else {
+                SpawnDebris();
+            }
 
-
-            // TODO: Cause explosion FX on death (sound and viz);
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
     }
 
     /*****************************************
      *               Helpers                 *
      ****************************************/
+    private void SpawnDebris()
+    {
+        Instantiate(_debris, transform.position, transform.rotation);
+        // TODO: Cause explosion FX on death (sound and viz);
+    }
+
     public void ChangeEntityColor(int r, int g, int b, int a = 1)
     {
         Color newColor = new Color(r, g, b, a);
@@ -299,6 +311,6 @@ public class CombatController : MonoBehaviour {
 
         // Instantiate light;
         GameObject newLight = Instantiate(indicatorLight, transform);
-        newLight.transform.localPosition = new Vector3(0, 0, -1);
+        newLight.transform.localPosition = new Vector3(0, 0, -0.7f);
     }
 }

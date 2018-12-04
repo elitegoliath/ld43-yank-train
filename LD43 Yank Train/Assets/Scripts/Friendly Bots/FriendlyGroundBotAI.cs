@@ -25,6 +25,7 @@ public class FriendlyGroundBotAI : MonoBehaviour {
 
     [Header("Effects")]
     public GameObject selfDestructIndicator;
+    public GameObject deathDebris;
 
     // Private Properties
     private CombatController _myCombatController;
@@ -48,6 +49,7 @@ public class FriendlyGroundBotAI : MonoBehaviour {
         _myAIController.SetAttackingTurnSpeed(attackingTurnSpeed);
         _myAIController.SetPlayer();
         _myAIController.InstantiateSpeedDifferential(speedVarience);
+        _myCombatController.SetDebris(deathDebris);
 
         // Initialize nav.
         _myAIController.SetCheckRangesCooldown(checkRangesCooldown);
@@ -106,6 +108,6 @@ public class FriendlyGroundBotAI : MonoBehaviour {
         _myCombatController.SetDetonationOnDeath(true);
 
         GameObject newLight = Instantiate(selfDestructIndicator, transform);
-        newLight.transform.localPosition = new Vector3(0, 0, -1);
+        newLight.transform.localPosition = new Vector3(0, 0, -0.7f);
     }
 }

@@ -22,6 +22,9 @@ public class EnemyGroundBotAI : MonoBehaviour {
     public CombatController rangedWeaponCombatController;
     public GameObject rangedWeaponMunition;
 
+    [Header("Effects")]
+    public GameObject deathDebris;
+
     // Private Properties
     private CombatController _myCombatController;
     private AIController _myAIController;
@@ -41,6 +44,7 @@ public class EnemyGroundBotAI : MonoBehaviour {
         _myAIController.SetAttackDelay(attackDelay);
         _myAIController.SetRangedWeaponCombatController(rangedWeaponCombatController);
         _myAIController.SetAttackingTurnSpeed(attackingTurnSpeed);
+        _myCombatController.SetDebris(deathDebris);
 
         // Initialize nav.
         _myAIController.SetCheckRangesCooldown(checkRangesCooldown);

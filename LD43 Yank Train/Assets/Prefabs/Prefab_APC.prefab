@@ -863,6 +863,8 @@ MonoBehaviour:
   - {fileID: 4261036760662658}
   - {fileID: 4974560167193782}
   - {fileID: 4940073994481920}
+  deathDebris: {fileID: 1492382660746542, guid: 19c0e71261afd0641bde7d92392e3384,
+    type: 2}
 --- !u!114 &114737397733441734
 MonoBehaviour:
   m_ObjectHideFlags: 1

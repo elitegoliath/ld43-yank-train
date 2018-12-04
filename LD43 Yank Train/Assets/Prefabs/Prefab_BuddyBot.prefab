@@ -1778,6 +1778,10 @@ MonoBehaviour:
   rangedWeaponCombatController: {fileID: 114903528608290828}
   rangedWeaponMunition: {fileID: 1273437431022602, guid: c023fe56d9bc64844aa0d992a12ad841,
     type: 2}
+  selfDestructIndicator: {fileID: 1873473179076264, guid: 052bba973009dd243974f9ada61383df,
+    type: 2}
+  deathDebris: {fileID: 1632049444595018, guid: 1638c85e0c90c3d41bc84142912f2b1f,
+    type: 2}
 --- !u!114 &114879587615428174
 MonoBehaviour:
   m_ObjectHideFlags: 1
