@@ -4,22 +4,24 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # http://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:ef32225e06aa3426907e7aff970d9bd2:52c12abe51aff8e08cf4e7870eefed56:ab52e9c49b03b01b90e397c31bcb36b4$
+# $TexturePacker:SmartUpdate:d4113472527538d2371261961879752d:04f1fd848727b4b35861cac5d946f0af:ab52e9c49b03b01b90e397c31bcb36b4$
 #
 :format=40300
 :texture=UI Atlas.png
-:size=1024x1024
+:size=1024x2048
 :pivotpoints=enabled
 :borders=disabled
 
-BotCounterFrame;917;225;100;100; 0.5;0.5; 0;0;0;0
-BuddyBots;860;327;128;128; 0.5;0.5; 0;0;0;0
-Controls;1;457;940;566; 0.5;0.5; 0;0;0;0
-Menu;1;45;400;280; 0.5;0.5; 0;0;0;0
-MenuButton;515;337;300;70; 0.5;0.5; 0;0;0;0
-ProgressBarEmpty;1;337;512;70; 0.5;0.5; 0;0;0;0
-ProgressBarFilled;403;255;512;70; 0.5;0.5; 0;0;0;0
-ProgressBarFrame;403;183;512;70; 0.5;0.5; 0;0;0;0
-ReactorCore;403;53;128;128; 0.5;0.5; 0;0;0;0
-ReactorCoreDamaged;533;53;128;128; 0.5;0.5; 0;0;0;0
-Title;1;409;857;46; 0.5;0.5; 0;0;0;0
+BotCounterFrame;645;895;100;100; 0.5;0.5; 0;0;0;0
+BuddyBots;860;1351;128;128; 0.5;0.5; 0;0;0;0
+Controls;1;1481;940;566; 0.5;0.5; 0;0;0;0
+CreditsContributors;1;1318;592;113; 0.5;0.5; 0;0;0;0
+CreditsTeam;1;1083;552;233; 0.5;0.5; 0;0;0;0
+Menu;595;1069;400;280; 0.5;0.5; 0;0;0;0
+MenuButton;515;997;300;70; 0.5;0.5; 0;0;0;0
+ProgressBarEmpty;1;1011;512;70; 0.5;0.5; 0;0;0;0
+ProgressBarFilled;1;939;512;70; 0.5;0.5; 0;0;0;0
+ProgressBarFrame;1;867;512;70; 0.5;0.5; 0;0;0;0
+ReactorCore;817;939;128;128; 0.5;0.5; 0;0;0;0
+ReactorCoreDamaged;515;867;128;128; 0.5;0.5; 0;0;0;0
+Title;1;1433;857;46; 0.5;0.5; 0;0;0;0
