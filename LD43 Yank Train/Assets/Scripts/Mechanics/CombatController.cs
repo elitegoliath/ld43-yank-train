@@ -23,10 +23,16 @@ public class CombatController : MonoBehaviour {
     private bool _detonatesOnDeath = false;
     private GameObject _debris;
     private AudioClip _deathExplosionSound;
+    private GameObject _detonationEffect;
 
     public void SetDetonationOnDeath(bool deathBoom)
     {
         _detonatesOnDeath = deathBoom;
+    }
+
+    public void SetDetonationEffect(GameObject detonEffect)
+    {
+        _detonationEffect = detonEffect;
     }
 
     /*****************************************
@@ -239,25 +245,31 @@ public class CombatController : MonoBehaviour {
         }
     }
 
-    public void DieViolently()
-    {
-        SpawnDebris();
-        Destroy(gameObject);
-    }
-
     public void Die()
     {
         if (_detonatesOnDeath == true) {
-            // Cause self-destruct then...
-            DieViolently();
+            Instantiate(_detonationEffect, transform);
         } else {
             if(_isCompanionOnDeath == true) {
                 Instantiate(_companion, transform.position, transform.rotation);
             } else {
-                SpawnDebris();
+                // small explosion
             }
+        }
 
-            Destroy(gameObject);
+        SpawnDebris();
+        Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (_detonatesOnDeath == true) {
+            Collider2D col = collision.collider;
+            string tag = col.tag;
+
+            if(tag == "Enemy" || tag == "Transport") {
+                Die();
+            }
         }
     }
 

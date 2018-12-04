@@ -35,6 +35,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4955703162530084}
+  - component: {fileID: 114771969342988958}
   m_Layer: 12
   m_Name: Obj_EnemyBotDestroyed
   m_TagString: Untagged
@@ -69,6 +70,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114771969342988958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1632049444595018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4292d8b7a61825741a94a50516658396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 1760409619119278, guid: 17c813a5ef16c0a4192b3c36eea8b979, type: 2}
 --- !u!212 &212258328111621932
 SpriteRenderer:
   m_ObjectHideFlags: 1

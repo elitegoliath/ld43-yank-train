@@ -26,6 +26,7 @@ public class FriendlyGroundBotAI : MonoBehaviour {
     [Header("Effects")]
     public GameObject selfDestructIndicator;
     public GameObject deathDebris;
+    public GameObject detonationEffect;
 
     // Private Properties
     private CombatController _myCombatController;
@@ -50,6 +51,7 @@ public class FriendlyGroundBotAI : MonoBehaviour {
         _myAIController.SetPlayer();
         _myAIController.InstantiateSpeedDifferential(speedVarience);
         _myCombatController.SetDebris(deathDebris);
+        _myCombatController.SetDetonationEffect(detonationEffect);
 
         // Initialize nav.
         _myAIController.SetCheckRangesCooldown(checkRangesCooldown);

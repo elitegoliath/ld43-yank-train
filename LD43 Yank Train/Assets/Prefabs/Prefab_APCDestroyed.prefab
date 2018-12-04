@@ -98,6 +98,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4009243706336598}
   - component: {fileID: 61603502543580164}
+  - component: {fileID: 114813753195811020}
   m_Layer: 10
   m_Name: Prefab_APCDestroyed
   m_TagString: Transport
@@ -478,6 +479,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.28, y: 8.88}
   m_EdgeRadius: 0
+--- !u!114 &114813753195811020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1492382660746542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4292d8b7a61825741a94a50516658396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 1760409619119278, guid: 17c813a5ef16c0a4192b3c36eea8b979, type: 2}
 --- !u!212 &212103103002822972
 SpriteRenderer:
   m_ObjectHideFlags: 1
