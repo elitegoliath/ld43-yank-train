@@ -110,15 +110,15 @@ namespace PolyNav{
 		}
 
 		///Adds a PolyNavObstacle to the map.
-		void AddObstacle( PolyNavObstacle navObstacle ){
+		public void AddObstacle( PolyNavObstacle navObstacle ){
 			if (!navObstacles.Contains(navObstacle)){
 				navObstacles.Add(navObstacle);
 				regenerateFlag = true;
 			}
 		}
 
-		///Removes a PolyNavObstacle from the map.
-		void RemoveObstacle ( PolyNavObstacle navObstacle ){
+        ///Removes a PolyNavObstacle from the map.
+        public void RemoveObstacle ( PolyNavObstacle navObstacle ){
 			if (navObstacles.Contains(navObstacle)){
 				navObstacles.Remove(navObstacle);
 				regenerateFlag = true;

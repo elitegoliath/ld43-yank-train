@@ -45,6 +45,7 @@ public class APCController : MonoBehaviour {
     private Vector2 _spawnPoint;
     private Vector2 _destination;
     private CombatController _myCombatController;
+    private bool _canCheckForBodies = false;
 
     private void Awake()
     {
@@ -97,6 +98,7 @@ public class APCController : MonoBehaviour {
 	private void Update () {
         CheckDestinationReached();
         CheckAPCHasStopped();
+        //BodyChecking();
     }
 
     /// <summary>
@@ -137,16 +139,6 @@ public class APCController : MonoBehaviour {
 
         _myRigidBody.bodyType = RigidbodyType2D.Kinematic;
 
-        //// Spawns the companion last.
-        //if ((Random.value * 100) <= companionSpawnChance) {
-        //    Invoke("DropCompanionPayload", deployRate * payload);
-        //}
-
-        //// Spawns each payload one at a time for performance and, well, it's pretty awesome.
-        //for (int i = 0; i < payload; i++) {
-        //    Invoke("DropPayload", deployRate * i);
-        //}
-
         for (int i = 0; i < payload; i++) {
             float companionOrNot = Random.Range(0f, 100f);
 
@@ -156,7 +148,45 @@ public class APCController : MonoBehaviour {
                 Invoke("DropPayload", deployRate * i);
             }
         }
+
+        Invoke("MakeIntoObstacle", payload);
     }
+
+    private void CheckForBodies()
+    {
+        _canCheckForBodies = true;
+    }
+
+    private void MakeIntoObstacle()
+    {
+        PolyNav2D navMap = FindObjectOfType<PolyNav2D>();
+        PolyNavObstacle myObs = gameObject.GetComponent<PolyNavObstacle>();
+        //myObs.enabled = true;
+        navMap.AddObstacle(myObs);
+    }
+
+    private void OnDestroy()
+    {
+        PolyNav2D navMap = FindObjectOfType<PolyNav2D>();
+        PolyNavObstacle myObs = gameObject.GetComponent<PolyNavObstacle>();
+        //myObs.enabled = true;
+        navMap.RemoveObstacle(myObs);
+    }
+
+    //private void BodyChecking()
+    //{
+    //    if (_canCheckForBodies == true) {
+
+    //    }
+    //}
+
+    //private void OnCollisionStay2D(Collision2D collision)
+    //{
+    //    if (_canCheckForBodies == true) {
+
+    //    }
+    //    // AddObstacle
+    //}
 
     private void DropPayload()
     {

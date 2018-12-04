@@ -8,7 +8,6 @@ public class SelfDestructExplosion : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Debug.Log("Cause big explosion");
         GameObject explosion = Instantiate(explosionParticles);
         explosion.transform.position = transform.position;
         explosion.transform.localScale = new Vector3(2, 2, 2);
@@ -19,12 +18,11 @@ public class SelfDestructExplosion : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("triggers");
         string tag = collision.tag;
 
         if (tag == "Enemy" || tag == "Transport") {
             CombatController combatController = collision.GetComponent<CombatController>();
-            combatController.Die();
+            combatController.Die(true);
         } else if (tag == "TransportDebris") {
             Destroy(collision.gameObject);
         }
