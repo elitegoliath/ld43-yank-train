@@ -64,6 +64,9 @@ public class FriendlyGroundBotAI : MonoBehaviour {
 
         // Register self with Wave Controller.
         EventManager.TriggerEvent("registerCompanion");
+
+        // Activate initial AI behaviors.
+        _myAIController.ActivateAIAfterDelay(1f);
     }
 
     /// <summary>
@@ -75,8 +78,8 @@ public class FriendlyGroundBotAI : MonoBehaviour {
         // These ranges drive the aggressive behavior of this robot.
         _myAIController.AITrackTarget();
 
-        // Fuck it, we're always lookin to engage. Every fuckin frame.
-        _myAIController.AIEngageTarget();
+        // Follow the leader, as they say.
+        _myAIController.AIFollowPlayer();
 
         // If within weapon range, fire fire fire!!
         _myAIController.AIAttackTarget();
@@ -85,15 +88,5 @@ public class FriendlyGroundBotAI : MonoBehaviour {
     private void OnDestroy()
     {
         EventManager.TriggerEvent("companionDeath");
-    }
-
-    /// <summary>
-    /// Public method for telling the AI to deploy to one of the locations given.
-    /// Each location will be tested before deployment begins.
-    /// </summary>
-    /// <param name="waypoints"></param>
-    public void DeployToRandomLocation(List<Transform> waypoints)
-    {
-        _myAIController.DeployToRandomLocation(waypoints);
     }
 }

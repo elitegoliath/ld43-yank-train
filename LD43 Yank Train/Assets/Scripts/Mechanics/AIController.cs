@@ -123,13 +123,21 @@ public class AIController : MonoBehaviour {
         }
     }
 
+    public void ActivateAIAfterDelay(float delay)
+    {
+        // TODO: If args need to be passed, make coroutine instead, maybe?
+        Invoke("ActivateAI", delay);
+    }
+
     public void ActivateAI()
     {
+        // TODO: Pass in args to initial behavior routines.
         _engageTargetModeActive = true;
         _canUpdateTracks = true;
         _canSetDestination = true;
         _canFireRangedWeapon = true;
 
+        // TODO: Circle collider not guarenteed. Pass in reference to desired collider instead.
         gameObject.GetComponent<CircleCollider2D>().enabled = true;
 
         // Un-register events listeners.
@@ -214,6 +222,11 @@ public class AIController : MonoBehaviour {
         }
     }
 
+    public void AIFollowPlayer()
+    {
+
+    }
+
     /// <summary>
     /// Turns to face the target at the specified rate of rotation.
     /// </summary>
@@ -228,7 +241,7 @@ public class AIController : MonoBehaviour {
     private void Die()
     {
         if (_isCompanionOnDeath) {
-
+            Instantiate(_companion, transform);
         } else {
             // TODO: Spawn debris on death.
             // TODO: Cause explosion FX on death (sound and viz);
