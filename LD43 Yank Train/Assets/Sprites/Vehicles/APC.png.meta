@@ -6,6 +6,12 @@ TextureImporter:
     21300002: APCBody
     21300004: APCGun
     21300006: APCWheel
+    21300008: APCBodyDamaged
+    21300010: APCGunDamaged
+    21300012: APCWheelDamaged
+    21300014: APCBodyDestroyed
+    21300016: APCGunDestroyed
+    21300018: APCWheelDestroyed
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -81,7 +87,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 401
+        y: 1425
         width: 948
         height: 622
       alignment: 9
@@ -91,7 +97,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 92f7c23a071f09f478178eb92dc607c5
+      spriteID: b96b0c35e44147948a4e87d6ac0d01a5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APCBodyDestroyed
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 801
+        width: 948
+        height: 622
+      alignment: 9
+      pivot: {x: 0.4857595, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 825071d052e99314c8c26138ec9126d9
       vertices: []
       indices: 
       edges: []
@@ -101,7 +127,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 233
+        y: 633
         width: 189
         height: 166
       alignment: 0
@@ -111,7 +137,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8505c96b81dfaa34da713adb716051e8
+      spriteID: 10433e3187c8132468fc28c5fab62834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APCGunDestroyed
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 465
+        width: 189
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ef1d8d529350dd49acd4a87f1b3f35a
       vertices: []
       indices: 
       edges: []
@@ -121,7 +167,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 112
+        y: 344
         width: 141
         height: 119
       alignment: 0
@@ -131,7 +177,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b3d31b037b566b749bb35b95f651097b
+      spriteID: 74b1fb1ecee6d474eb87ffc3bd57afba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: APCWheelDestroyed
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 223
+        width: 141
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af2c6be7b811acf43a0c1c60c0271176
       vertices: []
       indices: 
       edges: []
