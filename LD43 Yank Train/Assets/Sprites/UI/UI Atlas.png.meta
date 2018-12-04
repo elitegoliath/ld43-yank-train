@@ -14,6 +14,10 @@ TextureImporter:
     21300018: ReactorCoreDamaged
     21300020: ProgressBarFrame
     21300022: BotCounterFrame
+    21300024: DeathMenu
+    21300026: DeathMenuButton
+    21300028: Menu
+    21300030: MenuButton
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -88,8 +92,8 @@ TextureImporter:
       name: BotCounterFrame
       rect:
         serializedVersion: 2
-        x: 905
-        y: 155
+        x: 391
+        y: 129
         width: 100
         height: 100
       alignment: 0
@@ -99,7 +103,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e06199c0e0c84e845940c4f38d9999a5
+      spriteID: 77143d1598d4f9f4dbd3eadefa5dfb8a
       vertices: []
       indices: 
       edges: []
@@ -108,8 +112,8 @@ TextureImporter:
       name: BuddyBots
       rect:
         serializedVersion: 2
-        x: 515
-        y: 127
+        x: 1
+        y: 101
         width: 128
         height: 128
       alignment: 0
@@ -119,7 +123,47 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 661fec45214b90e4b880047d85a12da9
+      spriteID: 6f9979ed7f5356b4394fb16f6fa2174e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 231
+        width: 400
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 413b8db4b2999b84d8be226dd83b967b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuButton
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 297
+        width: 300
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44cd5fadd3af437458818dfe976c5c52
       vertices: []
       indices: 
       edges: []
@@ -129,7 +173,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 185
+        y: 29
         width: 512
         height: 70
       alignment: 0
@@ -139,7 +183,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79fb946881e167449ba05e9314f57c18
+      spriteID: 5ee977c24b5957f4db745a63e7a536bc
       vertices: []
       indices: 
       edges: []
@@ -148,8 +192,8 @@ TextureImporter:
       name: ProgressBarFilled
       rect:
         serializedVersion: 2
-        x: 1
-        y: 113
+        x: 493
+        y: 441
         width: 512
         height: 70
       alignment: 0
@@ -159,7 +203,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1fa018ecff6fb704f9ebd85b790d236f
+      spriteID: 87610a1c10eca5b4d8e5213ba0b5946f
       vertices: []
       indices: 
       edges: []
@@ -168,8 +212,8 @@ TextureImporter:
       name: ProgressBarFrame
       rect:
         serializedVersion: 2
-        x: 1
-        y: 41
+        x: 493
+        y: 369
         width: 512
         height: 70
       alignment: 0
@@ -179,7 +223,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0d0bcf7a7542d024d8fec99b5f5dec98
+      spriteID: 0e48de2e9bfca31479b38d486dbe94c5
       vertices: []
       indices: 
       edges: []
@@ -188,8 +232,8 @@ TextureImporter:
       name: ReactorCore
       rect:
         serializedVersion: 2
-        x: 645
-        y: 127
+        x: 131
+        y: 101
         width: 128
         height: 128
       alignment: 0
@@ -199,7 +243,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 13758acb88392c24580e61040508ab21
+      spriteID: 2adf600db147d1d449eeeeafd2a1c8db
       vertices: []
       indices: 
       edges: []
@@ -208,8 +252,8 @@ TextureImporter:
       name: ReactorCoreDamaged
       rect:
         serializedVersion: 2
-        x: 775
-        y: 127
+        x: 261
+        y: 101
         width: 128
         height: 128
       alignment: 0
@@ -219,7 +263,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0106937f3295a3e41999b45e292d9637
+      spriteID: f81283bf68bf28f4387d343adc1fca0f
       vertices: []
       indices: 
       edges: []
