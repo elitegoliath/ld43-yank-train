@@ -106,10 +106,18 @@ public class FriendlyGroundBotAI : MonoBehaviour {
     {
         _isAIActive = false;
 
+        // Remove from list of possible sac choices.
+        gameObject.tag = "Suicider";
+
         _myAIController.InitializeSelfDestructSequence(mousePos);
         _myCombatController.SetDetonationOnDeath(true);
 
         GameObject newLight = Instantiate(selfDestructIndicator, transform);
         newLight.transform.localPosition = new Vector3(0, 0, -0.7f);
+    }
+
+    public bool GetCanSac()
+    {
+        return _isAIActive;
     }
 }
