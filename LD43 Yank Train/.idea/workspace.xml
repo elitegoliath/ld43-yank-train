@@ -2,11 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a68be13d-d689-4da6-a7df-d8c99d7424d8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefab_BuddyBot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefab_BuddyBot.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Music/Yeetus.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Music/Yeetus.mp3.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Music/YeetusInGame.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Music/YeetusInGame.mp3.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Obj_EnemyBotDestroyed.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Obj_EnemyBotDestroyed.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefab_APCDestroyed.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefab_APCDestroyed.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefab_ParticleExplosion.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefab_ParticleExplosion.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Characters/Bots/EnemyBotDestroyed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Characters/Bots/EnemyBotDestroyed.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Effects/Materials/ParticleCore.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Effects/Materials/ParticleCore.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Effects/ParticleCore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Effects/ParticleCore.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/Arena Decals.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/Arena Decals.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/Arena Decals.tpsheet" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/DesertBrush.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/DesertBrush.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/DesertShrub.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/DesertShrub.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/DirtDecal.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/DirtDecal.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/GrassMoss.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/GrassMoss.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/GrassShrub.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/GrassShrub.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/ParadoxNotion/PolyNav2D/PolyNav_NodeCanvas.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Decals/Arena Decals.tpsheet.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/ParadoxNotion/PolyNav2D/PolyNav_PlayMaker.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Music.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Dependencies/codeandweb.com/Editor/SettingsTexturePackerImporter.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dependencies/codeandweb.com/Editor/SettingsTexturePackerImporter.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefab_APC.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefab_APC.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameArena.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameArena.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy Bots/EnemyGroundBotAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy Bots/EnemyGroundBotAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Friendly Bots/FriendlyGroundBotAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Friendly Bots/FriendlyGroundBotAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mechanics/AIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mechanics/AIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Effects/Materials/ParticleFire.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Effects/Materials/ParticleFire.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Environment/Tiles/New Palette.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Environment/Tiles/New Palette.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/UI Atlas.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/UI Atlas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/UI Atlas.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/UI Atlas.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/UI/UI Atlas.tpsheet" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/UI/UI Atlas.tpsheet" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Vehicles/APC.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Vehicles/APC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Vehicles/APC.tpsheet" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Vehicles/APC.tpsheet" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,8 +86,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player Scripts/PlayerControls.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+            <state relative-caret-position="330">
+              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -64,7 +106,7 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="5" />
     <option name="y" value="17" />
     <option name="width" value="1898" />
@@ -140,18 +182,17 @@
       <workItem from="1543642375267" duration="21000" />
       <workItem from="1543721519567" duration="1524000" />
       <workItem from="1543794093778" duration="814000" />
-      <workItem from="1543874985200" duration="726000" />
+      <workItem from="1543874985200" duration="807000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3282000" />
+    <option name="totallyTimeSpent" value="3363000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="5" y="17" width="1898" height="1047" extended-state="1" />
-    <editor active="true" />
+    <frame x="5" y="17" width="1898" height="1047" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20293798" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20293798" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -164,7 +205,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.15443593" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.15443593" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -181,8 +222,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player Scripts/PlayerControls.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+        <state relative-caret-position="330">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
         </state>
       </provider>
     </entry>
