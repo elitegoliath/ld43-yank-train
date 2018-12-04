@@ -133,14 +133,24 @@ public class APCController : MonoBehaviour {
 
         _myRigidBody.bodyType = RigidbodyType2D.Kinematic;
 
-        // Spawns the companion last.
-        if ((Random.value * 100) <= companionSpawnChance) {
-            Invoke("DropCompanionPayload", deployRate * payload);
-        }
+        //// Spawns the companion last.
+        //if ((Random.value * 100) <= companionSpawnChance) {
+        //    Invoke("DropCompanionPayload", deployRate * payload);
+        //}
 
-        // Spawns each payload one at a time for performance and, well, it's pretty awesome.
+        //// Spawns each payload one at a time for performance and, well, it's pretty awesome.
+        //for (int i = 0; i < payload; i++) {
+        //    Invoke("DropPayload", deployRate * i);
+        //}
+
         for (int i = 0; i < payload; i++) {
-            Invoke("DropPayload", deployRate * i);
+            float companionOrNot = Random.Range(0f, 100f);
+
+            if (companionOrNot <= companionSpawnChance) {
+                Invoke("DropCompanionPayload", deployRate * i);
+            } else {
+                Invoke("DropPayload", deployRate * i);
+            }
         }
     }
 
@@ -157,7 +167,8 @@ public class APCController : MonoBehaviour {
         GameObject freshSpawn = Instantiate(payloadPrefab);
         freshSpawn.transform.position = transform.position;
         AIController freshSpawnAI = freshSpawn.GetComponent<AIController>();
-        freshSpawnAI.InstantiateCompanionOnDeath(companionPrefab, companionLightIndicator);
+        CombatController freshSpawnCombatController = freshSpawn.GetComponent<CombatController>();
+        freshSpawnCombatController.InstantiateCompanionOnDeath(companionPrefab, companionLightIndicator);
         freshSpawnAI.DeployToRandomLocation(deployLocatons);
     }
 

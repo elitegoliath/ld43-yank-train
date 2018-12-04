@@ -10,9 +10,9 @@ public class FriendlyGroundBotAI : MonoBehaviour {
     [Header("Characteristics")]
     public int maxHealth = 10;
     public int armor = 1;
-    public float moveSpeed = 100f;
     public float attackingTurnSpeed = 30f;
-    //public float followRange = 1f;
+    public float followRange = 2f;
+    public float speedVarience = 2f;
 
     [Header("Weapon Stats")]
     public float attackRange = 5f;
@@ -25,16 +25,12 @@ public class FriendlyGroundBotAI : MonoBehaviour {
 
     // Private Properties
     private CombatController _myCombatController;
-    private Rigidbody2D _myRigidBody;
-    private PolyNavAgent _myNavAgent;
     private AIController _myAIController;
 
     private void Awake()
     {
         // Get components
-        _myRigidBody = gameObject.GetComponent<Rigidbody2D>();
         _myCombatController = gameObject.GetComponent<CombatController>();
-        _myNavAgent = gameObject.GetComponent<PolyNavAgent>();
         _myAIController = gameObject.GetComponent<AIController>();
     }
 
@@ -42,10 +38,12 @@ public class FriendlyGroundBotAI : MonoBehaviour {
     {
         // TODO: Categorize these.
         _myAIController.SetAttackRange(attackRange);
-        //_myAIController.SetEnagementRange(engagementRange);
+        _myAIController.SetFollowRange(followRange);
         _myAIController.SetAttackDelay(attackDelay);
         _myAIController.SetRangedWeaponCombatController(rangedWeaponCombatController);
         _myAIController.SetAttackingTurnSpeed(attackingTurnSpeed);
+        _myAIController.SetPlayer();
+        _myAIController.InstantiateSpeedDifferential(speedVarience);
 
         // Initialize nav.
         _myAIController.SetCheckRangesCooldown(checkRangesCooldown);
@@ -76,6 +74,9 @@ public class FriendlyGroundBotAI : MonoBehaviour {
     /// </summary>
     private void Update()
     {
+        // Lot's of targets to chose from. Keep an eye out...
+        _myAIController.AIFindClosestTarget();
+
         // These ranges drive the aggressive behavior of this robot.
         _myAIController.AITrackTarget();
 

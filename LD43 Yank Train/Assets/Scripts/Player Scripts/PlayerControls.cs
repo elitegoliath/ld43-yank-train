@@ -20,12 +20,9 @@ public class PlayerControls : MonoBehaviour
     private bool _canFireRangedWeapons = true;
     private Rigidbody2D _myRigidBody;
     private Camera _cam;
-    private CombatController _myCombatController;
 
     private void Awake()
     {
-        _myCombatController = gameObject.GetComponent<CombatController>();
-
         leftGun.SetRangedWeaponStats(0f, rangedWeaponRange, rangedWeaponDamage, rangedWeaponMunition);
         rightGun.SetRangedWeaponStats(0f, rangedWeaponRange, rangedWeaponDamage, rangedWeaponMunition);
     }

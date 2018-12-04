@@ -7,21 +7,20 @@ public class AIController : MonoBehaviour {
     private float _checkRangesCooldown = 0.2f;
     private float _attackRange = 5f;
     private float _attackDelay = 1f;
+    private float _followRange = 2f;
     private float _engagementRange = 3f;
     private float _attackingTurnSpeed = 30f;
     private bool _attackTargetModeActive = false;
-    private bool _engageTargetModeActive = false;
     private bool _canUpdateTracks = false;
     private bool _canSetDestination = false;
     private bool _canFireRangedWeapon = false;
-    private bool _isCompanionOnDeath = false;
+    private bool _canFindClosesTarget = false;
+    private bool _canUpdatePathToPlayer = false;
     private PolyNavAgent _myNavAgent;
     private List<Transform> _availableDeployLocations;
     private Transform _target;
-    private CombatController _targetCombatController;
     private CombatController _rangedWeaponCombatController;
-    private GameObject _companionLightIndicator;
-    private GameObject _companion;
+    private Transform _player;
 
     /*****************************************
      *              Lifecycles               *
@@ -33,6 +32,8 @@ public class AIController : MonoBehaviour {
         // Register events listeners.
         _myNavAgent.OnDestinationReached += ActivateAI;
         _myNavAgent.OnDestinationInvalid += PickNewDeployLocation;
+
+        Invoke("forceColliderActivation", 2f);
     }
 
     private void OnDestroy()
@@ -40,6 +41,12 @@ public class AIController : MonoBehaviour {
         // Un-register events listeners again, just in case.
         _myNavAgent.OnDestinationReached -= ActivateAI;
         _myNavAgent.OnDestinationInvalid -= PickNewDeployLocation;
+        _myNavAgent.OnDestinationInvalid -= ShamefulDeath;
+    }
+
+    private void forceColliderActivation()
+    {
+        gameObject.GetComponent<CircleCollider2D>().enabled = true;
     }
 
     /*****************************************
@@ -63,7 +70,6 @@ public class AIController : MonoBehaviour {
     public void SetTarget(GameObject target)
     {
         _target = target.GetComponent<Transform>();
-        _targetCombatController = target.GetComponent<CombatController>();
     }
 
     public void SetCheckRangesCooldown(float cooldown)
@@ -81,19 +87,15 @@ public class AIController : MonoBehaviour {
         _attackingTurnSpeed = attackingTurnSpeed;
     }
 
-    public void SetCompanionOnDeath(bool companionOnDeath)
+    public void SetPlayer()
     {
-        _isCompanionOnDeath = companionOnDeath;
+        GameObject playerRef = GameObject.FindGameObjectWithTag("Player");
+        _player = playerRef.GetComponent<Transform>();
     }
 
-    public void SetCompanionLightIndicator(GameObject light)
+    public void SetFollowRange(float followRange)
     {
-        _companionLightIndicator = light;
-    }
-
-    public void SetCompanion(GameObject companion)
-    {
-        _companion = companion;
+        _followRange = followRange;
     }
 
     /*****************************************
@@ -117,7 +119,7 @@ public class AIController : MonoBehaviour {
     {
         // If no deploy locations are viable, fuckin die.
         if (_availableDeployLocations.Count == 0) {
-            Die();
+            ShamefulDeath();
         } else {
             DeployToRandomLocation(_availableDeployLocations);
         }
@@ -134,6 +136,8 @@ public class AIController : MonoBehaviour {
         // TODO: Do better than this.
         _canUpdateTracks = true;
         _canFireRangedWeapon = true;
+        _canFindClosesTarget = true;
+        _canUpdatePathToPlayer = true;
 
         // TODO: Circle collider not guarenteed. Pass in reference to desired collider instead.
         gameObject.GetComponent<CircleCollider2D>().enabled = true;
@@ -142,7 +146,6 @@ public class AIController : MonoBehaviour {
     public void ActivateAI()
     {
         // TODO: Do better than this.
-        _engageTargetModeActive = true;
         _canUpdateTracks = true;
         _canSetDestination = true;
         _canFireRangedWeapon = true;
@@ -153,6 +156,45 @@ public class AIController : MonoBehaviour {
         // Un-register events listeners.
         _myNavAgent.OnDestinationReached -= ActivateAI;
         _myNavAgent.OnDestinationInvalid -= PickNewDeployLocation;
+
+        // Register new "stuck" event listener;
+        _myNavAgent.OnDestinationInvalid += ShamefulDeath;
+    }
+
+    public void AIFindClosestTarget()
+    {
+        if (_canFindClosesTarget == true) {
+            _canFindClosesTarget = false;
+            GameObject foundTarget = null;
+            float targetDistance = Mathf.Infinity;
+
+            // Doesn't need to update nearly as much as the other routines.
+            Invoke("UpdateTracksCooldown", _checkRangesCooldown * 1.5f);
+
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            GameObject[] transports = GameObject.FindGameObjectsWithTag("Transport");
+            Vector3 myPos = transform.position;
+
+            foreach (GameObject enemy in enemies) {
+                float dist = Vector3.Distance(enemy.transform.position, myPos);
+                if (dist < targetDistance) {
+                    foundTarget = enemy;
+                    targetDistance = dist;
+                }
+            }
+
+            foreach(GameObject transport in transports) {
+                float dist = Vector3.Distance(transport.transform.position, myPos);
+                if(dist < targetDistance) {
+                    foundTarget = transport;
+                    targetDistance = dist;
+                }
+            }
+
+            if (foundTarget != null) {
+                SetTarget(foundTarget);
+            }
+        }
     }
 
     /// <summary>
@@ -160,20 +202,24 @@ public class AIController : MonoBehaviour {
     /// </summary>
     public void AITrackTarget()
     {
-        if(_canUpdateTracks == true) {
+        if (_canUpdateTracks == true) {
             _canUpdateTracks = false;
 
-            // Let's not check too much. Performance + robots can be slow.
-            Invoke("UpdateTracksCooldown", _checkRangesCooldown);
-
-            // Set flag to allow for attacks.
-            _attackTargetModeActive = CheckWithinRange(_target.position, _attackRange);
-
-            // If attacking, we want to be in charge of rotation. Otherwise let the nav do it.
-            if(_attackTargetModeActive) {
-                _myNavAgent.rotateTransform = false;
+            if (_target == null) {
+                _canFindClosesTarget = true;
             } else {
-                _myNavAgent.rotateTransform = true;
+                // Let's not check too much. Performance + robots can be slow.
+                Invoke("UpdateTracksCooldown", _checkRangesCooldown);
+
+                // Set flag to allow for attacks.
+                _attackTargetModeActive = CheckWithinRange(_target.position, _attackRange);
+
+                // If attacking, we want to be in charge of rotation. Otherwise let the nav do it.
+                if(_attackTargetModeActive == true) {
+                    _myNavAgent.rotateTransform = false;
+                } else {
+                    _myNavAgent.rotateTransform = true;
+                }
             }
         }
     }
@@ -186,6 +232,7 @@ public class AIController : MonoBehaviour {
         // Refresh the destination to the target since, you know, they tend to move.
         if(_canSetDestination) {
             _canSetDestination = false;
+
             Invoke("SetDestinationCooldown", _checkRangesCooldown);
 
             // If AI is currently pathing after the traget...
@@ -193,23 +240,26 @@ public class AIController : MonoBehaviour {
                 bool isInEngagementRange = _myNavAgent.remainingDistance <= _engagementRange;
 
                 // Stop navigation, clear path.
-                if(isInEngagementRange == true) {
+                if (isInEngagementRange == true) {
                     _myNavAgent.Stop();
-                    //_myNavAgent.activePath.Clear();
-                } else {
+                } else if (_target != null) {
                     // Otherwise, update the path.
                     _myNavAgent.SetDestination(_target.position);
                 }
-            } else {
+            } else if (_target != null) {
                 // If no path exists, AI is not moving. Check range then start moving if needed.
                 _myNavAgent.SetDestination(_target.position);
-                bool isInRange = _myNavAgent.remainingDistance <= _engagementRange;
 
-                // If Ai is still close enough to the target, don't start moving again. Clear the set path.
-                if(isInRange == true) {
-                    //_myNavAgent.activePath.Clear();
-                    _myNavAgent.Stop();
-                }
+                /**
+                 * RECENTLY DISABLED
+                 * 
+                 */
+                //bool isInRange = _myNavAgent.remainingDistance <= _engagementRange;
+
+                //// If AI is still close enough to the target, don't start moving again. Clear the set path.
+                //if (isInRange == true) {
+                //    _myNavAgent.Stop();
+                //}
             }
         }
     }
@@ -220,21 +270,38 @@ public class AIController : MonoBehaviour {
     /// </summary>
     public void AIAttackTarget()
     {
-        if(_attackTargetModeActive == true) {
-            FaceTarget();
+        if (_attackTargetModeActive == true) {
+            if (_target == null) {
+                _attackTargetModeActive = false;
+                _myNavAgent.rotateTransform = true;
+            } else {
+                FaceTarget();
 
-            // Fire ranged weapon if not on cooldown. Set on cooldown.
-            if(_canFireRangedWeapon == true) {
-                _canFireRangedWeapon = false;
-                Invoke("FireRangedWeaponCooldown", _attackDelay);
-                _rangedWeaponCombatController.FireRangedWeapon();
+                // Fire ranged weapon if not on cooldown. Set on cooldown.
+                if(_canFireRangedWeapon == true) {
+                    _canFireRangedWeapon = false;
+
+                    Invoke("FireRangedWeaponCooldown", _attackDelay);
+                    _rangedWeaponCombatController.FireRangedWeapon();
+                }
             }
         }
     }
 
     public void AIFollowPlayer()
     {
+        if (_canUpdatePathToPlayer == true) {
+            _canUpdatePathToPlayer = false;
 
+            Invoke("UpdatePathToPlayerCooldown", _checkRangesCooldown * 1.2f);
+
+            bool isWithinFollowRange = CheckWithinRange(_player.position, _followRange);
+
+            // If outside of the follow range, move and stuff.
+            if (isWithinFollowRange == false) {
+                _myNavAgent.SetDestination(_player.position);
+            }
+        }
     }
 
     /// <summary>
@@ -242,21 +309,16 @@ public class AIController : MonoBehaviour {
     /// </summary>
     private void FaceTarget()
     {
-        Vector2 dir = _target.position - transform.position;
-        float rot = -Mathf.Atan2(dir.x, dir.y) * 180 / Mathf.PI;
-        float angle = Mathf.MoveTowardsAngle(transform.localEulerAngles.z, rot, _attackingTurnSpeed * Time.deltaTime);
-        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, angle);
+        if(_target != null) {
+            Vector2 dir = _target.position - transform.position;
+            float rot = -Mathf.Atan2(dir.x, dir.y) * 180 / Mathf.PI;
+            float angle = Mathf.MoveTowardsAngle(transform.localEulerAngles.z, rot, _attackingTurnSpeed * Time.deltaTime);
+            transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, angle);
+        }
     }
 
-    private void Die()
+    private void ShamefulDeath()
     {
-        if (_isCompanionOnDeath) {
-            Instantiate(_companion, transform);
-        } else {
-            // TODO: Spawn debris on death.
-            // TODO: Cause explosion FX on death (sound and viz);
-        }
-
         Destroy(gameObject);
     }
 
@@ -267,10 +329,10 @@ public class AIController : MonoBehaviour {
     /// Returns whether the target is within given range.
     /// </summary>
     /// <returns></returns>
-    private bool CheckWithinRange(Vector2 targetPosition, float range)
+    private bool CheckWithinRange(Vector3 targetPosition, float range)
     {
         bool retVal = false;
-        float distance = Vector2.Distance(transform.position, targetPosition);
+        float distance = Vector3.Distance(targetPosition, transform.position);
 
         if(distance <= range) {
             retVal = true;
@@ -279,17 +341,12 @@ public class AIController : MonoBehaviour {
         return retVal;
     }
 
-    public void InstantiateCompanionOnDeath(GameObject companionPrefab, GameObject indicatorLight)
+    public void InstantiateSpeedDifferential(float differencePotential)
     {
-        // Set properties.
-        _companion = companionPrefab;
-        _companionLightIndicator = indicatorLight;
-        _isCompanionOnDeath = true;
+        float maxSpeed = _myNavAgent.maxSpeed;
+        float minSpeed = Mathf.Abs(maxSpeed - differencePotential);
 
-        // Instantiate light;
-        GameObject newLight = Instantiate(indicatorLight);
-        newLight.transform.parent = transform;
-        newLight.transform.localPosition = Vector3.zero;
+        _myNavAgent.maxSpeed = Random.Range(minSpeed, maxSpeed);
     }
 
     /*****************************************
@@ -317,5 +374,15 @@ public class AIController : MonoBehaviour {
     private void SetDestinationCooldown()
     {
         _canSetDestination = true;
+    }
+
+    private void TrackClosestTargetCooldown()
+    {
+        _canFindClosesTarget = true;
+    }
+
+    private void UpdatePathToPlayerCooldown()
+    {
+        _canUpdatePathToPlayer = true;
     }
 }

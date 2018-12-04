@@ -10,7 +10,6 @@ public class EnemyGroundBotAI : MonoBehaviour {
     [Header("Characteristics")]
     public int maxHealth = 10;
     public int armor = 1;
-    public float moveSpeed = 100f;
     public float attackingTurnSpeed = 30f;
     public float engagementRange = 3f;
     
@@ -25,16 +24,12 @@ public class EnemyGroundBotAI : MonoBehaviour {
 
     // Private Properties
     private CombatController _myCombatController;
-    private Rigidbody2D _myRigidBody;
-    private PolyNavAgent _myNavAgent;
     private AIController _myAIController;
 
     private void Awake()
     {
         // Get components
-        _myRigidBody = gameObject.GetComponent<Rigidbody2D>();
         _myCombatController = gameObject.GetComponent<CombatController>();
-        _myNavAgent = gameObject.GetComponent<PolyNavAgent>();
         _myAIController = gameObject.GetComponent<AIController>();
     }
 

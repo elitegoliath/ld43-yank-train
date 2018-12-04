@@ -13,9 +13,12 @@ public class CombatController : MonoBehaviour {
     private float _weaponDelay = 2f;
     private float _weaponAccuracy = 10f;
     private int _weaponDamage = 1;
+    private bool _isCompanionOnDeath = false;
     private GameObject _weaponMunition;
     private GameObject _debris;
     private List<SpriteRenderer> _mySprites = new List<SpriteRenderer>();
+    private List<Color> _defaultColors = new List<Color>();
+    private GameObject _companion;
 
     /*****************************************
      *              Max Health               *
@@ -142,6 +145,16 @@ public class CombatController : MonoBehaviour {
         _debris = debris;
     }
 
+    public void SetCompanion(GameObject companion)
+    {
+        _companion = companion;
+    }
+
+    public void SetCompanionOnDeath(bool companionOnDeath)
+    {
+        _isCompanionOnDeath = companionOnDeath;
+    }
+
     /*****************************************
      *            Ranged Weapon              *
      ****************************************/
@@ -198,6 +211,9 @@ public class CombatController : MonoBehaviour {
         // If sprites aren't cached, do it.
         if (_mySprites.Count == 0) {
             _mySprites = new List<SpriteRenderer>(gameObject.GetComponentsInChildren<SpriteRenderer>());
+            foreach (SpriteRenderer sprite in _mySprites) {
+                _defaultColors.Add(sprite.color);
+            }
         }
 
         foreach (SpriteRenderer sprite in _mySprites) {
@@ -214,9 +230,14 @@ public class CombatController : MonoBehaviour {
         }
     }
 
-    public void Die()
+    private void Die()
     {
-        //Instantiate(_debris, transform.position, transform.rotation);
+        if(_isCompanionOnDeath == true) {
+            Instantiate(_companion, transform.position, transform.rotation);
+        } else {
+            // TODO: Spawn debris on death.
+            // TODO: Cause explosion FX on death (sound and viz);
+        }
 
         Destroy(gameObject);
     }
@@ -252,8 +273,19 @@ public class CombatController : MonoBehaviour {
 
     public void SetDefaultSpriteColors()
     {
-        foreach(SpriteRenderer sprite in _mySprites) {
-            sprite.color = Color.white;
+        for (int i = 0; i < _mySprites.Count; i++) {
+            _mySprites[i].color = _defaultColors[i];
         }
+    }
+
+    public void InstantiateCompanionOnDeath(GameObject companionPrefab, GameObject indicatorLight)
+    {
+        // Set properties.
+        _companion = companionPrefab;
+        _isCompanionOnDeath = true;
+
+        // Instantiate light;
+        GameObject newLight = Instantiate(indicatorLight, transform);
+        newLight.transform.localPosition = new Vector3(0, 0, -1);
     }
 }

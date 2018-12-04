@@ -1404,7 +1404,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202173623782010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -13.692608, y: 3.259665, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4096437240301728}
@@ -1638,14 +1638,14 @@ MonoBehaviour:
   _map: {fileID: 0}
   maxSpeed: 8
   mass: 50
-  stoppingDistance: 0.01
+  stoppingDistance: 0.1
   slowingDistance: 2
   accelerationRate: 0.8
   decelerationRate: 0.2
-  lookAheadDistance: 0.25
-  avoidRadius: 0.6
+  lookAheadDistance: 0.7
+  avoidRadius: 0.48
   avoidanceConsiderStuckedTime: 3
-  avoidanceConsiderReachedDistance: 0.05
+  avoidanceConsiderReachedDistance: 0.4
   rotateTransform: 0
   rotateSpeed: 1100
   centerOffset: {x: 0, y: 0}
@@ -1848,14 +1848,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b38d93b95422e44808e24a58a44190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkRangesCooldown: 0.5
+  checkRangesCooldown: 1
   maxHealth: 10
   armor: 1
-  moveSpeed: 110
   attackingTurnSpeed: 35
   engagementRange: 6
-  companionLightIndicator: {fileID: 1873473179076264, guid: dd00fb9fecef2264abf05bc6901a31f5,
-    type: 2}
   attackRange: 8
   attackDelay: 0.7
   accuracy: 20

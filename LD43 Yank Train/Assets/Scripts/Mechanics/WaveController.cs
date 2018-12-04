@@ -95,6 +95,7 @@ public class WaveController : MonoBehaviour {
         _currentWave++;
 
         if (_currentWave > numberOfWaves) {
+            // JK, leave this be.
             // TODO: Do some end-game shit here. Also, early return because fuck it.
         }
 
@@ -152,8 +153,10 @@ public class WaveController : MonoBehaviour {
     private void CheckDeathThreshold()
     {
         // If enough enemies are dead, set timer for the next wave.
-        if(_enemiesAlive <= enemyEndWaveThreshold && _isWaveActive == true) {
-            _isWaveActive = false;
+        // Threshold not important.
+        //if (_enemiesAlive <= enemyEndWaveThreshold && _isWaveActive == true) {
+        if (_enemiesAlive == 0 && _isWaveActive == true) {
+                _isWaveActive = false;
 
             // If we start the countdown now, we need to use "now" as a point of reference.
             // Time is all made up. It's all relative. Whatever.

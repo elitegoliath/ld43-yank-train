@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a68be13d-d689-4da6-a7df-d8c99d7424d8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Prefab_BuddyBot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Prefab_BuddyBot.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameArena.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameArena.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy Bots/EnemyGroundBotAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy Bots/EnemyGroundBotAI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Friendly Bots/FriendlyGroundBotAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Friendly Bots/FriendlyGroundBotAI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Mechanics/AIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Mechanics/AIController.cs" afterDir="false" />
     </list>

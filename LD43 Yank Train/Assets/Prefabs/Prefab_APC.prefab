@@ -841,7 +841,7 @@ MonoBehaviour:
   maxHealth: 200
   armor: 5
   attackRange: 20
-  weaponRange: 1.5
+  weaponRange: 1
   weaponDelay: 0.35
   weaponAccuracy: 20
   weaponDamage: 1
@@ -851,7 +851,7 @@ MonoBehaviour:
   aftTurret: {fileID: 1624798307895634}
   minPayload: 1
   maxPayload: 3
-  companionSpawnChance: 100
+  companionSpawnChance: 50
   deployRate: 0.5
   payloadPrefab: {fileID: 1202173623782010, guid: b8c1f37e3d58e0b41823adc5d6348037,
     type: 2}
