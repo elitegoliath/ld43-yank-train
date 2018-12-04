@@ -15,10 +15,19 @@ public class CombatController : MonoBehaviour {
     private int _weaponDamage = 1;
     private bool _isCompanionOnDeath = false;
     private GameObject _weaponMunition;
-    private GameObject _debris;
     private List<SpriteRenderer> _mySprites = new List<SpriteRenderer>();
     private List<Color> _defaultColors = new List<Color>();
     private GameObject _companion;
+
+    // Death
+    private bool _detonatesOnDeath = false;
+    private GameObject _debris;
+    private AudioClip deathExplosionSound;
+
+    public void SetDetonationOnDeath(bool deathBoom)
+    {
+        _detonatesOnDeath = deathBoom;
+    }
 
     /*****************************************
      *              Max Health               *
@@ -230,12 +239,16 @@ public class CombatController : MonoBehaviour {
         }
     }
 
-    private void Die()
+    public void Die(bool violently = false)
     {
-        if(_isCompanionOnDeath == true) {
+        if (_detonatesOnDeath == true) {
+
+        } else if (_isCompanionOnDeath == true && violently == false) {
             Instantiate(_companion, transform.position, transform.rotation);
         } else {
-            // TODO: Spawn debris on death.
+            Instantiate(_debris, transform.position, transform.rotation);
+
+
             // TODO: Cause explosion FX on death (sound and viz);
         }
 

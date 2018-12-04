@@ -23,9 +23,13 @@ public class FriendlyGroundBotAI : MonoBehaviour {
     public CombatController rangedWeaponCombatController;
     public GameObject rangedWeaponMunition;
 
+    [Header("Effects")]
+    public GameObject selfDestructIndicator;
+
     // Private Properties
     private CombatController _myCombatController;
     private AIController _myAIController;
+    private bool _isAIActive = true;
 
     private void Awake()
     {
@@ -79,18 +83,29 @@ public class FriendlyGroundBotAI : MonoBehaviour {
     /// </summary>
     private void Update()
     {
-        // Lot's of targets to chose from. Keep an eye out...
-        _myAIController.AIFindClosestTarget();
+        if (_isAIActive == true) {
+            // Lot's of targets to chose from. Keep an eye out...
+            _myAIController.AIFindClosestTarget();
 
-        // These ranges drive the aggressive behavior of this robot.
-        _myAIController.AITrackTarget();
+            // These ranges drive the aggressive behavior of this robot.
+            _myAIController.AITrackTarget();
 
-        // Follow the leader, as they say.
-        _myAIController.AIFollowPlayer();
+            // Follow the leader, as they say.
+            _myAIController.AIFollowPlayer();
 
-        // If within weapon range, fire fire fire!!
-        _myAIController.AIAttackTarget();
+            // If within weapon range, fire fire fire!!
+            _myAIController.AIAttackTarget();
+        }
     }
 
-    
+    public void SacrificeSelf(Vector3 mousePos)
+    {
+        _isAIActive = false;
+
+        _myAIController.InitializeSelfDestructSequence(mousePos);
+        _myCombatController.SetDetonationOnDeath(true);
+
+        GameObject newLight = Instantiate(selfDestructIndicator, transform);
+        newLight.transform.localPosition = new Vector3(0, 0, -1);
+    }
 }

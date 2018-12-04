@@ -33,18 +33,21 @@ public class AIController : MonoBehaviour {
         _myNavAgent.OnDestinationReached += ActivateAI;
         _myNavAgent.OnDestinationInvalid += PickNewDeployLocation;
 
-        Invoke("forceColliderActivation", 2f);
+        Invoke("ForceColliderActivation", 2f);
     }
 
     private void OnDestroy()
     {
         // Un-register events listeners again, just in case.
         _myNavAgent.OnDestinationReached -= ActivateAI;
+        _myNavAgent.OnDestinationReached -= SelfDestruct;
         _myNavAgent.OnDestinationInvalid -= PickNewDeployLocation;
         _myNavAgent.OnDestinationInvalid -= ShamefulDeath;
+        _myNavAgent.OnDestinationInvalid -= SelfDestruct;
+        CancelInvoke("ActivateAltAI");
     }
 
-    private void forceColliderActivation()
+    private void ForceColliderActivation()
     {
         gameObject.GetComponent<CircleCollider2D>().enabled = true;
     }
@@ -319,6 +322,22 @@ public class AIController : MonoBehaviour {
             float angle = Mathf.MoveTowardsAngle(transform.localEulerAngles.z, rot, _attackingTurnSpeed * Time.deltaTime);
             transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, angle);
         }
+    }
+
+    public void InitializeSelfDestructSequence(Vector3 destination)
+    {
+        _myNavAgent.OnDestinationInvalid -= ShamefulDeath;
+        _myNavAgent.rotateTransform = true;
+        _myNavAgent.Stop();
+
+        // Explode if no collision and pathing is finished.
+        _myNavAgent.OnDestinationReached += SelfDestruct;
+        _myNavAgent.OnDestinationInvalid += SelfDestruct;
+    }
+
+    private void SelfDestruct()
+    {
+        // Create self destruct explosion
     }
 
     private void ShamefulDeath()
