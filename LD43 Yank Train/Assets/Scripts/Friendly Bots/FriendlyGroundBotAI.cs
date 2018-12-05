@@ -133,8 +133,8 @@ public class FriendlyGroundBotAI : MonoBehaviour {
 
         // emit particles for a bit before dying;
         ParticleSystem regenSparkles = Instantiate(assimilationParticles, transform);
-        regenSparkles.transform.localScale = new Vector3(0.08f, 0.08f, 0.08f);
+        regenSparkles.transform.localScale = new Vector3(0.06f, 0.06f, 0.06f);
 
-        _myCombatController.Die(false, 10f);
+        _myCombatController.Die(false, 2.5f);
     }
 }
