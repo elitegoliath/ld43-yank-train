@@ -123,6 +123,9 @@ public class AIController : MonoBehaviour {
 
         // Attempt to deploy to location.
         _myNavAgent.SetDestination(chosenDeployLocation.position);
+
+        CancelInvoke("ActivateAI");
+        Invoke("ActivateAI", 2f);
     }
 
     private void PickNewDeployLocation()
@@ -155,6 +158,7 @@ public class AIController : MonoBehaviour {
 
     public void ActivateAI()
     {
+        CancelInvoke("ActivateAI");
         // TODO: Do better than this.
         _canUpdateTracks = true;
         _canSetDestination = true;
@@ -187,7 +191,7 @@ public class AIController : MonoBehaviour {
             CancelInvoke("TrackClosestTargetCooldown");
 
             // Doesn't need to update nearly as much as the other routines.
-            Invoke("TrackClosestTargetCooldown", _checkRangesCooldown * 1.5f);
+            Invoke("TrackClosestTargetCooldown", _checkRangesCooldown * 1.2f);
 
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             GameObject[] transports = GameObject.FindGameObjectsWithTag("Transport");
@@ -224,7 +228,8 @@ public class AIController : MonoBehaviour {
             _canUpdateTracks = false;
 
             if (_target == null) {
-                _canFindClosestTarget = true;
+                //_canFindClosestTarget = true;
+                //AIFindClosestTarget();
             } else {
                 // Let's not check too much. Performance + robots can be slow.
                 Invoke("UpdateTracksCooldown", _checkRangesCooldown);
@@ -251,8 +256,6 @@ public class AIController : MonoBehaviour {
         if(_canSetDestination) {
             _canSetDestination = false;
 
-            Invoke("SetDestinationCooldown", _checkRangesCooldown);
-
             // If AI is currently pathing after the traget...
             if(_myNavAgent.hasPath == true) {
                 bool isInEngagementRange = _myNavAgent.remainingDistance <= _engagementRange;
@@ -263,21 +266,21 @@ public class AIController : MonoBehaviour {
                 } else if (_target != null) {
                     // Otherwise, update the path.
                     _myNavAgent.SetDestination(_target.position);
+
+                    Invoke("SetDestinationCooldown", _checkRangesCooldown);
                 }
             } else if (_target != null) {
                 // If no path exists, AI is not moving. Check range then start moving if needed.
                 _myNavAgent.SetDestination(_target.position);
 
-                /**
-                 * RECENTLY DISABLED
-                 * 
-                 */
-                //bool isInRange = _myNavAgent.remainingDistance <= _engagementRange;
+                bool isInRange = _myNavAgent.remainingDistance <= _engagementRange;
 
-                //// If AI is still close enough to the target, don't start moving again. Clear the set path.
-                //if (isInRange == true) {
-                //    _myNavAgent.Stop();
-                //}
+                // If AI is still close enough to the target, don't start moving again. Clear the set path.
+                if(isInRange == true) {
+                    _myNavAgent.Stop();
+                }
+
+                Invoke("SetDestinationCooldown", _checkRangesCooldown * 1.5f);
             }
         }
     }

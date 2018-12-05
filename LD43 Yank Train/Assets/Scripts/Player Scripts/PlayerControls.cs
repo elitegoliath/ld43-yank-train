@@ -48,6 +48,8 @@ public class PlayerControls : MonoBehaviour
 
         _waveController = FindObjectOfType<WaveController>();
         _waveController.SetHealthbar(maxHealth);
+
+        _myCombatController.SetMaxHealth(maxHealth);
     }
 
     /// <summary>
@@ -179,7 +181,8 @@ public class PlayerControls : MonoBehaviour
         if (newHealthBuddy != null) {
             newHealthBuddy.AssimilateIntoPlayer();
             _myCombatController.Heal(assimilateHealAmount);
-            PlayerHealthChanged();
+            int newHealth = _myCombatController.GetCurrentHealth();
+            PlayerHealthChanged(newHealth);
         }
     }
 
@@ -196,9 +199,9 @@ public class PlayerControls : MonoBehaviour
         return foundBuddy;
     }
 
-    public void PlayerHealthChanged()
+    public void PlayerHealthChanged(int currentHealth)
     {
-        _waveController.UpdateHealthbar(_myCombatController.GetCurrentHealth());
+        _waveController.UpdateHealthbar(currentHealth);
     }
 
     private void FireRangedWeaponsCooldown()

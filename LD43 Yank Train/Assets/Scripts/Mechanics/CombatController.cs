@@ -265,7 +265,7 @@ public class CombatController : MonoBehaviour {
                 _isUnkillable = true;
                 _player.DisableControls();
             } else {
-                _player.PlayerHealthChanged();
+                _player.PlayerHealthChanged(_currentHealth);
             }
         } else if (_currentHealth <= 0) {
             Die();

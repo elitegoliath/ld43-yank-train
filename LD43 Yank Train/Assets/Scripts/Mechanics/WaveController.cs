@@ -13,6 +13,14 @@ public class WaveController : MonoBehaviour {
     public int baseTransportCount = 2;
     public int enemyEndWaveThreshold = 2;
     public GameObject[] transportPrefabList;
+    public GameObject core1;
+    public GameObject core2;
+    public GameObject core3;
+    public GameObject core4;
+    public ReactorCoreController coreController1;
+    public ReactorCoreController coreController2;
+    public ReactorCoreController coreController3;
+    public ReactorCoreController coreController4;
     
     private float _waveStartTimer;
     private int _currentWave;
@@ -25,9 +33,7 @@ public class WaveController : MonoBehaviour {
     private Text _uiWaveCounter;
     private Text _uiNextWaveTimer;
     private Text _uiCompanionTracker;
-    private int _playerMaxHealth;
-    private int _playerCurrenthealth;
-    private int _coreHealth;
+    private float _playerMaxHealth;
 
     private void Awake()
     {
@@ -95,9 +101,6 @@ public class WaveController : MonoBehaviour {
     /// </summary>
     private void StartWave()
     {
-
-        // TODO: Make minimum wave time.
-
         _currentWave++;
 
         if (_currentWave > numberOfWaves) {
@@ -122,6 +125,10 @@ public class WaveController : MonoBehaviour {
             // TODO: Make the multiplier be friendly to floats.
             spawnController.payloadMultiplier = _currentWave * enemyMultiplierPerWave;
         }
+
+        // TODO: WORKAROUND CODE BELOW
+        _isWaveActive = true;
+        waveDelay += 10f;
     }
 
     private void RegisterEnemy()
@@ -186,14 +193,32 @@ public class WaveController : MonoBehaviour {
 
     public void SetHealthbar(int maxHealth)
     {
-        _playerMaxHealth = maxHealth;
-        _playerCurrenthealth = maxHealth;
-
-        _coreHealth = maxHealth / 4;
+        _playerMaxHealth = (float)maxHealth;
     }
 
     public void UpdateHealthbar(int currentHealth)
     {
+        float core1Health = 100f;
+        float core2Health = 100f;
+        float core3Health = 100f;
+        float core4Health = 100f;
+        float ch = (float)currentHealth;
+        float healthPercent = (ch / _playerMaxHealth) * 100f;
 
+        core4Health = ((healthPercent - 75f) / 25f) * 100f;
+        //healthPercent -= 25;
+
+        core3Health = ((healthPercent - 50f) / 25f) * 100f;
+        //healthPercent -= 25;
+
+        core2Health = ((healthPercent - 25f) / 25f) * 100f;
+        //healthPercent -= 25;
+
+        core1Health = (healthPercent / 25f) * 100f;
+
+        coreController1.UpdateCoreHealth(core1Health);
+        coreController2.UpdateCoreHealth(core2Health);
+        coreController3.UpdateCoreHealth(core3Health);
+        coreController4.UpdateCoreHealth(core4Health);
     }
 }
