@@ -1404,7 +1404,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202173623782010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 130.96162, y: 456.57178, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4096437240301728}
@@ -1493,8 +1493,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 0.1
+  m_AngularDrag: 0.1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -1507,7 +1507,7 @@ CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202173623782010}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1783,6 +1783,10 @@ MonoBehaviour:
   deathDebris: {fileID: 1632049444595018, guid: 1638c85e0c90c3d41bc84142912f2b1f,
     type: 2}
   detonationEffect: {fileID: 1185687494847534, guid: b5082b7d617fb474c86d45ae000d795f,
+    type: 2}
+  assimilationIndicator: {fileID: 1873473179076264, guid: 194f4c75d5f803d46b90e66251ed507a,
+    type: 2}
+  assimilationParticles: {fileID: 198727702327704770, guid: 3242a14471fe9e6448b8348182e66ac0,
     type: 2}
 --- !u!114 &114879587615428174
 MonoBehaviour:

@@ -22,11 +22,20 @@ public class SelfDestructExplosion : MonoBehaviour {
     {
         string tag = collision.tag;
 
-        if (tag == "Enemy" || tag == "Transport") {
+        if (tag == "Enemy") {
             CombatController combatController = collision.GetComponent<CombatController>();
             combatController.Die(true);
-        } else if (tag == "TransportDebris") {
-            Destroy(collision.gameObject);
         }
     }
+
+    //private void TestBoom()
+    //{
+    //    Vector3 bombPosition = transform.position;
+    //    Collider[] colliders = Physics.OverlapSphere(bombPosition, radius);
+    //    foreach(Collider hit in colliders) {
+    //        Rigidbody rb = hit.GetComponent<Rigidbody>();
+    //        if(rb != null) {
+    //            rb.AddExplosionForce(power, bombPosition, radius, upForce, ForceMode.Impulse);
+    //        }
+    //}
 }

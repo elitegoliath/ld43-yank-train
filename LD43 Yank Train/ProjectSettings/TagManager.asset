@@ -13,6 +13,8 @@ TagManager:
   - CompanionBot
   - TransportDebris
   - Suicider
+  - Assimilator
+  - LargeExplosion
   layers:
   - Default
   - TransparentFX

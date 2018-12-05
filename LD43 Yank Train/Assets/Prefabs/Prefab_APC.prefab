@@ -838,7 +838,7 @@ MonoBehaviour:
   speed: 700
   drag: 3.7
   angularDrag: 4
-  torque: 500
+  torque: 600
   maxHealth: 200
   armor: 5
   attackRange: 20

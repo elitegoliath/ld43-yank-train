@@ -27,6 +27,8 @@ public class FriendlyGroundBotAI : MonoBehaviour {
     public GameObject selfDestructIndicator;
     public GameObject deathDebris;
     public GameObject detonationEffect;
+    public GameObject assimilationIndicator;
+    public ParticleSystem assimilationParticles;
 
     // Private Properties
     private CombatController _myCombatController;
@@ -72,8 +74,8 @@ public class FriendlyGroundBotAI : MonoBehaviour {
         EventManager.TriggerEvent("registerCompanion");
 
         // Activate initial AI behaviors.
-        // Do so after delay for effect and for the enemy to cleat the space.
-        _myAIController.ActivateAIAfterDelay(0.05f);
+        // Do so after delay for effect and for the enemy to clear the space.
+        _myAIController.ActivateAltAI();
     }
 
     private void OnDestroy()
@@ -116,8 +118,23 @@ public class FriendlyGroundBotAI : MonoBehaviour {
         newLight.transform.localPosition = new Vector3(0, 0, -0.7f);
     }
 
-    public bool GetCanSac()
+    public void AssimilateIntoPlayer()
     {
-        return _isAIActive;
+        _isAIActive = false;
+
+        PolyNavAgent agent = gameObject.GetComponent<PolyNavAgent>();
+        agent.Stop();
+
+        gameObject.tag = "Assimilator";
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;
+
+        GameObject newLight = Instantiate(assimilationIndicator, transform);
+        newLight.transform.localPosition = new Vector3(0, 0, -0.7f);
+
+        // emit particles for a bit before dying;
+        ParticleSystem regenSparkles = Instantiate(assimilationParticles, transform);
+        regenSparkles.transform.localScale = new Vector3(0.08f, 0.08f, 0.08f);
+
+        _myCombatController.Die(false, 10f);
     }
 }

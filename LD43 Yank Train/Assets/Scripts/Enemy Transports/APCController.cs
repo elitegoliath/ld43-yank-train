@@ -165,6 +165,13 @@ public class APCController : MonoBehaviour {
         _navMapRef.RemoveObstacle(_myObstacle);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "LargeExplosion") {
+            _myCombatController.Die();
+        }
+    }
+
     private void DropPayload()
     {
         GameObject freshSpawn = Instantiate(payloadPrefab);

@@ -103,6 +103,11 @@ public class AIController : MonoBehaviour {
         _followRange = followRange;
     }
 
+    public void StopNavigation()
+    {
+        _myNavAgent.Stop();
+    }
+
     /*****************************************
      *               Behaviors               *
      ****************************************/
@@ -156,7 +161,10 @@ public class AIController : MonoBehaviour {
         _canFireRangedWeapon = true;
 
         // TODO: Circle collider not guarenteed. Pass in reference to desired collider instead.
-        gameObject.GetComponent<CircleCollider2D>().enabled = true;
+        CircleCollider2D[] myColliders = gameObject.GetComponents<CircleCollider2D>();
+        foreach (CircleCollider2D collider in myColliders) {
+            collider.enabled = true;
+        }
 
         // Un-register events listeners.
         _myNavAgent.OnDestinationReached -= ActivateAI;

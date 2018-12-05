@@ -4,6 +4,7 @@ public class PlayerControls : MonoBehaviour
 {
     [Header("Characteristics")]
     public float moveSpeed = 100f;
+    public int assimilateHealAmount = 200;
 
     [Header("Combat Stats")]
     public int maxHealth = 200;
@@ -24,11 +25,15 @@ public class PlayerControls : MonoBehaviour
     private bool _isAssimilateOnCooldown = false;
     private bool _sacTrigger = false;
     private bool _simTrigger = false;
+    private bool _controlsEnabled = true;
     private Rigidbody2D _myRigidBody;
     private Camera _cam;
+    private CombatController _myCombatController;
+    WaveController _waveController;
 
     private void Awake()
     {
+        _myCombatController = gameObject.GetComponent<CombatController>();
         leftGun.SetRangedWeaponStats(0f, rangedWeaponRange, rangedWeaponDamage, rangedWeaponMunition);
         rightGun.SetRangedWeaponStats(0f, rangedWeaponRange, rangedWeaponDamage, rangedWeaponMunition);
     }
@@ -40,6 +45,9 @@ public class PlayerControls : MonoBehaviour
     {
         _myRigidBody = GetComponent<Rigidbody2D>();
         _cam = Camera.main;
+
+        _waveController = FindObjectOfType<WaveController>();
+        _waveController.SetHealthbar(maxHealth);
     }
 
     /// <summary>
@@ -47,10 +55,12 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        FaceAvatar();
-        FireRangedWeapons();
-        SacrificeAFriend();
-        AssimilateABuddy();
+        if (_controlsEnabled == true) {
+            FaceAvatar();
+            FireRangedWeapons();
+            SacrificeAFriend();
+            AssimilateABuddy();
+        }
     }
 
     /// <summary>
@@ -59,6 +69,11 @@ public class PlayerControls : MonoBehaviour
     private void FixedUpdate()
     {
         MoveAvatar();
+    }
+
+    public void DisableControls()
+    {
+        _controlsEnabled = false;
     }
 
     /// <summary>
@@ -124,7 +139,7 @@ public class PlayerControls : MonoBehaviour
             _isSacrificingPal = false;
             _isSacrificeOnCooldown = true;
 
-            Invoke("SacrificeCooldown", 0.2f);
+            Invoke("SacrificeCooldown", 0.5f);
         }
     }
 
@@ -135,31 +150,55 @@ public class PlayerControls : MonoBehaviour
 
             if (_simTrigger == false) {
                 _simTrigger = true;
-
-                // sim logic here
+                AssimilateRandomCompanion();
             }
         } else if(_isAssimilatingBro == true) {
             // Begin cooldown after input stops.
             _isAssimilatingBro = false;
             _isAssimilateOnCooldown = true;
 
-            Invoke("AssimilateCooldown", 0.2f);
+            Invoke("AssimilateCooldown", 0.5f);
         }
     }
 
     private void SacrificeRandomCompanion()
     {
+        // Tell him to wreck himself into them.
+        FriendlyGroundBotAI newDeathBuddy = FindRandomCompanion();
+
+        if (newDeathBuddy != null) {
+            newDeathBuddy.SacrificeSelf(GetMousePos());
+        }
+    }
+
+    private void AssimilateRandomCompanion()
+    {
+        // Tell him to wreck himself into yourself.
+        FriendlyGroundBotAI newHealthBuddy = FindRandomCompanion();
+
+        if (newHealthBuddy != null) {
+            newHealthBuddy.AssimilateIntoPlayer();
+            _myCombatController.Heal(assimilateHealAmount);
+            PlayerHealthChanged();
+        }
+    }
+
+    private FriendlyGroundBotAI FindRandomCompanion()
+    {
         GameObject[] companions = GameObject.FindGameObjectsWithTag("CompanionBot");
+        FriendlyGroundBotAI foundBuddy = null;
 
         if (companions.Length > 0) {
             int chosenIndex = Random.Range(0, companions.Length);
-            Vector3 deathPoint = GetMousePos();
-
-            FriendlyGroundBotAI newDeathBuddy = companions[chosenIndex].GetComponent<FriendlyGroundBotAI>();
-
-            // Tell him to wreck himself.
-            newDeathBuddy.SacrificeSelf(deathPoint);
+            foundBuddy = companions[chosenIndex].GetComponent<FriendlyGroundBotAI>();
         }
+
+        return foundBuddy;
+    }
+
+    public void PlayerHealthChanged()
+    {
+        _waveController.UpdateHealthbar(_myCombatController.GetCurrentHealth());
     }
 
     private void FireRangedWeaponsCooldown()

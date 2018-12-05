@@ -25,6 +25,8 @@ public class WaveController : MonoBehaviour {
     private Text _uiWaveCounter;
     private Text _uiNextWaveTimer;
     private Text _uiCompanionTracker;
+    private int _playerMaxHealth;
+    private int _playerCurrenthealth;
 
     private void Awake()
     {
@@ -68,7 +70,7 @@ public class WaveController : MonoBehaviour {
     private void Update()
     {
         // If the wave ain't goin, let the counter start blowin.
-        if (_isWaveActive == false) {
+        if (_isWaveActive == false && _uiNextWaveTimer != null) {
             // Get the remaining time.
             float timeRemaining = _waveStartTimer - Time.time;
 
@@ -166,6 +168,26 @@ public class WaveController : MonoBehaviour {
 
     private void UpdateCompanionTracker()
     {
-        _uiCompanionTracker.text = _companionsAlive.ToString();
+        if (_uiCompanionTracker != null) {
+            _uiCompanionTracker.text = _companionsAlive.ToString();
+        }
+    }
+
+    public void GameOver()
+    {
+        EventManager.TriggerEvent("GameEnded");
+
+        // Enter loss condition stuff here.
+    }
+
+    public void SetHealthbar(int maxHealth)
+    {
+        _playerMaxHealth = maxHealth;
+        _playerCurrenthealth = maxHealth;
+    }
+
+    public void UpdateHealthbar(int currentHealth)
+    {
+
     }
 }

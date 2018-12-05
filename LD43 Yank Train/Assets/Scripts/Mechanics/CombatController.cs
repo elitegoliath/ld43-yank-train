@@ -21,9 +21,22 @@ public class CombatController : MonoBehaviour {
 
     // Death
     private bool _detonatesOnDeath = false;
+    private bool _isUnkillable = false;
+    private bool _isPlayer = false;
+    private bool _isDying = false;
     private GameObject _debris;
-    private AudioClip _deathExplosionSound;
     private GameObject _detonationEffect;
+    private PlayerControls _player;
+
+    private void Start()
+    {
+        string tag = gameObject.tag;
+
+        if (tag == "Player") {
+            _isPlayer = true;
+            _player = gameObject.GetComponent<PlayerControls>();
+        }
+    }
 
     public void SetDetonationOnDeath(bool deathBoom)
     {
@@ -72,6 +85,11 @@ public class CombatController : MonoBehaviour {
     public int GetCurrentHealth()
     {
         return _currentHealth;
+    }
+
+    public void MakeUnkillable()
+    {
+        _isUnkillable = true;
     }
 
     /*****************************************
@@ -214,11 +232,13 @@ public class CombatController : MonoBehaviour {
      ****************************************/
     public void TakeDamage(int damage)
     {
-        _currentHealth -= damage;
-        CheckHealth();
+        if (_isUnkillable == false) {
+            _currentHealth -= damage;
+            CheckHealth();
 
-        // If not dead yet, blink!
-        DamageBlink();
+            // If not dead yet, blink!
+            DamageBlink();
+        }
     }
 
     public void DamageBlink()
@@ -240,25 +260,41 @@ public class CombatController : MonoBehaviour {
 
     public void CheckHealth()
     {
-        if (_currentHealth <= 0) {
+        if (_isPlayer == true) {
+            if (_currentHealth <= 0) {
+                _isUnkillable = true;
+                _player.DisableControls();
+            } else {
+                _player.PlayerHealthChanged();
+            }
+        } else if (_currentHealth <= 0) {
             Die();
         }
     }
 
-    public void Die(bool isViolentDeath = false)
+    public void Die(bool isViolentDeath = false, float deathDelay = 0)
     {
-        if (_detonatesOnDeath == true) {
-            Instantiate(_detonationEffect, transform.position, transform.rotation);
-        } else {
-            if(_isCompanionOnDeath == true && isViolentDeath == false) {
-                Instantiate(_companion, transform.position, transform.rotation);
+        if (_isDying == false) {
+            _isDying = true;
+
+            if(_detonatesOnDeath == true) {
+                Instantiate(_detonationEffect, transform.position, transform.rotation);
             } else {
-                SpawnDebris();
-                // small explosion
+                if(_isCompanionOnDeath == true && isViolentDeath == false) {
+                    Instantiate(_companion, transform.position, transform.rotation);
+                } else if (deathDelay == 0) {
+                    // TODO: Currently assuming only Assimilate uses death delay. Ya no.
+                    SpawnDebris();
+                }
+            }
+
+            
+            if (deathDelay > 0) {
+                Destroy(gameObject, deathDelay);
+            } else {
+                Destroy(gameObject);
             }
         }
-
-        Destroy(gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -267,10 +303,16 @@ public class CombatController : MonoBehaviour {
             Collider2D col = collision.collider;
             string tag = col.tag;
 
-            if(tag == "Enemy" || tag == "Transport") {
+            if (tag == "Enemy" || tag == "Transport") {
                 Die();
             }
         }
+    }
+
+    public void Heal(int healAmount)
+    {
+        int newHealth = _currentHealth += healAmount;
+        SetCurrentHealth(newHealth);
     }
 
     /*****************************************
@@ -280,7 +322,6 @@ public class CombatController : MonoBehaviour {
     {
         if (_debris != null) {
             Instantiate(_debris, transform.position, transform.rotation);
-            // TODO: Cause explosion FX on death (sound and viz);
         }
     }
 
