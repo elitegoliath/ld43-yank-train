@@ -1865,7 +1865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkRangesCooldown: 1
-  maxHealth: 10
+  maxHealth: 25
   armor: 1
   attackingTurnSpeed: 35
   engagementRange: 6

@@ -27,6 +27,7 @@ public class WaveController : MonoBehaviour {
     private Text _uiCompanionTracker;
     private int _playerMaxHealth;
     private int _playerCurrenthealth;
+    private int _coreHealth;
 
     private void Awake()
     {
@@ -94,6 +95,9 @@ public class WaveController : MonoBehaviour {
     /// </summary>
     private void StartWave()
     {
+
+        // TODO: Make minimum wave time.
+
         _currentWave++;
 
         if (_currentWave > numberOfWaves) {
@@ -184,6 +188,8 @@ public class WaveController : MonoBehaviour {
     {
         _playerMaxHealth = maxHealth;
         _playerCurrenthealth = maxHealth;
+
+        _coreHealth = maxHealth / 4;
     }
 
     public void UpdateHealthbar(int currentHealth)
