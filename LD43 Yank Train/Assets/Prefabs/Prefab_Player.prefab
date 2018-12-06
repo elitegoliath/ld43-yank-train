@@ -1544,7 +1544,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.59
+  m_Radius: 0.66
 --- !u!58 &58599682959750516
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -1559,7 +1559,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.13}
   serializedVersion: 2
-  m_Radius: 1.04
+  m_Radius: 0.8
 --- !u!95 &95613787166952550
 Animator:
   serializedVersion: 3
@@ -1604,12 +1604,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 300
-  transcodeDifficulty: 2
+  transcodeDifficulty: 3
   assimilateHealAmount: 100
   maxHealth: 400
   armor: 1
   rangedAttackDelay: 0.2
-  rangedWeaponRange: 1
+  rangedWeaponRange: 3
   rangedWeaponDamage: 2
   rangedWeaponMunition: {fileID: 1273437431022602, guid: c023fe56d9bc64844aa0d992a12ad841,
     type: 2}

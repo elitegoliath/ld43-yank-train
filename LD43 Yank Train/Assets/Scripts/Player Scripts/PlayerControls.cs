@@ -236,4 +236,9 @@ public class PlayerControls : MonoBehaviour
             _waveController.AddPlayerTranscode();
         }
     }
+
+    public void Died()
+    {
+        _waveController.GameOver();
+    }
 }

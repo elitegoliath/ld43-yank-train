@@ -14,6 +14,7 @@ public class WaveController : MonoBehaviour {
     public int numberOfWaves = 10;
     public int baseTransportCount = 2;
     public int enemyEndWaveThreshold = 2;
+    public GameObject retryScreen;
     public GameObject[] transportPrefabList;
     public GameObject core1;
     public GameObject core2;
@@ -38,7 +39,6 @@ public class WaveController : MonoBehaviour {
     private float _playerMaxHealth;
     private float _currentTranscode = 0f;
     private Image _uiTranscodeFill;
-    private GameObject _retryScreen;
 
     private void Awake()
     {
@@ -83,8 +83,6 @@ public class WaveController : MonoBehaviour {
 
         GameObject tFill = GameObject.Find("TranscodeFill");
         _uiTranscodeFill = tFill.GetComponent<Image>();
-
-        _retryScreen = GameObject.Find("UI_Death");
     }
 
     private void Update()
@@ -201,7 +199,7 @@ public class WaveController : MonoBehaviour {
     {
         EventManager.TriggerEvent("GameEnded");
 
-        _retryScreen.SetActive(true);
+        retryScreen.SetActive(true);
     }
 
     public void SetHealthbar(int maxHealth)

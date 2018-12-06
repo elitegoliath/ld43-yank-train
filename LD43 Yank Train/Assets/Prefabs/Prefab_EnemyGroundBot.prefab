@@ -1864,16 +1864,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b38d93b95422e44808e24a58a44190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkRangesCooldown: 1
+  checkRangesCooldown: 0.5
   maxHealth: 25
   armor: 1
   attackingTurnSpeed: 35
   engagementRange: 10
   attackRange: 8
-  attackDelay: 0.4
+  attackDelay: 0.25
   accuracy: 20
-  weaponDamage: 2
-  weaponRange: 2
+  weaponDamage: 3
+  weaponRange: 3
   rangedWeaponCombatController: {fileID: 114903528608290828}
   rangedWeaponMunition: {fileID: 1273437431022602, guid: 7149c311b1d05f04a87c6f7afa7b051c,
     type: 2}

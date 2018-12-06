@@ -192,7 +192,7 @@ public class AIController : MonoBehaviour {
 
     public void AIFindClosestTarget()
     {
-        if (_canFindClosestTarget == true) {
+        if (_canFindClosestTarget == true && _target == null) {
             _canFindClosestTarget = false;
             GameObject foundTarget = null;
             float targetDistance = Mathf.Infinity;
@@ -202,7 +202,7 @@ public class AIController : MonoBehaviour {
             CancelInvoke("TrackClosestTargetCooldown");
 
             // Doesn't need to update nearly as much as the other routines.
-            Invoke("TrackClosestTargetCooldown", _checkRangesCooldown * 1.2f);
+            Invoke("TrackClosestTargetCooldown", _checkRangesCooldown);
 
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             GameObject[] transports = GameObject.FindGameObjectsWithTag("Transport");
@@ -218,7 +218,7 @@ public class AIController : MonoBehaviour {
 
             foreach(GameObject transport in transports) {
                 float dist = Vector3.Distance(transport.transform.position, myPos);
-                if(dist < targetDistance) {
+                if (dist < targetDistance) {
                     foundTarget = transport;
                     targetDistance = dist;
                 }
@@ -305,6 +305,7 @@ public class AIController : MonoBehaviour {
         if (_attackTargetModeActive == true) {
             if (_target == null) {
                 _attackTargetModeActive = false;
+                _canUpdateTracks = true;
                 _myNavAgent.rotateTransform = true;
             } else {
                 FaceTarget();

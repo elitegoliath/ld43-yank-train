@@ -52,13 +52,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6680d6b222b45a4baff33f507cbe331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveDelay: 5
-  initialWaveDelay: 3
+  transcodeGoal: 200
+  waveDelay: 15
+  initialWaveDelay: 5
   enemyMultiplierPerWave: 2
   startingWave: 1
   numberOfWaves: 10
   baseTransportCount: 1
   enemyEndWaveThreshold: 2
+  retryScreen: {fileID: 0}
   transportPrefabList:
   - {fileID: 1722753128056126, guid: e18ab76959598434e946f0793424d127, type: 2}
   core1: {fileID: 0}

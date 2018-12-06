@@ -30,9 +30,9 @@ public class CombatController : MonoBehaviour {
 
     private void Start()
     {
-        string tag = gameObject.tag;
+        string _tag = gameObject.tag;
 
-        if (tag == "Player") {
+        if (_tag == "Player") {
             _isPlayer = true;
             _player = gameObject.GetComponent<PlayerControls>();
         }
@@ -264,6 +264,7 @@ public class CombatController : MonoBehaviour {
             if (_currentHealth <= 0) {
                 _isUnkillable = true;
                 _player.DisableControls();
+                _player.Died();
             } else {
                 _player.PlayerHealthChanged(_currentHealth);
             }
@@ -301,9 +302,9 @@ public class CombatController : MonoBehaviour {
     {
         if (_detonatesOnDeath == true) {
             Collider2D col = collision.collider;
-            string tag = col.tag;
+            string _tag = col.tag;
 
-            if (tag == "Enemy" || tag == "Transport") {
+            if (_tag == "Enemy" || _tag == "Transport") {
                 Die();
             }
         }

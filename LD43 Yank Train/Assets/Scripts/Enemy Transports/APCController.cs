@@ -173,7 +173,7 @@ public class APCController : MonoBehaviour {
     {
         if (collision.tag == "LargeExplosion") {
             _myCombatController.Die();
-        } else if (collision.tag == "Player" || collision.tag == "Transport") {
+        } else if (collision.tag == "Player" || collision.tag == "Transport" || collision.tag == "CompanionBot") {
             StopOrder();
         }
     }

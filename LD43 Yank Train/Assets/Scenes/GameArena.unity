@@ -64908,6 +64908,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114209253028603272, guid: a49ce874ddd5da244b318626566e2410,
         type: 2}
+      propertyPath: retryScreen
+      value: 
+      objectReference: {fileID: 685625054}
+    - target: {fileID: 114209253028603272, guid: a49ce874ddd5da244b318626566e2410,
+        type: 2}
       propertyPath: core1
       value: 
       objectReference: {fileID: 367328933}
@@ -64946,11 +64951,6 @@ Prefab:
       propertyPath: coreController4
       value: 
       objectReference: {fileID: 1254642313}
-    - target: {fileID: 114209253028603272, guid: a49ce874ddd5da244b318626566e2410,
-        type: 2}
-      propertyPath: initialWaveDelay
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 114209253028603272, guid: a49ce874ddd5da244b318626566e2410,
         type: 2}
       propertyPath: waveDelay

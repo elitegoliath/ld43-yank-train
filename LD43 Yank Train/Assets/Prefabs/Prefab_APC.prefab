@@ -842,17 +842,17 @@ MonoBehaviour:
   maxHealth: 200
   armor: 5
   attackRange: 20
-  weaponRange: 2
-  weaponDelay: 0.25
-  weaponAccuracy: 20
-  weaponDamage: 2
+  weaponRange: 3
+  weaponDelay: 0.1
+  weaponAccuracy: 30
+  weaponDamage: 1
   weaponMunitionPrefab: {fileID: 1273437431022602, guid: 7149c311b1d05f04a87c6f7afa7b051c,
     type: 2}
   foreTurret: {fileID: 1368444749696026}
   aftTurret: {fileID: 1624798307895634}
   minPayload: 1
   maxPayload: 5
-  companionSpawnChance: 65
+  companionSpawnChance: 35
   deployRate: 0.5
   payloadPrefab: {fileID: 1202173623782010, guid: b8c1f37e3d58e0b41823adc5d6348037,
     type: 2}

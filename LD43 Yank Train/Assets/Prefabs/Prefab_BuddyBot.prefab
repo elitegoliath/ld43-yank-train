@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 114458641205617308}
   - component: {fileID: 114620944300656414}
   - component: {fileID: 114817464106040908}
+  - component: {fileID: 58013228581155980}
   m_Layer: 16
   m_Name: Prefab_BuddyBot
   m_TagString: CompanionBot
@@ -1501,6 +1502,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &58013228581155980
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1202173623782010}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1, y: -0.05}
+  serializedVersion: 2
+  m_Radius: 0.49
 --- !u!58 &58597938273094032
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -1764,18 +1780,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfacd770c4a8e344591b0fdf0204ce99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transcodeDifficulty: 2.5
-  checkRangesCooldown: 1
-  maxHealth: 100
+  transcodeDifficulty: 4
+  checkRangesCooldown: 0.5
+  maxHealth: 200
   armor: 1
-  attackingTurnSpeed: 100
+  attackingTurnSpeed: 400
   followRange: 4
   speedVarience: 2
   attackRange: 20
-  attackDelay: 0.3
-  accuracy: 15
-  weaponDamage: 1
-  weaponRange: 2
+  attackDelay: 0.2
+  accuracy: 10
+  weaponDamage: 2
+  weaponRange: 3
   rangedWeaponCombatController: {fileID: 114903528608290828}
   rangedWeaponMunition: {fileID: 1273437431022602, guid: c023fe56d9bc64844aa0d992a12ad841,
     type: 2}
