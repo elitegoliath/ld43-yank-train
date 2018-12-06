@@ -64951,11 +64951,6 @@ Prefab:
       propertyPath: coreController4
       value: 
       objectReference: {fileID: 1254642313}
-    - target: {fileID: 114209253028603272, guid: a49ce874ddd5da244b318626566e2410,
-        type: 2}
-      propertyPath: waveDelay
-      value: 15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a49ce874ddd5da244b318626566e2410, type: 2}
   m_IsPrefabAsset: 0
