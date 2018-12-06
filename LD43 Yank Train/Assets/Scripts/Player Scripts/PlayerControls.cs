@@ -232,8 +232,8 @@ public class PlayerControls : MonoBehaviour
         yield return null;
 
         while (_controlsEnabled == true) {
-            _waveController.AddPlayerTranscode();
             yield return new WaitForSeconds(transcodeDifficulty);
+            _waveController.AddPlayerTranscode();
         }
     }
 }

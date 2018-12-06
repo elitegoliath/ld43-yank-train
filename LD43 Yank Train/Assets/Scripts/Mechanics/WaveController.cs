@@ -219,14 +219,8 @@ public class WaveController : MonoBehaviour {
         float healthPercent = (ch / _playerMaxHealth) * 100f;
 
         core4Health = ((healthPercent - 75f) / 25f) * 100f;
-        //healthPercent -= 25;
-
         core3Health = ((healthPercent - 50f) / 25f) * 100f;
-        //healthPercent -= 25;
-
         core2Health = ((healthPercent - 25f) / 25f) * 100f;
-        //healthPercent -= 25;
-
         core1Health = (healthPercent / 25f) * 100f;
 
         coreController1.UpdateCoreHealth(core1Health);
@@ -253,9 +247,6 @@ public class WaveController : MonoBehaviour {
         if (percentage > 1f) {
             percentage = 1f;
         }
-
-        Debug.Log("Transcode");
-        Debug.Log(percentage);
 
         _uiTranscodeFill.fillAmount = percentage;
 

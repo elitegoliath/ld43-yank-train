@@ -1764,7 +1764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfacd770c4a8e344591b0fdf0204ce99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transcodeDifficulty: 1.5
+  transcodeDifficulty: 2.5
   checkRangesCooldown: 1
   maxHealth: 100
   armor: 1

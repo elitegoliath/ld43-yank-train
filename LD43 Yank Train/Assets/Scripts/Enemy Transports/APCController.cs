@@ -193,7 +193,7 @@ public class APCController : MonoBehaviour {
         AIController freshSpawnAI = freshSpawn.GetComponent<AIController>();
         CombatController freshSpawnCombatController = freshSpawn.GetComponent<CombatController>();
         freshSpawnCombatController.InstantiateCompanionOnDeath(companionPrefab, companionLightIndicator);
-        freshSpawnAI.DeployToRandomLocation(deployLocatons, "ActivateAltAI");
+        freshSpawnAI.DeployToRandomLocation(deployLocatons, "ActivateAI");
     }
 
     /// <summary>

@@ -1868,7 +1868,7 @@ MonoBehaviour:
   maxHealth: 25
   armor: 1
   attackingTurnSpeed: 35
-  engagementRange: 8
+  engagementRange: 10
   attackRange: 8
   attackDelay: 0.4
   accuracy: 20

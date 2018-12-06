@@ -81,11 +81,14 @@ public class FriendlyGroundBotAI : MonoBehaviour {
         _myAIController.ActivateAltAI();
 
         _transcode = TranscodeForPlayer();
+
+        StartCoroutine(_transcode);
     }
 
     private void OnDestroy()
     {
         EventManager.TriggerEvent("companionDeath");
+        StopCoroutine(_transcode);
     }
 
     /// <summary>
@@ -106,8 +109,6 @@ public class FriendlyGroundBotAI : MonoBehaviour {
 
             // If within weapon range, fire fire fire!!
             _myAIController.AIAttackTarget();
-
-            StartCoroutine(_transcode);
         }
     }
 
@@ -146,9 +147,11 @@ public class FriendlyGroundBotAI : MonoBehaviour {
     }
 
     public IEnumerator TranscodeForPlayer() {
+        yield return null;
+
         while (_isAIActive == true) {
-            EventManager.TriggerEvent("companionTranscode");
             yield return new WaitForSeconds(transcodeDifficulty);
+            EventManager.TriggerEvent("companionTranscode");
         }
     }
 }
