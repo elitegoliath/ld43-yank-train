@@ -91,8 +91,8 @@ public class EnemyGroundBotAI : MonoBehaviour {
     /// Each location will be tested before deployment begins.
     /// </summary>
     /// <param name="waypoints"></param>
-    public void DeployToRandomLocation(List<Transform> waypoints)
-    {
-        _myAIController.DeployToRandomLocation(waypoints);
-    }
+    // public void DeployToRandomLocation(List<Transform> waypoints)
+    // {
+    //     _myAIController.DeployToRandomLocation(waypoints);
+    // }
 }

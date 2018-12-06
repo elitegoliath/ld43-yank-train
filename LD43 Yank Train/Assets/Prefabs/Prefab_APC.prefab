@@ -710,7 +710,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.1
+  m_LinearDrag: 0
   m_AngularDrag: 0.1
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -835,24 +835,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe50d28c6abcf0348b6498adcd780aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 700
+  speed: 800
   drag: 3.7
   angularDrag: 4
-  torque: 600
+  torque: 700
   maxHealth: 200
   armor: 5
   attackRange: 20
-  weaponRange: 1
+  weaponRange: 2
   weaponDelay: 0.25
   weaponAccuracy: 20
-  weaponDamage: 1
+  weaponDamage: 2
   weaponMunitionPrefab: {fileID: 1273437431022602, guid: 7149c311b1d05f04a87c6f7afa7b051c,
     type: 2}
   foreTurret: {fileID: 1368444749696026}
   aftTurret: {fileID: 1624798307895634}
   minPayload: 1
-  maxPayload: 3
-  companionSpawnChance: 100
+  maxPayload: 5
+  companionSpawnChance: 65
   deployRate: 0.5
   payloadPrefab: {fileID: 1202173623782010, guid: b8c1f37e3d58e0b41823adc5d6348037,
     type: 2}

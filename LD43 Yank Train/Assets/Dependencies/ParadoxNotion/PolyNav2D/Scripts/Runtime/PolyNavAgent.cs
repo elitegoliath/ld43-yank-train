@@ -326,10 +326,19 @@ namespace PolyNav{
 			}
 
 			//Check and remove if we reached a point. proximity distance depends
-			float proximity = (activePath[activePath.Count -1] == nextPoint)? stoppingDistance : 0.05f;
+			float proximity = 0f;
+
+			if (activePath.Count == 0) {
+				proximity = 0.05f;
+			} else {
+				proximity = (activePath[activePath.Count - 1] == nextPoint) ? stoppingDistance : 0.05f;
+			}
+			
 			if ((position - nextPoint).sqrMagnitude <= proximity){
 
-				activePath.RemoveAt(0);
+				if (activePath.Count > 0) {
+					activePath.RemoveAt(0);
+				}
 
 				//if it was last point, means the path is complete and no longer have an active path.
 				if (!hasPath){

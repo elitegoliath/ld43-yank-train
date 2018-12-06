@@ -946,7 +946,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1115375241
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0
@@ -5570,7 +5570,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1115375241
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0
@@ -10652,12 +10652,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 1521429185}
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11164,7 +11164,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1115375241
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0
@@ -18206,7 +18206,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1115375241
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 3
   m_RenderMode: 0
   m_SortMode: 0
@@ -22887,7 +22887,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1115375241
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 3
   m_RenderMode: 0
   m_SortMode: 0
@@ -27775,7 +27775,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1115375241
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 3
   m_RenderMode: 0
   m_SortMode: 0
@@ -33019,12 +33019,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 1521429185}
+        m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -54468,7 +54468,7 @@ GameObject:
   - component: {fileID: 1243717463}
   - component: {fileID: 1243717462}
   m_Layer: 5
-  m_Name: Filled
+  m_Name: TranscodeFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54735,7 +54735,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1115375241
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 3
   m_RenderMode: 0
   m_SortMode: 0
@@ -60254,7 +60254,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1115375241
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 2
   m_RenderMode: 1
   m_SortMode: 0
@@ -64946,9 +64946,25 @@ Prefab:
       propertyPath: coreController4
       value: 
       objectReference: {fileID: 1254642313}
+    - target: {fileID: 114209253028603272, guid: a49ce874ddd5da244b318626566e2410,
+        type: 2}
+      propertyPath: initialWaveDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114209253028603272, guid: a49ce874ddd5da244b318626566e2410,
+        type: 2}
+      propertyPath: waveDelay
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a49ce874ddd5da244b318626566e2410, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1521429185 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114209253028603272, guid: a49ce874ddd5da244b318626566e2410,
+    type: 2}
+  m_PrefabInternal: {fileID: 1521429184}
+  m_Script: {fileID: 11500000, guid: f6680d6b222b45a4baff33f507cbe331, type: 3}
 --- !u!1 &1545902378
 GameObject:
   m_ObjectHideFlags: 0
@@ -65210,7 +65226,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1115375241
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0
@@ -70170,7 +70186,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1115375241
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 2
   m_RenderMode: 1
   m_SortMode: 0
@@ -75283,7 +75299,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1115375241
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 2
   m_RenderMode: 1
   m_SortMode: 0
@@ -79964,7 +79980,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1115375241
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 2
   m_RenderMode: 1
   m_SortMode: 0

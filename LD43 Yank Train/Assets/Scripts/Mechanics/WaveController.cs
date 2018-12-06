@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WaveController : MonoBehaviour {
+    public float transcodeGoal = 200;
     public float waveDelay = 60f;
     public float initialWaveDelay = 6f;
     public int enemyMultiplierPerWave = 2;
@@ -34,6 +36,9 @@ public class WaveController : MonoBehaviour {
     private Text _uiNextWaveTimer;
     private Text _uiCompanionTracker;
     private float _playerMaxHealth;
+    private float _currentTranscode = 0f;
+    private Image _uiTranscodeFill;
+    private GameObject _retryScreen;
 
     private void Awake()
     {
@@ -42,6 +47,7 @@ public class WaveController : MonoBehaviour {
         EventManager.StartListening("enemyDeath", EnemyDeath);
         EventManager.StartListening("companionDeath", CompanionDeath);
         EventManager.StartListening("spawnCheckerCloneRemoved", SpawnCheckerCloneRemoved);
+        EventManager.StartListening("companionTranscode", AddCompanionTranscode);
     }
 
     private void OnDestroy()
@@ -51,9 +57,11 @@ public class WaveController : MonoBehaviour {
         EventManager.StopListening("enemyDeath", EnemyDeath);
         EventManager.StopListening("companionDeath", CompanionDeath);
         EventManager.StopListening("spawnCheckerCloneRemoved", SpawnCheckerCloneRemoved);
+        EventManager.StopListening("companionTranscode", AddCompanionTranscode);
     }
 
-    private void Start () {
+    private void Start () 
+    {
         // Set defaults.
         _waveStartTimer = initialWaveDelay;
         _isWaveActive = false;
@@ -72,6 +80,11 @@ public class WaveController : MonoBehaviour {
 
         GameObject companionTracker = GameObject.Find("CompanionTracker");
         _uiCompanionTracker = companionTracker.GetComponent<Text>();
+
+        GameObject tFill = GameObject.Find("TranscodeFill");
+        _uiTranscodeFill = tFill.GetComponent<Image>();
+
+        _retryScreen = GameObject.Find("UI_Death");
     }
 
     private void Update()
@@ -103,17 +116,16 @@ public class WaveController : MonoBehaviour {
     {
         _currentWave++;
 
-        if (_currentWave > numberOfWaves) {
+        // if (_currentWave > numberOfWaves) {
             // JK, leave this be.
             // TODO: Do some end-game shit here. Also, early return because fuck it.
-        }
+        // }
 
         _waveStartTimer = waveDelay;
-        _isWaveActive = true;
         _uiWaveCounter.text = _currentWave.ToString();
 
         // Re-activate the destination collider so waypoints can be generated.
-        _destinationColliderController.Activate();
+        // _destinationColliderController.Activate();
 
         // Determine wave size.
         int transportCount = Random.Range(baseTransportCount, (baseTransportCount * _currentWave));
@@ -127,8 +139,9 @@ public class WaveController : MonoBehaviour {
         }
 
         // TODO: WORKAROUND CODE BELOW
-        _isWaveActive = true;
-        waveDelay += 10f;
+        // _isWaveActive = true;
+        _waveStartTimer = Time.time + _waveStartTimer;
+        waveDelay += 4f;
     }
 
     private void RegisterEnemy()
@@ -156,11 +169,11 @@ public class WaveController : MonoBehaviour {
 
     private void SpawnCheckerCloneRemoved()
     {
-        _spawnCheckerCloneCount -= 1;
+        // _spawnCheckerCloneCount -= 1;
 
-        if (_spawnCheckerCloneCount <= 0) {
-            _destinationColliderController.Deactivate();
-        }
+        // if (_spawnCheckerCloneCount <= 0) {
+        //     _destinationColliderController.Deactivate();
+        // }
     }
 
     private void CheckDeathThreshold()
@@ -168,13 +181,13 @@ public class WaveController : MonoBehaviour {
         // If enough enemies are dead, set timer for the next wave.
         // Threshold not important.
         //if (_enemiesAlive <= enemyEndWaveThreshold && _isWaveActive == true) {
-        if (_enemiesAlive == 0 && _isWaveActive == true) {
-                _isWaveActive = false;
+        // if (_enemiesAlive == 0 && _isWaveActive == true) {
+        //         _isWaveActive = false;
 
-            // If we start the countdown now, we need to use "now" as a point of reference.
-            // Time is all made up. It's all relative. Whatever.
-            _waveStartTimer = Time.time + _waveStartTimer;
-        }
+        //     // If we start the countdown now, we need to use "now" as a point of reference.
+        //     // Time is all made up. It's all relative. Whatever.
+        //     _waveStartTimer = Time.time + _waveStartTimer;
+        // }
     }
 
     private void UpdateCompanionTracker()
@@ -188,7 +201,7 @@ public class WaveController : MonoBehaviour {
     {
         EventManager.TriggerEvent("GameEnded");
 
-        // Enter loss condition stuff here.
+        _retryScreen.SetActive(true);
     }
 
     public void SetHealthbar(int maxHealth)
@@ -220,5 +233,44 @@ public class WaveController : MonoBehaviour {
         coreController2.UpdateCoreHealth(core2Health);
         coreController3.UpdateCoreHealth(core3Health);
         coreController4.UpdateCoreHealth(core4Health);
+    }
+
+    public void AddPlayerTranscode() {
+        _currentTranscode += 1f;
+        CheckTranscodeProgress();
+    }
+
+    private void AddCompanionTranscode()
+    {
+        _currentTranscode += 1f;
+    }
+
+    private void CheckTranscodeProgress()
+    {
+        // Update the UI
+        float percentage = _currentTranscode / transcodeGoal;
+
+        if (percentage > 1f) {
+            percentage = 1f;
+        }
+
+        Debug.Log("Transcode");
+        Debug.Log(percentage);
+
+        _uiTranscodeFill.fillAmount = percentage;
+
+        if (_currentTranscode >= transcodeGoal) {
+            SceneManager.LoadScene("Credits");
+        }
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene("GameArena");
     }
 }

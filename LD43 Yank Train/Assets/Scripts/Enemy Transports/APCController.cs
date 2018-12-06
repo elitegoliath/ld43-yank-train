@@ -127,9 +127,13 @@ public class APCController : MonoBehaviour {
     /// </summary>
     private void StopOrder()
     {
-        _myRigidBody.AddTorque(torque);
-        _myRigidBody.drag = drag;
-        _myRigidBody.angularDrag = angularDrag;
+        if (_isMoving == true) {
+            _isMoving = false;
+            _isStopping = true;
+            _myRigidBody.AddTorque(torque);
+            _myRigidBody.drag = drag;
+            _myRigidBody.angularDrag = angularDrag;
+        }
     }
 
     private void DeployOrder()
@@ -169,6 +173,8 @@ public class APCController : MonoBehaviour {
     {
         if (collision.tag == "LargeExplosion") {
             _myCombatController.Die();
+        } else if (collision.tag == "Player" || collision.tag == "Transport") {
+            StopOrder();
         }
     }
 
@@ -177,7 +183,7 @@ public class APCController : MonoBehaviour {
         GameObject freshSpawn = Instantiate(payloadPrefab);
         freshSpawn.transform.position = transform.position;
         AIController freshSpawnAI = freshSpawn.GetComponent<AIController>();
-        freshSpawnAI.DeployToRandomLocation(deployLocatons);
+        freshSpawnAI.DeployToRandomLocation(deployLocatons, "ActivateAI");
     }
 
     private void DropCompanionPayload()
@@ -187,7 +193,7 @@ public class APCController : MonoBehaviour {
         AIController freshSpawnAI = freshSpawn.GetComponent<AIController>();
         CombatController freshSpawnCombatController = freshSpawn.GetComponent<CombatController>();
         freshSpawnCombatController.InstantiateCompanionOnDeath(companionPrefab, companionLightIndicator);
-        freshSpawnAI.DeployToRandomLocation(deployLocatons);
+        freshSpawnAI.DeployToRandomLocation(deployLocatons, "ActivateAltAI");
     }
 
     /// <summary>
@@ -199,8 +205,6 @@ public class APCController : MonoBehaviour {
             float distance = Vector2.Distance(transform.position, _destination);
             
             if (distance <= 2f) {
-                _isMoving = false;
-                _isStopping = true;
                 StopOrder();
             }
         }

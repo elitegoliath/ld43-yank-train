@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class PlayerControls : MonoBehaviour
 {
     [Header("Characteristics")]
     public float moveSpeed = 100f;
+    public float transcodeDifficulty = 2f;
     public int assimilateHealAmount = 200;
 
     [Header("Combat Stats")]
@@ -29,7 +31,8 @@ public class PlayerControls : MonoBehaviour
     private Rigidbody2D _myRigidBody;
     private Camera _cam;
     private CombatController _myCombatController;
-    WaveController _waveController;
+    private WaveController _waveController;
+    private IEnumerator _transcodeMind;
 
     private void Awake()
     {
@@ -50,6 +53,10 @@ public class PlayerControls : MonoBehaviour
         _waveController.SetHealthbar(maxHealth);
 
         _myCombatController.SetMaxHealth(maxHealth);
+
+        _transcodeMind = TranscodeMind();
+
+        StartCoroutine(_transcodeMind);
     }
 
     /// <summary>
@@ -219,5 +226,14 @@ public class PlayerControls : MonoBehaviour
     {
         _isAssimilateOnCooldown = false;
         _simTrigger = false;
+    }
+
+    private IEnumerator TranscodeMind() {
+        yield return null;
+
+        while (_controlsEnabled == true) {
+            _waveController.AddPlayerTranscode();
+            yield return new WaitForSeconds(transcodeDifficulty);
+        }
     }
 }

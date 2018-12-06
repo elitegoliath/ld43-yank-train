@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour {
     private const string arenaSceneName = "GameArena";
-    private const string mainMenuSceneName = "GameArena";
+    private const string mainMenuSceneName = "MainMenu";
 
     /// <summary>
     /// Loads the Arena Scene so that the game may begin.

@@ -4,6 +4,8 @@ using UnityEngine;
 using PolyNav;
 
 public class FriendlyGroundBotAI : MonoBehaviour {
+    public float transcodeDifficulty = 1f;
+
     [Header("Navigation")]
     public float checkRangesCooldown = 0.2f;
 
@@ -34,6 +36,7 @@ public class FriendlyGroundBotAI : MonoBehaviour {
     private CombatController _myCombatController;
     private AIController _myAIController;
     private bool _isAIActive = true;
+    private IEnumerator _transcode;
 
     private void Awake()
     {
@@ -76,6 +79,8 @@ public class FriendlyGroundBotAI : MonoBehaviour {
         // Activate initial AI behaviors.
         // Do so after delay for effect and for the enemy to clear the space.
         _myAIController.ActivateAltAI();
+
+        _transcode = TranscodeForPlayer();
     }
 
     private void OnDestroy()
@@ -101,6 +106,8 @@ public class FriendlyGroundBotAI : MonoBehaviour {
 
             // If within weapon range, fire fire fire!!
             _myAIController.AIAttackTarget();
+
+            StartCoroutine(_transcode);
         }
     }
 
@@ -133,8 +140,15 @@ public class FriendlyGroundBotAI : MonoBehaviour {
 
         // emit particles for a bit before dying;
         ParticleSystem regenSparkles = Instantiate(assimilationParticles, transform);
-        regenSparkles.transform.localScale = new Vector3(0.02f, 0.06f, 0.06f);
+        regenSparkles.transform.localScale = new Vector3(0.04f, 0.04f, 0.04f);
 
         _myCombatController.Die(false, 2.5f);
+    }
+
+    public IEnumerator TranscodeForPlayer() {
+        while (_isAIActive == true) {
+            EventManager.TriggerEvent("companionTranscode");
+            yield return new WaitForSeconds(transcodeDifficulty);
+        }
     }
 }

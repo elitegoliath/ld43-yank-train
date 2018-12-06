@@ -22,6 +22,7 @@ public class AIController : MonoBehaviour {
     private CombatController _rangedWeaponCombatController;
     private CombatController _myCombatController;
     private Transform _player;
+    private string _aiType;
 
     /*****************************************
      *              Lifecycles               *
@@ -47,6 +48,8 @@ public class AIController : MonoBehaviour {
         _myNavAgent.OnDestinationInvalid -= ShamefulDeath;
         _myNavAgent.OnDestinationInvalid -= SelfDestruct;
         CancelInvoke("ActivateAltAI");
+
+        _myNavAgent.Stop();
     }
 
     private void ForceColliderActivation()
@@ -111,10 +114,11 @@ public class AIController : MonoBehaviour {
     /*****************************************
      *               Behaviors               *
      ****************************************/
-    public void DeployToRandomLocation(List<Transform> waypoints)
+    public void DeployToRandomLocation(List<Transform> waypoints, string aiType)
     {
         // TODO: Make this code better like MephDaddyX's.
         _availableDeployLocations = new List<Transform>(waypoints);
+        _aiType = aiType;
         Transform chosenDeployLocation = _availableDeployLocations[Random.Range(0, _availableDeployLocations.Count)];
 
         // Remove deploy location from the list in case it isn't valid.
@@ -124,25 +128,26 @@ public class AIController : MonoBehaviour {
         // Attempt to deploy to location.
         _myNavAgent.SetDestination(chosenDeployLocation.position);
 
-        CancelInvoke("ActivateAI");
-        Invoke("ActivateAI", 2f);
+        CancelInvoke(aiType);
+        Invoke(aiType, 2f);
     }
 
     private void PickNewDeployLocation()
     {
+        // TODO: Should be a while loop inside a coroutine here.
         // If no deploy locations are viable, fuckin die.
         if (_availableDeployLocations.Count == 0) {
             ShamefulDeath();
         } else {
-            DeployToRandomLocation(_availableDeployLocations);
+            DeployToRandomLocation(_availableDeployLocations, _aiType);
         }
     }
 
-    public void ActivateAIAfterDelay(float delay)
-    {
-        // TODO: If args need to be passed, make coroutine instead, maybe?
-        Invoke("ActivateAltAI", delay);
-    }
+    // public void ActivateAIAfterDelay(float delay)
+    // {
+    //     // TODO: If args need to be passed, make coroutine instead, maybe?
+    //     Invoke("ActivateAltAI", delay);
+    // }
 
     public void ActivateAltAI()
     {
@@ -154,6 +159,9 @@ public class AIController : MonoBehaviour {
 
         // TODO: Circle collider not guarenteed. Pass in reference to desired collider instead.
         gameObject.GetComponent<CircleCollider2D>().enabled = true;
+
+        SetPlayer();
+        _myNavAgent.SetDestination(_player.position);
     }
 
     public void ActivateAI()
@@ -177,6 +185,9 @@ public class AIController : MonoBehaviour {
         // Register new "stuck" event listener;
         // TODO: Handle entities that get stuck better.
         _myNavAgent.OnDestinationInvalid += ShamefulDeath;
+
+        SetPlayer();
+        _myNavAgent.SetDestination(_player.position);
     }
 
     public void AIFindClosestTarget()
