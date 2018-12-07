@@ -126,7 +126,7 @@ public class WaveController : MonoBehaviour {
         // _destinationColliderController.Activate();
 
         // Determine wave size.
-        int transportCount = Random.Range(baseTransportCount, (baseTransportCount * _currentWave));
+        int transportCount = Random.Range(baseTransportCount, (baseTransportCount + _currentWave));
         _spawnCheckerCloneCount = transportCount;
 
         for (int i = 0; i < transportCount; i++) {
@@ -139,7 +139,7 @@ public class WaveController : MonoBehaviour {
         // TODO: WORKAROUND CODE BELOW
         // _isWaveActive = true;
         _waveStartTimer = Time.time + _waveStartTimer;
-        waveDelay += 4f;
+        waveDelay += 1f;
     }
 
     private void RegisterEnemy()

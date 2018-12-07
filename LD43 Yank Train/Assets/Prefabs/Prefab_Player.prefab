@@ -1604,7 +1604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 300
-  transcodeDifficulty: 3
+  transcodeDifficulty: 4
   assimilateHealAmount: 100
   maxHealth: 400
   armor: 1
