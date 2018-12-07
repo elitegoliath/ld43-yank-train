@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MunitionController : MonoBehaviour {
     public float speed = 1f;
+    public ParticleSystem damageSparks;
+    public AudioClip sfx;
+    public float volume = 1f;
 
     private float _lifeSpan = 1f;
     private int _damage = 1;
@@ -12,6 +15,7 @@ public class MunitionController : MonoBehaviour {
     {
         Rigidbody2D _myRigidBody = gameObject.GetComponent<Rigidbody2D>();
         _myRigidBody.AddForce(transform.up * speed);
+        AudioSource.PlayClipAtPoint(sfx, transform.position, volume);
 
         Destroy(gameObject, _lifeSpan);
     }
@@ -40,6 +44,7 @@ public class MunitionController : MonoBehaviour {
 
     public void Die()
     {
+        Instantiate(damageSparks, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }

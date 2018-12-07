@@ -28,6 +28,7 @@ public class CombatController : MonoBehaviour {
     private GameObject _detonationEffect;
     private PlayerControls _player;
 
+
     private void Start()
     {
         string _tag = gameObject.tag;
@@ -323,6 +324,7 @@ public class CombatController : MonoBehaviour {
     {
         if (_debris != null) {
             Instantiate(_debris, transform.position, transform.rotation);
+
         }
     }
 

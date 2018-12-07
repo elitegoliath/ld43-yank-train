@@ -22,7 +22,7 @@ public class SelfDestructExplosion : MonoBehaviour {
     {
         string tag = collision.tag;
 
-        if (tag == "Enemy") {
+        if (tag == "Enemy" || tag == "Transport") {
             CombatController combatController = collision.GetComponent<CombatController>();
             combatController.Die(true);
         }

@@ -39,6 +39,7 @@ public class WaveController : MonoBehaviour {
     private float _playerMaxHealth;
     private float _currentTranscode = 0f;
     private Image _uiTranscodeFill;
+    private int _waveSpawnSize = 0;
 
     private void Awake()
     {
@@ -125,8 +126,12 @@ public class WaveController : MonoBehaviour {
         // Re-activate the destination collider so waypoints can be generated.
         // _destinationColliderController.Activate();
 
+        if (_currentWave % 2 == 0) {
+            _waveSpawnSize += 1;
+        }
+
         // Determine wave size.
-        int transportCount = Random.Range(baseTransportCount, (baseTransportCount + _currentWave));
+        int transportCount = Random.Range(baseTransportCount, (baseTransportCount + _waveSpawnSize));
         _spawnCheckerCloneCount = transportCount;
 
         for (int i = 0; i < transportCount; i++) {
@@ -139,7 +144,7 @@ public class WaveController : MonoBehaviour {
         // TODO: WORKAROUND CODE BELOW
         // _isWaveActive = true;
         _waveStartTimer = Time.time + _waveStartTimer;
-        waveDelay += 1f;
+        waveDelay += 3f;
     }
 
     private void RegisterEnemy()

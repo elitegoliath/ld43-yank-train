@@ -86,6 +86,15 @@ public class EnemyGroundBotAI : MonoBehaviour {
         EventManager.TriggerEvent("enemyDeath");
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        string tag = collision.tag;
+
+        if(tag == "LargeExplosion") {
+            _myCombatController.Die(true);
+        }
+    }
+
     /// <summary>
     /// Public method for telling the AI to deploy to one of the locations given.
     /// Each location will be tested before deployment begins.

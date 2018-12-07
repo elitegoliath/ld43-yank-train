@@ -1864,7 +1864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b38d93b95422e44808e24a58a44190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkRangesCooldown: 0.75
+  checkRangesCooldown: 1.5
   maxHealth: 25
   armor: 1
   attackingTurnSpeed: 400

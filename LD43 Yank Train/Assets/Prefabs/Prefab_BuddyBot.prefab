@@ -1781,7 +1781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transcodeDifficulty: 5
-  checkRangesCooldown: 0.75
+  checkRangesCooldown: 1.5
   maxHealth: 200
   armor: 1
   attackingTurnSpeed: 400
