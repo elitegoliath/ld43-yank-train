@@ -1,13 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using PolyNav;
 using UnityEngine;
-using PolyNav;
 
-public class FriendlyGroundBotAI : MonoBehaviour {
-    public float transcodeDifficulty = 1f;
+public class FriendlyGroundBotAI : MonoBehaviour
+{
+    #region Variable Instantiation
+
+    #region Navigation
 
     [Header("Navigation")]
     public float checkRangesCooldown = 0.2f;
+
+    #endregion Navigation
+
+    #region Characteristics
 
     [Header("Characteristics")]
     public int maxHealth = 10;
@@ -15,6 +20,10 @@ public class FriendlyGroundBotAI : MonoBehaviour {
     public float attackingTurnSpeed = 30f;
     public float followRange = 2f;
     public float speedVarience = 2f;
+
+    #endregion Characteristics
+
+    #region Weapon Stats
 
     [Header("Weapon Stats")]
     public float attackRange = 5f;
@@ -25,6 +34,10 @@ public class FriendlyGroundBotAI : MonoBehaviour {
     public CombatController rangedWeaponCombatController;
     public GameObject rangedWeaponMunition;
 
+    #endregion Weapon Stats
+
+    #region Effects
+
     [Header("Effects")]
     public GameObject selfDestructIndicator;
     public GameObject deathDebris;
@@ -32,12 +45,18 @@ public class FriendlyGroundBotAI : MonoBehaviour {
     public GameObject assimilationIndicator;
     public ParticleSystem assimilationParticles;
 
-    // Private Properties
+    #endregion Effects
+
     private CombatController _myCombatController;
     private AIController _myAIController;
     private bool _isAIActive = true;
-    private IEnumerator _transcode;
 
+    #endregion Variable Instantiation
+
+    /// <summary>
+    /// Sets Variables <see cref="_myCombatController"/> and <seealso cref="_myAIController"/>
+    ///     to current/starting state of gameObject Components <see cref="CombatController"/> and <seealso cref="AIController"/> respectivly.
+    /// </summary>
     private void Awake()
     {
         // Get components
@@ -45,6 +64,9 @@ public class FriendlyGroundBotAI : MonoBehaviour {
         _myAIController = gameObject.GetComponent<AIController>();
     }
 
+    /// <summary>
+    /// Instantiates Friendly AI's with params on load.
+    /// </summary>
     private void Start()
     {
         // TODO: Categorize these.
@@ -79,16 +101,20 @@ public class FriendlyGroundBotAI : MonoBehaviour {
         // Activate initial AI behaviors.
         // Do so after delay for effect and for the enemy to clear the space.
         _myAIController.ActivateAltAI();
-
-        _transcode = TranscodeForPlayer();
-
-        StartCoroutine(_transcode);
     }
 
+    /// <summary>
+    /// Event called opon Friendly AI death
+    /// </summary>
     private void OnDestroy()
     {
-        EventManager.TriggerEvent("companionDeath");
-        StopCoroutine(_transcode);
+        #region Consts for readability
+
+        const string _friendlyDeath = "companionDeath";
+
+        #endregion Consts for readability
+
+        EventManager.TriggerEvent(_friendlyDeath);
     }
 
     /// <summary>
@@ -97,7 +123,8 @@ public class FriendlyGroundBotAI : MonoBehaviour {
     /// </summary>
     private void Update()
     {
-        if (_isAIActive == true) {
+        if (_isAIActive == true)
+        {
             // Lot's of targets to chose from. Keep an eye out...
             _myAIController.AIFindClosestTarget();
 
@@ -112,12 +139,22 @@ public class FriendlyGroundBotAI : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Method called when a Friendly AI is used as a "bomb" either for map clearing or enemy AI kills.
+    /// </summary>
+    /// <param name="mousePos">Cords retrieved from mouse at time of command.</param>
     public void SacrificeSelf(Vector3 mousePos)
     {
+        #region Consts for readability
+
+        const string _selfSacrifier = "Suicider";
+
+        #endregion Consts for readability
+
         _isAIActive = false;
 
         // Remove from list of possible sac choices.
-        gameObject.tag = "Suicider";
+        gameObject.tag = _selfSacrifier;
 
         _myAIController.InitializeSelfDestructSequence(mousePos);
         _myCombatController.SetDetonationOnDeath(true);
@@ -126,14 +163,27 @@ public class FriendlyGroundBotAI : MonoBehaviour {
         newLight.transform.localPosition = new Vector3(0, 0, -0.7f);
     }
 
+    /// <summary>
+    /// Called to sacrifice Ally AI to heal player.
+    /// </summary>
     public void AssimilateIntoPlayer()
     {
-        _isAIActive = false;
+        #region Consts for readability
 
+        const string _assimilatedAlly = "Assimilator";
+
+        #endregion Consts for readability
+
+        #region Variable Instantiation
+
+        _isAIActive = false;
         PolyNavAgent agent = gameObject.GetComponent<PolyNavAgent>();
+
+        #endregion Variable Instantiation
+
         agent.Stop();
 
-        gameObject.tag = "Assimilator";
+        gameObject.tag = _assimilatedAlly;
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
 
         GameObject newLight = Instantiate(assimilationIndicator, transform);
@@ -141,17 +191,8 @@ public class FriendlyGroundBotAI : MonoBehaviour {
 
         // emit particles for a bit before dying;
         ParticleSystem regenSparkles = Instantiate(assimilationParticles, transform);
-        regenSparkles.transform.localScale = new Vector3(0.04f, 0.04f, 0.04f);
+        regenSparkles.transform.localScale = new Vector3(0.02f, 0.06f, 0.06f);
 
         _myCombatController.Die(false, 2.5f);
-    }
-
-    public IEnumerator TranscodeForPlayer() {
-        yield return null;
-
-        while (_isAIActive == true) {
-            yield return new WaitForSeconds(transcodeDifficulty);
-            EventManager.TriggerEvent("companionTranscode");
-        }
     }
 }

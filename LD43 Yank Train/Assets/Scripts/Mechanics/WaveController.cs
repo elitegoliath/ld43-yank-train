@@ -1,104 +1,138 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class WaveController : MonoBehaviour {
-    public float transcodeGoal = 200;
-    public float waveDelay = 60f;
+public class WaveController : MonoBehaviour
+{
+    #region Variable Initilization
+
+    private bool _isWaveActive;
+    private DestinationColliderController _destinationColliderController;
+    private float _playerMaxHealth;
+    private float _waveStartTimer;
+    private GameObject _destinationCollider;
+    private int _companionsAlive = 0;
+    private int _currentWave;
+    private int _enemiesAlive = 0;
+    private int _spawnCheckerCloneCount = 0;
+    private Text _uiCompanionTracker;
+    private Text _uiNextWaveTimer;
+    private Text _uiWaveCounter;
     public float initialWaveDelay = 6f;
-    public int enemyMultiplierPerWave = 2;
-    public int startingWave = 1;
-    public int numberOfWaves = 10;
-    public int baseTransportCount = 2;
-    public int enemyEndWaveThreshold = 2;
-    public GameObject retryScreen;
-    public GameObject[] transportPrefabList;
+    public float waveDelay = 60f;
     public GameObject core1;
     public GameObject core2;
     public GameObject core3;
     public GameObject core4;
+    public GameObject[] transportPrefabList;
+    public int baseTransportCount = 2;
+    public int enemyEndWaveThreshold = 2;
+    public int enemyMultiplierPerWave = 2;
+    public int numberOfWaves = 10;
+    public int startingWave = 1;
     public ReactorCoreController coreController1;
     public ReactorCoreController coreController2;
     public ReactorCoreController coreController3;
     public ReactorCoreController coreController4;
-    
-    private float _waveStartTimer;
-    private int _currentWave;
-    private int _enemiesAlive = 0;
-    private int _companionsAlive = 0;
-    private int _spawnCheckerCloneCount = 0;
-    private bool _isWaveActive;
-    private GameObject _destinationCollider;
-    private DestinationColliderController _destinationColliderController;
-    private Text _uiWaveCounter;
-    private Text _uiNextWaveTimer;
-    private Text _uiCompanionTracker;
-    private float _playerMaxHealth;
-    private float _currentTranscode = 0f;
-    private Image _uiTranscodeFill;
-    private int _waveSpawnSize = 0;
 
+    #endregion Variable Initilization
+
+    /// <summary>
+    /// called on init, starts all needed Event Managers.
+    /// </summary>
     private void Awake()
     {
-        EventManager.StartListening("registerEnemy", RegisterEnemy);
-        EventManager.StartListening("registerCompanion", RegisterCompanion);
-        EventManager.StartListening("enemyDeath", EnemyDeath);
-        EventManager.StartListening("companionDeath", CompanionDeath);
-        EventManager.StartListening("spawnCheckerCloneRemoved", SpawnCheckerCloneRemoved);
-        EventManager.StartListening("companionTranscode", AddCompanionTranscode);
+        #region consts for readability
+
+        const string _registerEnemy = "registerEnemy";
+        const string _registerCompanion = "registerCompanion";
+        const string _enemyDeath = "enemyDeath";
+        const string _companionDeath = "companionDeath";
+        const string _spawnCloneRemoved = "spawnCheckerCloneRemoved";
+
+        #endregion consts for readability
+
+        EventManager.StartListening(_registerEnemy, RegisterEnemy);                     ///<see cref="RegisterEnemy"/>
+        EventManager.StartListening(_registerCompanion, RegisterCompanion);             ///<see cref="RegisterCompanion"/>
+        EventManager.StartListening(_enemyDeath, EnemyDeath);                           ///<see cref="EnemyDeath"/>
+        EventManager.StartListening(_companionDeath, CompanionDeath);                   ///<see cref="CompanionDeath"/>
+        EventManager.StartListening(_spawnCloneRemoved, SpawnCheckerCloneRemoved);      ///<see cref="SpawnCheckerCloneRemoved"/>
     }
 
+    /// <summary>
+    /// once event is raise stops listening for the events.
+    /// </summary>
     private void OnDestroy()
     {
-        EventManager.StopListening("registerEnemy", RegisterEnemy);
-        EventManager.StopListening("registerCompanion", RegisterCompanion);
-        EventManager.StopListening("enemyDeath", EnemyDeath);
-        EventManager.StopListening("companionDeath", CompanionDeath);
-        EventManager.StopListening("spawnCheckerCloneRemoved", SpawnCheckerCloneRemoved);
-        EventManager.StopListening("companionTranscode", AddCompanionTranscode);
+        #region consts for readability
+
+        const string _registerEnemy = "registerEnemy";
+        const string _registerCompanion = "registerCompanion";
+        const string _enemyDeath = "enemyDeath";
+        const string _companionDeath = "companionDeath";
+        const string _spawnCloneRemoved = "spawnCheckerCloneRemoved";
+
+        #endregion consts for readability
+
+        EventManager.StopListening(_registerEnemy, RegisterEnemy);                                      ///<see cref="RegisterEnemy"/>
+        EventManager.StopListening(_registerCompanion, RegisterCompanion);                              ///<see cref="RegisterCompanion"/>
+        EventManager.StopListening(_enemyDeath, EnemyDeath);                                            ///<see cref="EnemyDeath"/>
+        EventManager.StopListening(_companionDeath, CompanionDeath);                                    ///<see cref="CompanionDeath"/>
+        EventManager.StopListening(_spawnCloneRemoved, SpawnCheckerCloneRemoved);                       ///<see cref="SpawnCheckerCloneRemoved"/>
     }
 
-    private void Start () 
+    /// <summary>
+    /// init method for wave.
+    /// </summary>
+    private void Start()
     {
-        // Set defaults.
-        _waveStartTimer = initialWaveDelay;
-        _isWaveActive = false;
+        #region consts for readability
+
+        const string _companionTracker = "CompanionTracker";
+        const string _destination = "DestinationArea";
+        const string _nextWaveTimer = "NextWaveTimer";
+        const string _waveCounter = "WaveCounter";
+
+        #endregion consts for readability
+
+        #region Variable Initialization
+
         _currentWave = startingWave - 1;
+        _destinationCollider = GameObject.FindGameObjectWithTag(_destination);
+        _isWaveActive = false;
+        _waveStartTimer = initialWaveDelay;
+        GameObject companionTracker = GameObject.Find(_companionTracker);
+        GameObject nextWaveTimer = GameObject.Find(_nextWaveTimer);
+        GameObject waveCounter = GameObject.Find(_waveCounter);
+
+        #endregion Variable Initialization
 
         // Get destination collider assets.
-        _destinationCollider = GameObject.FindGameObjectWithTag("DestinationArea");
         _destinationColliderController = _destinationCollider.GetComponent<DestinationColliderController>();
 
         // Get UI Elements.
-        GameObject waveCounter = GameObject.Find("WaveCounter");
-        _uiWaveCounter = waveCounter.GetComponent<Text>();
-
-        GameObject nextWaveTimer = GameObject.Find("NextWaveTimer");
-        _uiNextWaveTimer = nextWaveTimer.GetComponent<Text>();
-
-        GameObject companionTracker = GameObject.Find("CompanionTracker");
         _uiCompanionTracker = companionTracker.GetComponent<Text>();
-
-        GameObject tFill = GameObject.Find("TranscodeFill");
-        _uiTranscodeFill = tFill.GetComponent<Image>();
+        _uiNextWaveTimer = nextWaveTimer.GetComponent<Text>();
+        _uiWaveCounter = waveCounter.GetComponent<Text>();
     }
 
+    /// <summary>
+    /// update method for the wave, and needed checks.
+    /// </summary>
     private void Update()
     {
-        // If the wave ain't goin, let the counter start blowin.
-        if (_isWaveActive == false && _uiNextWaveTimer != null) {
+        // If the wave ended, start next.
+        if(_isWaveActive == false && _uiNextWaveTimer != null)
+        {
             // Get the remaining time.
             float timeRemaining = _waveStartTimer - Time.time;
 
-            // Convert it to M:SS.
+            // Convert it to MM:SS.
             float minutes = Mathf.FloorToInt(timeRemaining / 60f);
             float seconds = Mathf.FloorToInt(timeRemaining - minutes * 60);
 
-            // If time's up, make sure the counter didn't go negative, then begin next wave.
-            if (timeRemaining <= 0) {
+            // If time's up, reset, start new wave.
+            if(timeRemaining <= 0)
+            {
                 minutes = 0;
                 seconds = 0;
                 StartWave();
@@ -113,158 +147,165 @@ public class WaveController : MonoBehaviour {
     /// </summary>
     private void StartWave()
     {
-        _currentWave++;
-
-        // if (_currentWave > numberOfWaves) {
-            // JK, leave this be.
-            // TODO: Do some end-game shit here. Also, early return because fuck it.
-        // }
+        #region variable initiation
 
         _waveStartTimer = waveDelay;
+        _isWaveActive = true;
+        int transportCount = Random.Range(baseTransportCount, baseTransportCount * _currentWave);
+
+        #endregion variable initiation
+
+        _currentWave++;
+
+        if(_currentWave > numberOfWaves)
+        {
+            // JK, leave this be.
+            // TODO: Do some end-game shit here.
+        }
+
         _uiWaveCounter.text = _currentWave.ToString();
 
         // Re-activate the destination collider so waypoints can be generated.
-        // _destinationColliderController.Activate();
-
-        if (_currentWave % 2 == 0) {
-            _waveSpawnSize += 1;
-        }
+        _destinationColliderController.Activate();
 
         // Determine wave size.
-        int transportCount = Random.Range(baseTransportCount, (baseTransportCount + _waveSpawnSize));
         _spawnCheckerCloneCount = transportCount;
 
-        for (int i = 0; i < transportCount; i++) {
+        for(int i = 0; i < transportCount; i++)
+        {
             GameObject newTransport = Instantiate(transportPrefabList[Random.Range(0, transportPrefabList.Length)]);
             TransportSpawnController spawnController = newTransport.GetComponent<TransportSpawnController>();
             // TODO: Make the multiplier be friendly to floats.
-            spawnController.payloadMultiplier = _currentWave * enemyMultiplierPerWave;
+            spawnController.PayloadMultiplier = _currentWave * enemyMultiplierPerWave;
         }
 
         // TODO: WORKAROUND CODE BELOW
-        // _isWaveActive = true;
-        _waveStartTimer = Time.time + _waveStartTimer;
-        waveDelay += 3f;
+        _isWaveActive = true;
+        waveDelay += 10f;
     }
 
+    /// <summary>
+    /// on spawns add 1 to enemy count.
+    /// </summary>
     private void RegisterEnemy()
     {
-        _enemiesAlive += 1;
+        _enemiesAlive++;
     }
 
+    /// <summary>
+    /// if spawn is a companion register it as such.
+    /// </summary>
     private void RegisterCompanion()
     {
-        _companionsAlive += 1;
-        UpdateCompanionTracker();
+        _companionsAlive++;
+        UpdateCompanionTracker();       ///<see cref="UpdateCompanionTracker"/>
     }
 
+    /// <summary>
+    /// called on enemy death(s).
+    /// </summary>
     private void EnemyDeath()
     {
-        _enemiesAlive -= 1;
-        CheckDeathThreshold();
+        _enemiesAlive--;
+        CheckDeathThreshold();          ///<see cref="CheckDeathThreshold"/>
     }
 
+    /// <summary>
+    /// called on companion death.
+    /// </summary>
     private void CompanionDeath()
     {
-        _companionsAlive -= 1;
-        UpdateCompanionTracker();
+        _companionsAlive--;
+        UpdateCompanionTracker();       ///<see cref="UpdateCompanionTracker"/>
     }
 
+    /// <summary>
+    /// when spawn que is empty stop spawn logic.
+    /// </summary>
     private void SpawnCheckerCloneRemoved()
     {
-        // _spawnCheckerCloneCount -= 1;
+        _spawnCheckerCloneCount--;
 
-        // if (_spawnCheckerCloneCount <= 0) {
-        //     _destinationColliderController.Deactivate();
-        // }
+        if(_spawnCheckerCloneCount <= 0)
+        {
+            _destinationColliderController.Deactivate();
+        }
     }
 
+    /// <summary>
+    /// if enemies are dead start new wave.
+    /// </summary>
     private void CheckDeathThreshold()
     {
-        // If enough enemies are dead, set timer for the next wave.
-        // Threshold not important.
-        //if (_enemiesAlive <= enemyEndWaveThreshold && _isWaveActive == true) {
-        // if (_enemiesAlive == 0 && _isWaveActive == true) {
-        //         _isWaveActive = false;
+        if(_enemiesAlive == 0 && _isWaveActive == true)
+        {
+            _isWaveActive = false;
 
-        //     // If we start the countdown now, we need to use "now" as a point of reference.
-        //     // Time is all made up. It's all relative. Whatever.
-        //     _waveStartTimer = Time.time + _waveStartTimer;
-        // }
+            // If we start the countdown now, we need to use "now" as a point of reference.
+            // Time is all made up. It's all relative. Whatever.
+            _waveStartTimer = Time.time + _waveStartTimer;
+        }
     }
 
+    /// <summary>
+    /// updates companion tracker on ally state changes.
+    /// </summary>
     private void UpdateCompanionTracker()
     {
-        if (_uiCompanionTracker != null) {
+        if(_uiCompanionTracker != null)
+        {
             _uiCompanionTracker.text = _companionsAlive.ToString();
         }
     }
 
+    /// <summary>
+    /// called on game end.
+    /// </summary>
     public void GameOver()
     {
-        EventManager.TriggerEvent("GameEnded");
+        #region consts for readability
 
-        retryScreen.SetActive(true);
+        const string _gameOver = "GameEnded";
+
+        #endregion consts for readability
+
+        EventManager.TriggerEvent(_gameOver);       ///<see cref="GameOver"/>
+
+        // Enter loss condition stuff here.
     }
 
+    /// <summary>
+    /// sets players max health.
+    /// </summary>
+    /// <param name="maxHealth"></param>
     public void SetHealthbar(int maxHealth)
     {
         _playerMaxHealth = (float)maxHealth;
     }
 
+    /// <summary>
+    /// update health.
+    /// </summary>
+    /// <param name="currentHealth"></param>
     public void UpdateHealthbar(int currentHealth)
     {
+        #region Initiate Variables
+
         float core1Health = 100f;
         float core2Health = 100f;
         float core3Health = 100f;
         float core4Health = 100f;
-        float ch = (float)currentHealth;
-        float healthPercent = (ch / _playerMaxHealth) * 100f;
 
-        core4Health = ((healthPercent - 75f) / 25f) * 100f;
-        core3Health = ((healthPercent - 50f) / 25f) * 100f;
-        core2Health = ((healthPercent - 25f) / 25f) * 100f;
-        core1Health = (healthPercent / 25f) * 100f;
+        #endregion Initiate Variables
+
+        core1Health = (currentHealth / _playerMaxHealth * 100f / 25f) * 100f;
+        core2Health = ((currentHealth / _playerMaxHealth * 100f - 25f) / 25f) * 100f;
+        core3Health = ((currentHealth / _playerMaxHealth * 100f - 50f) / 25f) * 100f;
+        core4Health = ((currentHealth / _playerMaxHealth * 100f - 75f) / 25f) * 100f;
 
         coreController1.UpdateCoreHealth(core1Health);
         coreController2.UpdateCoreHealth(core2Health);
         coreController3.UpdateCoreHealth(core3Health);
         coreController4.UpdateCoreHealth(core4Health);
-    }
-
-    public void AddPlayerTranscode() {
-        _currentTranscode += 1f;
-        CheckTranscodeProgress();
-    }
-
-    private void AddCompanionTranscode()
-    {
-        _currentTranscode += 1f;
-    }
-
-    private void CheckTranscodeProgress()
-    {
-        // Update the UI
-        float percentage = _currentTranscode / transcodeGoal;
-
-        if (percentage > 1f) {
-            percentage = 1f;
-        }
-
-        _uiTranscodeFill.fillAmount = percentage;
-
-        if (_currentTranscode >= transcodeGoal) {
-            SceneManager.LoadScene("Credits");
-        }
-    }
-
-    public void MainMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
-
-    public void Retry()
-    {
-        SceneManager.LoadScene("GameArena");
     }
 }

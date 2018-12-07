@@ -1,39 +1,54 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class PlayerControls : MonoBehaviour
 {
+    #region Variable Initilization
+
+    #region Characterisics
+
     [Header("Characteristics")]
     public float moveSpeed = 100f;
-    public float transcodeDifficulty = 2f;
     public int assimilateHealAmount = 200;
 
+    #endregion Characterisics
+
+    #region Combat Stats
+
     [Header("Combat Stats")]
-    public int maxHealth = 200;
-    public int armor = 1;
     public float rangedAttackDelay = 0.5f;
     public float rangedWeaponRange = 1f;
-    public int rangedWeaponDamage = 2;
     public GameObject rangedWeaponMunition;
+    public int armor = 1;
+    public int maxHealth = 200;
+    public int rangedWeaponDamage = 2;
+
+    #endregion Combat Stats
+
+    #region Weapons
 
     [Header("Weapons")]
+    private bool _canFireRangedWeapons = true;
+    private bool _controlsEnabled = true;
+    private bool _isAssimilateOnCooldown = false;
+    private bool _isAssimilatingBro = false;
+    private bool _isSacrificeOnCooldown = false;
+    private bool _isSacrificingPal = false;
+    private bool _sacTrigger = false;
+    private bool _simTrigger = false;
+    private Camera _cam;
+    private CombatController _myCombatController;
+    private Rigidbody2D _myRigidBody;
+    private WaveController _waveController;
     public CombatController leftGun;
     public CombatController rightGun;
 
-    private bool _canFireRangedWeapons = true;
-    private bool _isSacrificingPal = false;
-    private bool _isAssimilatingBro = false;
-    private bool _isSacrificeOnCooldown = false;
-    private bool _isAssimilateOnCooldown = false;
-    private bool _sacTrigger = false;
-    private bool _simTrigger = false;
-    private bool _controlsEnabled = true;
-    private Rigidbody2D _myRigidBody;
-    private Camera _cam;
-    private CombatController _myCombatController;
-    private WaveController _waveController;
-    private IEnumerator _transcodeMind;
+    #endregion Weapons
 
+    #endregion Variable Initilization
+
+    /// <summary>
+    /// Player init method.
+    /// </summary>
     private void Awake()
     {
         _myCombatController = gameObject.GetComponent<CombatController>();
@@ -53,10 +68,6 @@ public class PlayerControls : MonoBehaviour
         _waveController.SetHealthbar(maxHealth);
 
         _myCombatController.SetMaxHealth(maxHealth);
-
-        _transcodeMind = TranscodeMind();
-
-        StartCoroutine(_transcodeMind);
     }
 
     /// <summary>
@@ -64,11 +75,12 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if (_controlsEnabled == true) {
-            FaceAvatar();
-            FireRangedWeapons();
-            SacrificeAFriend();
-            AssimilateABuddy();
+        if(_controlsEnabled == true)
+        {
+            FaceAvatar();               ///<see cref="FaceAvatar"/>
+            FireRangedWeapons();        ///<see cref="FireRangedWeapons"/>
+            SacrificeAFriend();         ///<see cref="SacrificeAFriend"/>
+            AssimilateABuddy();         ///<see cref="AssimilateABuddy"/>
         }
     }
 
@@ -80,6 +92,9 @@ public class PlayerControls : MonoBehaviour
         MoveAvatar();
     }
 
+    /// <summary>
+    /// toggles players controls to disabled.
+    /// </summary>
     public void DisableControls()
     {
         _controlsEnabled = false;
@@ -90,9 +105,16 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
     private void MoveAvatar()
     {
+        #region consts for readability
+
+        const string _horizonal = "Horizontal";
+        const string _vertical = "Vertical";
+
+        #endregion consts for readability
+
         // Get the combination of movement inputs from the player.
-        float moveX = (Input.GetAxis("Horizontal") * Time.deltaTime) * moveSpeed;
-        float moveY = (Input.GetAxis("Vertical") * Time.deltaTime) * moveSpeed;
+        float moveX = (Input.GetAxis(_horizonal) * Time.deltaTime) * moveSpeed;
+        float moveY = (Input.GetAxis(_vertical) * Time.deltaTime) * moveSpeed;
 
         _myRigidBody.velocity = new Vector2(moveX, moveY);
     }
@@ -104,141 +126,192 @@ public class PlayerControls : MonoBehaviour
     {
         Vector3 mousePos = GetMousePos();
 
-        // Fuckin fancy ass math... I really don't get it, but it works, so yolo.
         float AngleRad = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x);
         float angle = (180 / Mathf.PI) * AngleRad;
 
         _myRigidBody.rotation = angle + 90;
     }
 
+    /// <summary>
+    /// Gets the position of the players mouse.
+    /// </summary>
     private Vector3 GetMousePos()
     {
-        // Distance between player avatar and the camera so the angle can be properly derived.
-        float camDis = _cam.transform.position.y - transform.position.y;
-
-        // Get the mouse position in the world space, while using the camera distance for Z, for some reason.
-        Vector3 mousePos = _cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDis));
-
-        return mousePos;
+        return _cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _cam.transform.position.y - transform.position.y));
     }
 
+    /// <summary>
+    /// method called to shoot weapons.
+    /// </summary>
     private void FireRangedWeapons()
     {
-        if (Input.GetAxis("Fire1") != 0 && _canFireRangedWeapons == true) {
+        #region consts for readability
+
+        const string _fire = "Fire1";
+        const string _rangedWeaponCD = "FireRangedWeaponsCooldown";
+
+        #endregion consts for readability
+
+        if(Input.GetAxis(_fire) != 0 && _canFireRangedWeapons == true)
+        {
             _canFireRangedWeapons = false;
 
             leftGun.FireRangedWeapon();
             rightGun.FireRangedWeapon();
 
-            Invoke("FireRangedWeaponsCooldown", rangedAttackDelay);
+            Invoke(_rangedWeaponCD, rangedAttackDelay);     ///<see cref="FireRangedWeaponsCooldown"/>
         }
     }
 
+    /// <summary>
+    /// event called to sacrifice a companion.
+    /// </summary>
     private void SacrificeAFriend()
     {
-        if (Input.GetAxis("Fire2") != 0 && _isSacrificeOnCooldown == false) {
+        #region consts for readability
+
+        const string _fire = "Fire2";
+        const string _innocentLambCD = "SacrificeCooldown";
+
+        #endregion consts for readability
+
+        if(Input.GetAxis(_fire) != 0 && _isSacrificeOnCooldown == false)
+        {
             _isSacrificingPal = true;
 
-            if (_sacTrigger == false) {
+            if(_sacTrigger == false)
+            {
                 _sacTrigger = true;
                 SacrificeRandomCompanion();
             }
-        } else if (_isSacrificingPal == true) {
+        }
+        else if(_isSacrificingPal == true)
+        {
             // Begin cooldown after input stops.
             _isSacrificingPal = false;
             _isSacrificeOnCooldown = true;
 
-            Invoke("SacrificeCooldown", 0.5f);
+            Invoke(_innocentLambCD, 0.5f);      ///<see cref="SacrificeCooldown"/>
         }
     }
 
+    /// <summary>
+    /// called to sacrifice a companion to heal player.
+    /// </summary>
     private void AssimilateABuddy()
     {
-        if (Input.GetAxis("Q") != 0 && _isAssimilateOnCooldown == false) {
+        #region consts for readability
+
+        const string _fire = "Q";
+        const string _assimilationCD = "AssimilateCooldown";
+
+        #endregion consts for readability
+
+        if(Input.GetAxis(_fire) != 0 && _isAssimilateOnCooldown == false)
+        {
             _isAssimilatingBro = true;
 
-            if (_simTrigger == false) {
+            if(_simTrigger == false)
+            {
                 _simTrigger = true;
                 AssimilateRandomCompanion();
             }
-        } else if(_isAssimilatingBro == true) {
+        }
+        else if(_isAssimilatingBro == true)
+        {
             // Begin cooldown after input stops.
             _isAssimilatingBro = false;
             _isAssimilateOnCooldown = true;
 
-            Invoke("AssimilateCooldown", 0.5f);
+            Invoke(_assimilationCD, 0.5f);      ///<see cref="AssimilateCooldown"/>
         }
     }
 
+    /// <summary>
+    /// tells a companion to charge enemies before exploding.
+    /// </summary>
     private void SacrificeRandomCompanion()
     {
         // Tell him to wreck himself into them.
         FriendlyGroundBotAI newDeathBuddy = FindRandomCompanion();
 
-        if (newDeathBuddy != null) {
+        if(newDeathBuddy != null)
+        {
             newDeathBuddy.SacrificeSelf(GetMousePos());
         }
     }
 
+    /// <summary>
+    /// uses a random companion to heal player.
+    /// </summary>
     private void AssimilateRandomCompanion()
     {
-        // Tell him to wreck himself into yourself.
-        FriendlyGroundBotAI newHealthBuddy = FindRandomCompanion();
+        FriendlyGroundBotAI newHealthBuddy = FindRandomCompanion();     ///<see cref="FindRandomCompanion"/>
 
-        if (newHealthBuddy != null) {
+        if(newHealthBuddy != null)
+        {
+            #region Variable Inintialization
+
+            int newHealth = _myCombatController.GetCurrentHealth();
+
+            #endregion Variable Inintialization
+
             newHealthBuddy.AssimilateIntoPlayer();
             _myCombatController.Heal(assimilateHealAmount);
-            int newHealth = _myCombatController.GetCurrentHealth();
             PlayerHealthChanged(newHealth);
         }
     }
 
     private FriendlyGroundBotAI FindRandomCompanion()
     {
-        GameObject[] companions = GameObject.FindGameObjectsWithTag("CompanionBot");
+        #region consts for readability
+
+        const string _companionTag = "CompanionBot";
+
+        #endregion consts for readability
+
+        GameObject[] companions = GameObject.FindGameObjectsWithTag(_companionTag);
         FriendlyGroundBotAI foundBuddy = null;
 
-        if (companions.Length > 0) {
+        if(companions.Length > 0)
+        {
             int chosenIndex = Random.Range(0, companions.Length);
-            foundBuddy = companions[chosenIndex].GetComponent<FriendlyGroundBotAI>();
+            return foundBuddy = companions[chosenIndex].GetComponent<FriendlyGroundBotAI>();
         }
-
-        return foundBuddy;
     }
 
+    /// <summary>
+    /// When a players health changes feed the current health into the update health bar method.
+    /// </summary>
+    /// <param name="currentHealth"></param>
     public void PlayerHealthChanged(int currentHealth)
     {
         _waveController.UpdateHealthbar(currentHealth);
     }
 
+    /// <summary>
+    /// when weapons cooldown is over sets can fire flag to true.
+    /// </summary>
     private void FireRangedWeaponsCooldown()
     {
         _canFireRangedWeapons = true;
     }
 
+    /// <summary>
+    /// flags that handle weather player can currently sacrifice a companion
+    /// </summary>
     private void SacrificeCooldown()
     {
         _isSacrificeOnCooldown = false;
         _sacTrigger = false;
     }
 
+    /// <summary>
+    /// flags that handle weather player can currently sacrifice a companion
+    /// </summary>
     private void AssimilateCooldown()
     {
         _isAssimilateOnCooldown = false;
         _simTrigger = false;
-    }
-
-    private IEnumerator TranscodeMind() {
-        yield return null;
-
-        while (_controlsEnabled == true) {
-            yield return new WaitForSeconds(transcodeDifficulty);
-            _waveController.AddPlayerTranscode();
-        }
-    }
-
-    public void Died()
-    {
-        _waveController.GameOver();
     }
 }

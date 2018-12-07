@@ -1,10 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class TransportSpawnController : MonoBehaviour {
-    public GameObject spawnCollider;
+public class TransportSpawnController : MonoBehaviour
+{
+    #region Instantiate Variables Used In Class('s)
 
+    public GameObject spawnCollider;
     private List<BoxCollider2D> _spawnSectors = new List<BoxCollider2D>();
     private GameObject _spawnColliderClone;
     private GameObject _destinationCollider;
@@ -12,15 +13,39 @@ public class TransportSpawnController : MonoBehaviour {
     private DestinationColliderController _destinationColliderController;
     private int _payloadMultiplier = 1;
 
-    public int payloadMultiplier {
-        get { return _payloadMultiplier; }
-        set { _payloadMultiplier = value; }
+    #endregion Instantiate Variables Used In Class('s)
+
+    /// <summary>
+    /// Creation of PayloadMultiplier Field
+    /// </summary>
+    public int PayloadMultiplier
+    {
+        get
+        {
+            return _payloadMultiplier;
+        }
+        set
+        {
+            _payloadMultiplier = value;
+        }
     }
 
-    private void Start () {
+    /// <summary>
+    /// Sets Up All Variable's and task needed for spawn.
+    /// </summary>
+    private void Start()
+    {
+        #region Consts for readability
+
+        const string _spawnSector = "SpawnSector";
+        const string _destination = "DestinationArea";
+
+        #endregion Consts for readability
+
         // Compile list of spawn sector colliders.
-        GameObject[] spawnSectorObjects = GameObject.FindGameObjectsWithTag("SpawnSector");
-        for (int i = 0; i < spawnSectorObjects.Length; i++) {
+        GameObject[] spawnSectorObjects = GameObject.FindGameObjectsWithTag(_spawnSector);
+        for (int i = 0; i < spawnSectorObjects.Length; i++)
+        {
             _spawnSectors.Add(spawnSectorObjects[i].GetComponent<BoxCollider2D>());
         }
 
@@ -29,14 +54,15 @@ public class TransportSpawnController : MonoBehaviour {
         _spawnColliderController = _spawnColliderClone.GetComponent<SpawnColliderController>();
 
         // Instantiate the collider that will be used to obtain waypoints for transports.
-        _destinationCollider = GameObject.FindGameObjectWithTag("DestinationArea");
+        _destinationCollider = GameObject.FindGameObjectWithTag(_destination);
         _destinationColliderController = _destinationCollider.GetComponent<DestinationColliderController>();
     }
 
     /// <summary>
     /// Returns a Vector2 of a free location for the transport to spawn.
     /// </summary>
-    /// <returns></returns>
+    /// <see cref="FindSpawnPoint"/>
+    /// <seealso cref="GetSpawnPoint"/>
     public Vector2 GetSpawnPoint()
     {
         // Gets a potential spawn point.
@@ -46,7 +72,8 @@ public class TransportSpawnController : MonoBehaviour {
         bool canSpawnHere = CheckForCollision(foundSpawnPoint);
 
         // If not, invoke recursion until one is found.
-        if(canSpawnHere == false) {
+        if (canSpawnHere == false)
+        {
             foundSpawnPoint = GetSpawnPoint();
         }
 
@@ -56,7 +83,6 @@ public class TransportSpawnController : MonoBehaviour {
     /// <summary>
     /// Calls the Destination Collider Controller to return a rnadom point within itself.
     /// </summary>
-    /// <returns></returns>
     public Vector2 GetDestination()
     {
         Vector2 foundDestination = _destinationColliderController.GetRandomPoint();
@@ -67,7 +93,6 @@ public class TransportSpawnController : MonoBehaviour {
     /// <summary>
     /// Finds and returns a Vector2 coordinate inside one of the sectors.
     /// </summary>
-    /// <returns></returns>
     private Vector2 FindSpawnPoint()
     {
         BoxCollider2D chosenSector = _spawnSectors[Random.Range(0, _spawnSectors.Count)];
@@ -84,8 +109,7 @@ public class TransportSpawnController : MonoBehaviour {
     /// <summary>
     /// Checks for collisions with other Transports and returns whether the space is free of them.
     /// </summary>
-    /// <param name="spawnPoint"></param>
-    /// <returns></returns>
+    /// <param name="spawnPoint">The cords that need to be checked to see if they are a valid spawn.</param>
     private bool CheckForCollision(Vector2 spawnPoint)
     {
         _spawnColliderClone.transform.position = spawnPoint;
@@ -99,8 +123,14 @@ public class TransportSpawnController : MonoBehaviour {
     /// </summary>
     public void TearDown()
     {
-        EventManager.TriggerEvent("spawnCheckerCloneRemoved");
+        #region Consts for Readability
+
+        const string _checkIfCloneRemoved = "spawnCheckerCloneRemoved";
+
+        #endregion Consts for Readability
+
+        EventManager.TriggerEvent(_checkIfCloneRemoved);
         Destroy(_spawnColliderClone);
-        Destroy(this);
+        Destroy(this); /// <see cref="TransportSpawnController"/>
     }
 }

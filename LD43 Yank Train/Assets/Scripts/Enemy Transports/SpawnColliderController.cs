@@ -1,18 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class SpawnColliderController : MonoBehaviour {
+public class SpawnColliderController : MonoBehaviour
+{
     private bool _isInFreeSpace = true;
 
     /// <summary>
     /// Detects existing transports in the area.
     /// </summary>
-    /// <param name="collision"></param>
+    /// <param name="collision"> The current Collision event being checked against valid tag(s). </param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        #region Consts for Readability
+
+        const string _transport = "Transport";
+
+        #endregion
+
         // If another transport is in the immediate area, space is not free.
-        if (collision.tag == "Transport") {
+        if (collision.tag == _transport)
+        {
             _isInFreeSpace = false;
         }
     }
@@ -20,7 +26,6 @@ public class SpawnColliderController : MonoBehaviour {
     /// <summary>
     /// Public function to retrieve whether the area is free.
     /// </summary>
-    /// <returns></returns>
     public bool CheckIfFree()
     {
         // Reset the value after each check in case of recursion.
