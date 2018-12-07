@@ -15,6 +15,7 @@ TagManager:
   - Suicider
   - Assimilator
   - LargeExplosion
+  - Wall
   layers:
   - Default
   - TransparentFX

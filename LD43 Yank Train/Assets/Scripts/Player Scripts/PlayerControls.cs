@@ -90,11 +90,14 @@ public class PlayerControls : MonoBehaviour
     /// </summary>
     private void MoveAvatar()
     {
-        // Get the combination of movement inputs from the player.
-        float moveX = (Input.GetAxis("Horizontal") * Time.deltaTime) * moveSpeed;
-        float moveY = (Input.GetAxis("Vertical") * Time.deltaTime) * moveSpeed;
+        if (_controlsEnabled == true)
+        {
+            // Get the combination of movement inputs from the player.
+            float moveX = (Input.GetAxis("Horizontal") * Time.deltaTime) * moveSpeed;
+            float moveY = (Input.GetAxis("Vertical") * Time.deltaTime) * moveSpeed;
 
-        _myRigidBody.velocity = new Vector2(moveX, moveY);
+            _myRigidBody.velocity = new Vector2(moveX, moveY);
+        }
     }
 
     /// <summary>

@@ -850,9 +850,9 @@ MonoBehaviour:
     type: 2}
   foreTurret: {fileID: 1368444749696026}
   aftTurret: {fileID: 1624798307895634}
-  minPayload: 1
-  maxPayload: 5
-  companionSpawnChance: 20
+  minPayload: 2
+  maxPayload: 6
+  companionSpawnChance: 35
   deployRate: 0.5
   payloadPrefab: {fileID: 1202173623782010, guid: b8c1f37e3d58e0b41823adc5d6348037,
     type: 2}

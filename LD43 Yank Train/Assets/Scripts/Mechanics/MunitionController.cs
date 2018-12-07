@@ -20,19 +20,39 @@ public class MunitionController : MonoBehaviour {
         Destroy(gameObject, _lifeSpan);
     }
 
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    Collider2D _collider = collision.collider;
+
+    //    CombatController entity = _collider.GetComponent<CombatController>();
+    //    string _tag = _collider.tag;
+
+    //    if (_tag == "Wall" || _tag == "LargeDebris") {
+    //        Die();
+    //    } else {
+    //        if (entity != null) {
+    //            entity.TakeDamage(_damage);
+    //            Die();
+    //        }
+    //    }
+    //}
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         CombatController entity = collider.GetComponent<CombatController>();
+        string _tag = collider.tag;
 
-        if (entity == null) {
-            // This was a mistake. How did we get here? What is life, even?
-        } else {
-            entity.TakeDamage(_damage);
+        if (_tag == "Wall" || _tag == "TransportDebris") {
             Die();
+        } else {
+            if (entity != null) {
+                entity.TakeDamage(_damage);
+                Die();
+            }
         }
     }
 
-    public void SetDamage(int damage)
+        public void SetDamage(int damage)
     {
         _damage = damage;
     }

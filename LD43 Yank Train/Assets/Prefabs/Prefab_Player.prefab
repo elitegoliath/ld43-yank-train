@@ -1559,7 +1559,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.13}
   serializedVersion: 2
-  m_Radius: 0.8
+  m_Radius: 0.76
 --- !u!95 &95613787166952550
 Animator:
   serializedVersion: 3
@@ -1604,7 +1604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 300
-  transcodeDifficulty: 4
+  transcodeDifficulty: 3.5
   assimilateHealAmount: 100
   maxHealth: 400
   armor: 1

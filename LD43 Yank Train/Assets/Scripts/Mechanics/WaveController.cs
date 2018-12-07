@@ -39,7 +39,7 @@ public class WaveController : MonoBehaviour {
     private float _playerMaxHealth;
     private float _currentTranscode = 0f;
     private Image _uiTranscodeFill;
-    private int _waveSpawnSize = 0;
+    private bool _isGameOver = false;
 
     private void Awake()
     {
@@ -89,7 +89,7 @@ public class WaveController : MonoBehaviour {
     private void Update()
     {
         // If the wave ain't goin, let the counter start blowin.
-        if (_isWaveActive == false && _uiNextWaveTimer != null) {
+        if (_isWaveActive == false && _uiNextWaveTimer != null && _isGameOver == false) {
             // Get the remaining time.
             float timeRemaining = _waveStartTimer - Time.time;
 
@@ -126,12 +126,8 @@ public class WaveController : MonoBehaviour {
         // Re-activate the destination collider so waypoints can be generated.
         // _destinationColliderController.Activate();
 
-        if (_currentWave % 2 == 0) {
-            _waveSpawnSize += 1;
-        }
-
         // Determine wave size.
-        int transportCount = Random.Range(baseTransportCount, (baseTransportCount + _waveSpawnSize));
+        int transportCount = Random.Range(baseTransportCount, (baseTransportCount * _currentWave));
         _spawnCheckerCloneCount = transportCount;
 
         for (int i = 0; i < transportCount; i++) {
@@ -144,7 +140,7 @@ public class WaveController : MonoBehaviour {
         // TODO: WORKAROUND CODE BELOW
         // _isWaveActive = true;
         _waveStartTimer = Time.time + _waveStartTimer;
-        waveDelay += 3f;
+        waveDelay += 4f;
     }
 
     private void RegisterEnemy()
@@ -205,6 +201,7 @@ public class WaveController : MonoBehaviour {
         EventManager.TriggerEvent("GameEnded");
 
         retryScreen.SetActive(true);
+        _isGameOver = true;
     }
 
     public void SetHealthbar(int maxHealth)
@@ -233,13 +230,19 @@ public class WaveController : MonoBehaviour {
     }
 
     public void AddPlayerTranscode() {
-        _currentTranscode += 1f;
-        CheckTranscodeProgress();
+        if (_isGameOver == false)
+        {
+            _currentTranscode += 1f;
+            CheckTranscodeProgress();
+        }
     }
 
     private void AddCompanionTranscode()
     {
-        _currentTranscode += 1f;
+        if (_isGameOver == false)
+        {
+            _currentTranscode += 1f;
+        }
     }
 
     private void CheckTranscodeProgress()

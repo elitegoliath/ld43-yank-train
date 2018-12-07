@@ -117,19 +117,17 @@ public class AIController : MonoBehaviour {
     public void DeployToRandomLocation(List<Transform> waypoints, string aiType)
     {
         // TODO: Make this code better like MephDaddyX's.
-        if (waypoints != null) {
-            _availableDeployLocations = new List<Transform>(waypoints);
-            _aiType = aiType;
-            Transform chosenDeployLocation = _availableDeployLocations[Random.Range(0, _availableDeployLocations.Count)];
+        _availableDeployLocations = new List<Transform>(waypoints);
+        _aiType = aiType;
+        Transform chosenDeployLocation = _availableDeployLocations[Random.Range(0, _availableDeployLocations.Count)];
 
-            // Remove deploy location from the list in case it isn't valid.
-            // TODO: Maybe have a deployment validity checker on the transport so this isn't needed.
-            _availableDeployLocations.Remove(chosenDeployLocation);
+        // Remove deploy location from the list in case it isn't valid.
+        // TODO: Maybe have a deployment validity checker on the transport so this isn't needed.
+        _availableDeployLocations.Remove(chosenDeployLocation);
 
-            // Attempt to deploy to location.
-            _myNavAgent.SetDestination(chosenDeployLocation.position);
-        }
-       
+        // Attempt to deploy to location.
+        _myNavAgent.SetDestination(chosenDeployLocation.position);
+
         CancelInvoke(aiType);
         Invoke(aiType, 2f);
     }
@@ -138,7 +136,7 @@ public class AIController : MonoBehaviour {
     {
         // TODO: Should be a while loop inside a coroutine here.
         // If no deploy locations are viable, fuckin die.
-        if (_availableDeployLocations != null && _availableDeployLocations.Count == 0) {
+        if (_availableDeployLocations.Count == 0) {
             ShamefulDeath();
         } else {
             DeployToRandomLocation(_availableDeployLocations, _aiType);
@@ -241,8 +239,8 @@ public class AIController : MonoBehaviour {
             _canUpdateTracks = false;
 
             if (_target == null) {
-                _canFindClosestTarget = true;
-                AIFindClosestTarget();
+                //_canFindClosestTarget = true;
+                //AIFindClosestTarget();
             } else {
                 // Let's not check too much. Performance + robots can be slow.
                 Invoke("UpdateTracksCooldown", _checkRangesCooldown);
@@ -293,9 +291,7 @@ public class AIController : MonoBehaviour {
                     _myNavAgent.Stop();
                 }
 
-                Invoke("SetDestinationCooldown", _checkRangesCooldown * 1.2f);
-            } else {
-                _canUpdateTracks = true;
+                Invoke("SetDestinationCooldown", _checkRangesCooldown * 1.5f);
             }
         }
     }

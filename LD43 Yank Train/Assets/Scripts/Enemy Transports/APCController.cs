@@ -142,7 +142,9 @@ public class APCController : MonoBehaviour {
         // a single point and if within nav barrier payload won't spawn.
 
         // Dump payload.
-        int payload = Random.Range(minPayload, (maxPayload * _payloadMultiplier));
+        int payload = Random.Range(minPayload, maxPayload);
+        int payloadCount = 0;
+        int payloadCompanionCount = 0;
 
         _myRigidBody.bodyType = RigidbodyType2D.Kinematic;
 
@@ -150,13 +152,13 @@ public class APCController : MonoBehaviour {
             float companionOrNot = Random.Range(0f, 100f);
 
             if (companionOrNot <= companionSpawnChance) {
-                Invoke("DropCompanionPayload", deployRate * i);
+                payloadCompanionCount += 1;
             } else {
-                Invoke("DropPayload", deployRate * i);
+                payloadCount += 1;
             }
         }
 
-        Invoke("MakeIntoObstacle", payload);
+        StartCoroutine(ExecuteDeployPayload(payloadCount, payloadCompanionCount));
     }
 
     private void MakeIntoObstacle()
@@ -176,6 +178,33 @@ public class APCController : MonoBehaviour {
         } else if (collision.tag == "Player" || collision.tag == "Transport" || collision.tag == "CompanionBot") {
             StopOrder();
         }
+    }
+
+    private IEnumerator ExecuteDeployPayload(int dropCount, int dropCompCount)
+    {
+        int deploysLeft = dropCount + dropCompCount;
+        int dCount = dropCount;
+
+        while (deploysLeft > 0)
+        {
+            if (dCount > 0)
+            {
+                dCount -= 1;
+                DropPayload();
+            }
+            else
+            {
+                DropCompanionPayload();
+            }
+
+            deploysLeft -= 1;
+
+            yield return new WaitForSeconds(deployRate);
+        }
+
+        MakeIntoObstacle();
+
+        yield return 0;
     }
 
     private void DropPayload()

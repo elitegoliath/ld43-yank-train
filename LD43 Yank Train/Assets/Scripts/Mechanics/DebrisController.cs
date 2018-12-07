@@ -12,6 +12,7 @@ public class DebrisController : MonoBehaviour {
     
     private PolyNav2D _navMapRef;
     private PolyNavObstacle _myObstacle;
+    private bool _canBeDestroyed = false;
     
 	private void Start () {
         float fireSize = hasLargeFire ? 0.3f : 0.1f;
@@ -36,11 +37,16 @@ public class DebrisController : MonoBehaviour {
             _navMapRef = FindObjectOfType<PolyNav2D>();
             _navMapRef.AddObstacle(_myObstacle);
         }
-	}
+
+        if (hasLargeFire == true)
+        {
+            StartCoroutine(ActivateVulnerability());
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "LargeExplosion") {
+        if (collision.tag == "LargeExplosion" && _canBeDestroyed == true) {
             Destroy(gameObject);
         }
     }
@@ -50,5 +56,11 @@ public class DebrisController : MonoBehaviour {
         if (isPolyNav == true) {
             _navMapRef.RemoveObstacle(_myObstacle);
         }
+    }
+
+    private IEnumerator ActivateVulnerability()
+    {
+        yield return 0;
+        _canBeDestroyed = true;
     }
 }

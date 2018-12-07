@@ -20,7 +20,7 @@ public class SelfDestructExplosion : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        string tag = collision.tag;
+        string _tag = collision.tag;
 
         if (tag == "Enemy" || tag == "Transport") {
             CombatController combatController = collision.GetComponent<CombatController>();
