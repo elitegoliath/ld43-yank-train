@@ -7,6 +7,7 @@ public class PlayerControls : MonoBehaviour
     public float moveSpeed = 100f;
     public float transcodeDifficulty = 2f;
     public int assimilateHealAmount = 200;
+    public Animator animator;
 
     [Header("Combat Stats")]
     public int maxHealth = 200;
@@ -33,6 +34,7 @@ public class PlayerControls : MonoBehaviour
     private CombatController _myCombatController;
     private WaveController _waveController;
     private IEnumerator _transcodeMind;
+    private IEnumerator _fireRangedWeaponsCooldown;
 
     private void Awake()
     {
@@ -55,6 +57,7 @@ public class PlayerControls : MonoBehaviour
         _myCombatController.SetMaxHealth(maxHealth);
 
         _transcodeMind = TranscodeMind();
+        _fireRangedWeaponsCooldown = FireRangedWeaponsCooldown();
 
         StartCoroutine(_transcodeMind);
     }
@@ -133,7 +136,7 @@ public class PlayerControls : MonoBehaviour
             leftGun.FireRangedWeapon();
             rightGun.FireRangedWeapon();
 
-            Invoke("FireRangedWeaponsCooldown", rangedAttackDelay);
+            StartCoroutine(FireRangedWeaponsCooldown());
         }
     }
 
@@ -214,8 +217,9 @@ public class PlayerControls : MonoBehaviour
         _waveController.UpdateHealthbar(currentHealth);
     }
 
-    private void FireRangedWeaponsCooldown()
+    private IEnumerator FireRangedWeaponsCooldown()
     {
+        yield return new WaitForSeconds(rangedAttackDelay);
         _canFireRangedWeapons = true;
     }
 

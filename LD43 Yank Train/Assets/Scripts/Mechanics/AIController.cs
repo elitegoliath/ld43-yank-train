@@ -134,12 +134,14 @@ public class AIController : MonoBehaviour {
 
     private void PickNewDeployLocation()
     {
-        // TODO: Should be a while loop inside a coroutine here.
-        // If no deploy locations are viable, fuckin die.
-        if (_availableDeployLocations.Count == 0) {
-            ShamefulDeath();
-        } else {
-            DeployToRandomLocation(_availableDeployLocations, _aiType);
+        if (_availableDeployLocations != null) {
+            // TODO: Should be a while loop inside a coroutine here.
+            // If no deploy locations are viable, fuckin die.
+            if(_availableDeployLocations.Count == 0) {
+                ShamefulDeath();
+            } else {
+                DeployToRandomLocation(_availableDeployLocations, _aiType);
+            }
         }
     }
 
@@ -360,7 +362,8 @@ public class AIController : MonoBehaviour {
         _myNavAgent.OnDestinationInvalid += SelfDestruct;
 
         // Send him on his way.
-        _myNavAgent.maxSpeed = _myNavAgent.maxSpeed * 2;
+        _myNavAgent.maxSpeed = _myNavAgent.maxSpeed * 3;
+        _myNavAgent.accelerationRate = 6f;
         _myNavAgent.SetDestination(destination);
     }
 
