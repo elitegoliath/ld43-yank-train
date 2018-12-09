@@ -15,6 +15,7 @@ public class WaveController : MonoBehaviour {
     public int baseTransportCount = 2;
     public int enemyEndWaveThreshold = 2;
     public GameObject retryScreen;
+    public GameObject menuScreen;
     public GameObject[] transportPrefabList;
     public GameObject core1;
     public GameObject core2;
@@ -200,6 +201,7 @@ public class WaveController : MonoBehaviour {
     {
         EventManager.TriggerEvent("GameEnded");
 
+        menuScreen.SetActive(false);
         retryScreen.SetActive(true);
         _isGameOver = true;
     }
@@ -259,6 +261,11 @@ public class WaveController : MonoBehaviour {
         if (_currentTranscode >= transcodeGoal) {
             SceneManager.LoadScene("Credits");
         }
+    }
+
+    public void ToggleMenu()
+    {
+        menuScreen.SetActive(!menuScreen.activeSelf);
     }
 
     public void MainMenu()

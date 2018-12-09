@@ -61,6 +61,7 @@ MonoBehaviour:
   baseTransportCount: 1
   enemyEndWaveThreshold: 2
   retryScreen: {fileID: 0}
+  menuScreen: {fileID: 0}
   transportPrefabList:
   - {fileID: 1722753128056126, guid: e18ab76959598434e946f0793424d127, type: 2}
   core1: {fileID: 0}
