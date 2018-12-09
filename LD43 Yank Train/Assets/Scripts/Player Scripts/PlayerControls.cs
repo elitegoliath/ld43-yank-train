@@ -29,6 +29,8 @@ public class PlayerControls : MonoBehaviour
     private bool _sacTrigger = false;
     private bool _simTrigger = false;
     private bool _controlsEnabled = true;
+    private bool _isTogglingMenu = false;
+    private bool _canToggleMenu = true;
     private Rigidbody2D _myRigidBody;
     private Camera _cam;
     private CombatController _myCombatController;
@@ -72,6 +74,7 @@ public class PlayerControls : MonoBehaviour
             FireRangedWeapons();
             SacrificeAFriend();
             AssimilateABuddy();
+            OpenMenu();
         }
     }
 
@@ -81,6 +84,21 @@ public class PlayerControls : MonoBehaviour
     private void FixedUpdate()
     {
         MoveAvatar();
+    }
+
+    /// <summary>
+    /// Call Toggle Menu once, then wait for input to end to reset. This is how we prevent spam.
+    /// </summary>
+    private void OpenMenu()
+    {
+        if (Input.GetAxis("Cancel") != 0) {
+            if (_canToggleMenu == true) {
+                _canToggleMenu = false;
+                _waveController.ToggleMenu();
+            }
+        } else {
+            _canToggleMenu = true;
+        }
     }
 
     public void DisableControls()
