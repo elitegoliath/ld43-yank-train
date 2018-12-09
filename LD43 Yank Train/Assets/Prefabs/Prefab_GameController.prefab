@@ -58,7 +58,7 @@ MonoBehaviour:
   enemyMultiplierPerWave: 2
   startingWave: 1
   numberOfWaves: 10
-  baseTransportCount: 1
+  baseTransportCount: 2
   enemyEndWaveThreshold: 2
   retryScreen: {fileID: 0}
   menuScreen: {fileID: 0}

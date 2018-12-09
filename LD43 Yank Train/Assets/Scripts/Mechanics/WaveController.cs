@@ -141,7 +141,7 @@ public class WaveController : MonoBehaviour {
         // TODO: WORKAROUND CODE BELOW
         // _isWaveActive = true;
         _waveStartTimer = Time.time + _waveStartTimer;
-        waveDelay += 4f;
+        waveDelay += 3f;
     }
 
     private void RegisterEnemy()
