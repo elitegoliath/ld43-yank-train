@@ -1,0 +1,299 @@
+fileFormatVersion: 2
+guid: 543d5601ed1fcc34298e1031d7445aec
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: AvatarSheet2
+    21300002: AvatarArmatureL
+    21300004: AvatarArmatureR
+    21300006: AvatarChest
+    21300008: AvatarForearmL
+    21300010: AvatarForearmR
+    21300012: AvatarGun
+    21300014: AvatarGunFiring
+    21300016: AvatarHelmet
+    21300018: AvatarUpperArmL
+    21300020: AvatarUpperArmR
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AvatarArmatureL
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 305
+        width: 94
+        height: 103
+      alignment: 9
+      pivot: {x: 0.5159575, y: 0.5048544}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cd06af66cc817b4a8d8dbe5d0122409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AvatarArmatureR
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 410
+        width: 97
+        height: 101
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5049505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72d0b064f5ea94c489e503b70c0eeb7b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AvatarChest
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 391
+        width: 152
+        height: 120
+      alignment: 9
+      pivot: {x: 0.4901316, y: 0.4875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ae3357270d0a3144a854089d300bb83
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AvatarForearmL
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 358
+        width: 70
+        height: 153
+      alignment: 9
+      pivot: {x: 0.49285713, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97ef4e6fceccb8042a3cca41023b5ce1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AvatarForearmR
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 69
+        width: 68
+        height: 155
+      alignment: 9
+      pivot: {x: 0.50735295, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2f4c1914e1162e42875a59af210af03
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AvatarGun
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 275
+        width: 68
+        height: 114
+      alignment: 9
+      pivot: {x: 0.5, y: 0.51754385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edf18d5899debad4fbaa690348e3f2eb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AvatarGunFiring
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 275
+        width: 67
+        height: 114
+      alignment: 9
+      pivot: {x: 0.5074627, y: 0.51754385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d2560c22a551ec4ab9962698b35c508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AvatarHelmet
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 381
+        width: 181
+        height: 130
+      alignment: 9
+      pivot: {x: 0.51104975, y: 0.4923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90d795324b7e19a48a8cc6f17e0e2030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AvatarUpperArmL
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 226
+        width: 70
+        height: 130
+      alignment: 9
+      pivot: {x: 0.5214286, y: 0.50769234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a760c8ffbd21cd44baf3b51a3667891f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AvatarUpperArmR
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 243
+        width: 68
+        height: 136
+      alignment: 9
+      pivot: {x: 0.50735295, y: 0.4852941}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd1b1fefb369d9049bb4adc0baa9afcc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: de53672cef1663149ad6a0e33db70cf2
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

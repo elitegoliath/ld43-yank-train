@@ -1628,6 +1628,7 @@ MonoBehaviour:
   moveSpeed: 300
   transcodeDifficulty: 3.5
   assimilateHealAmount: 100
+  animator: {fileID: 0}
   maxHealth: 400
   armor: 1
   rangedAttackDelay: 0.2
@@ -2621,7 +2622,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d13794b5bb20e6641808b06266a0ec4f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
