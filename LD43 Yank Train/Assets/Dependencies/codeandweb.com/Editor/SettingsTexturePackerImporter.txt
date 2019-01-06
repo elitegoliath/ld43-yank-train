@@ -1,7 +1,6 @@
 version: 2
 importPivots: 1
 tpsheetFileNames:
-- Assets/Sprites/Characters/Avatar/AvatarSheet.tpsheet
 - Assets/Sprites/Characters/Avatar/AvatarSheet2.tpsheet
 - Assets/Sprites/Effects/Effects Atlas.tpsheet
 - Assets/Sprites/Environment/Decals/Arena Decals.tpsheet
@@ -9,7 +8,6 @@ tpsheetFileNames:
 - Assets/Sprites/UI/UI Atlas.tpsheet
 - Assets/Sprites/Vehicles/APC.tpsheet
 textureFileNames:
-- Assets/Sprites/Characters/Avatar/AvatarSheet.png
 - Assets/Sprites/Characters/Avatar/AvatarSheet2.png
 - Assets/Sprites/Effects/Effects Atlas.png
 - Assets/Sprites/Environment/Decals/Arena Decals.png
@@ -17,7 +15,6 @@ textureFileNames:
 - Assets/Sprites/UI/UI Atlas.png
 - Assets/Sprites/Vehicles/APC.png
 normalmapFileNames:
-- Assets/Sprites/Characters/Avatar/AvatarSheet_n.png
 - Assets/Sprites/Characters/Avatar/AvatarSheet2_n.png
 - 
 - 
